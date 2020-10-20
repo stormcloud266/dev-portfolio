@@ -11,10 +11,15 @@ html {
 }
 
 body {
-  color: $color-text-1;
-  background-color: $color-bg-0;
+  color: #222;
+  background-color: #fff;
   box-sizing: border-box;
   position: relative;
+}
+
+body.dark {
+  color: #fff;
+  background-color: #222;
 }
 
 li { list-style: none; }
