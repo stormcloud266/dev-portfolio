@@ -23,6 +23,7 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-dark-mode`,
+    `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-plugin-web-font-loader`,
       options: {
