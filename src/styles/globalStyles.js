@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
 
-export const GlobalStyle = createGlobalStyle`
+const GlobalStyle = createGlobalStyle`
 
   :root {
     --s-0: .57rem;
@@ -37,7 +37,6 @@ export const GlobalStyle = createGlobalStyle`
     font-family: "Open Sans", sans-serif;
     line-height: 1.6;
     position: relative;
-    padding: 0 40px;
   }
 
   body.dark {
@@ -86,3 +85,5 @@ export const GlobalStyle = createGlobalStyle`
     line-height: inherit;
   }
 `
+
+export default GlobalStyle

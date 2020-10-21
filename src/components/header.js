@@ -4,7 +4,7 @@ import Nav from '@components/Nav'
 import { Hamburger, Times, Logo } from '@images/icons'
 
 import styled from "styled-components"
-import { Container } from "../styles/container"
+import { Container } from "@styles"
 
 const Header = () => {
   const [isOpen, toggleNav] = useState(false)

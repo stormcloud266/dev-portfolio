@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 import Header from "@components/header"
 // import Footer from "@components/footer"
 // import CookieBanner from "@components/CookieBanner"
-import { GlobalStyle } from "../styles/globalStyles"
+import { GlobalStyle } from "@styles"
 
 const Layout = ({ children }) => (
   <>

@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components"
 
-export const Button = styled.button`
+const Button = styled.button`
   padding: var(--s-3) var(--s-7) var(--s-1);
   font-family: 'Yantramanav', sans-serif;
   font-weight: bold;
@@ -12,6 +12,8 @@ export const Button = styled.button`
   display: inline-block;
   cursor: pointer;
   transition: all .2s;
+  min-width: 16rem;
+  text-align: center;
   
   :hover {
     background-color: #efefef;
@@ -29,3 +31,5 @@ export const Button = styled.button`
     }
   `}
 `
+
+export default Button

@@ -3,10 +3,10 @@ import { Link } from "gatsby"
 
 import Layout from "@components/layout"
 import SEO from "@components/seo"
+import Hero from "@components/hero"
 
 import projects from '../data/projects'
 
-import { Button } from "../styles/button"
 
 
 const IndexPage = () => {
@@ -27,6 +27,8 @@ const IndexPage = () => {
     <Layout>
   
       <SEO title="Home" />
+
+      <Hero />
   
       <section className="wrapper section">
         <input type="text" value={search} onChange={(e) => setSearch(e.target.value)} />
@@ -39,14 +41,6 @@ const IndexPage = () => {
           )
         }
       </section>
-
-      <h1>Hello and Welcome To My Website</h1>
-      <h2>This Is My Secondary Headline</h2>
-      <h3>This Is My Secondary Headline</h3>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium mollitia sit, voluptatem est earum iste! Velit ratione nam neque, qui odit delectus tempora eveniet quaerat, sint similique minus molestias unde ut error!</p>
-      <Button primary>This My Button</Button>
-      <Button>This My Button</Button>
-      <Button as={Link}>This My Link</Button>
   
     </Layout>
   )

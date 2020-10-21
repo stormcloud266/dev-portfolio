@@ -79,7 +79,7 @@ module.exports = {
         alias: {
           '@components': path.resolve(__dirname, 'src/components'),
           '@images': path.resolve(__dirname, 'src/assets/images'),
-          '@styles': path.resolve(__dirname, 'src/assets/styles/'),
+          '@styles': path.resolve(__dirname, 'src/styles/'),
         },
       },
     },

@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components"
 
-export const Container = styled.div`
+const Container = styled.div`
 
   ${props => props.wrapper && css`
     width: 100%;
@@ -64,3 +64,5 @@ export const Container = styled.div`
   } // end of 600px
 
 `
+
+export default Container
