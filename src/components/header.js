@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import Nav from '@components/Nav'
 import { Hamburger, Times, Logo } from '@images/icons'
 
-import styled, { css } from "styled-components"
+import styled from "styled-components"
 import { Container } from "../styles/container"
 
 const Header = () => {
