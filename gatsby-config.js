@@ -27,7 +27,7 @@ module.exports = {
       resolve: `gatsby-plugin-web-font-loader`,
       options: {
         google: {
-          families: ['Lato:900,400', 'Open Sans:400']
+          families: ['Open Sans:400', 'Yantramanav:700,400']
         }
       }
     },
