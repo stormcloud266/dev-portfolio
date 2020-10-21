@@ -4,10 +4,12 @@ import PropTypes from "prop-types"
 import Header from "@components/header"
 import Footer from "@components/footer"
 // import CookieBanner from "@components/CookieBanner"
-import "@styles/styles.scss"
+import { GlobalStyle } from "../styles/globalStyles"
 
 const Layout = ({ children }) => (
   <>
+    <GlobalStyle />
+
     <Header />
       
     <main>{children}</main>
