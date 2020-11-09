@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
-import Nav from '@components/Nav'
+import Nav from '@global/Nav'
 import { Hamburger, Times, Logo } from '@images/icons'
 
 import styled from "styled-components"
@@ -34,7 +34,7 @@ const Header = () => {
 export default Header
 
 const SiteHeader = styled.header`
-  background-color: #d7e5e6;
+  background-color: var(--color-black);
 
   // positioning
   position: fixed;

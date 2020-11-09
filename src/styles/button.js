@@ -6,8 +6,8 @@ const Button = styled.button`
   font-weight: bold;
   letter-spacing: .5px;
   text-transform: uppercase;
-  color: #000;
-  border: 2px solid #000;
+  color: var(--color-black);
+  border: 2px solid var(--color-black);
   background-color: #fff;
   display: inline-block;
   cursor: pointer;
@@ -17,17 +17,17 @@ const Button = styled.button`
   
   :hover {
     background-color: #efefef;
-    color: #000;
-    box-shadow: 4px 4px 0 #f199b9;
+    color: var(--color-black);
+    box-shadow: 4px 4px 0 var(--color-cta);
   }
 
   ${props => props.primary && css`
     color: #fff;
-    border: 2px solid #000;
-    background-color: #000;
+    border: 2px solid var(--color-black);
+    background-color: var(--color-black);
     :hover {
-      background-color: #000;
-      color: #f199b9;
+      background-color: var(--color-black);
+      color: var(--color-cta);
     }
   `}
 `

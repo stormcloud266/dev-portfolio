@@ -15,6 +15,11 @@ const GlobalStyle = createGlobalStyle`
     --s-8: 2.9rem;
     --s-9: 3.5rem;
     --s-10: 4.2rem;
+
+    --color-cta: #f199b9;
+    --color-black: #111213;
+    --color-bg: #fff;
+    --color-bg-accent: #eee;
   }
 
   *,

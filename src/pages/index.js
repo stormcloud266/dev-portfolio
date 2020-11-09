@@ -1,27 +1,11 @@
-import React, { useState } from "react"
-import { Link } from "gatsby"
+import React from "react"
 
-import Layout from "@components/layout"
-import SEO from "@components/seo"
-import Hero from "@components/hero"
-
-import projects from '../data/projects'
-
-
+import Layout from "@global/layout"
+import SEO from "@global/seo"
+import Hero from "@components/home/hero"
+import Projects from "@components/home/projects"
 
 const IndexPage = () => {
-
-  const [search, setSearch] = useState('')
-
-  const filterProjects = project => {
-
-    const searchTerm = search.toLowerCase(),
-          projectTitle = project.title.toLowerCase(),
-          projectTags = project.tags,
-          hasTag = tag => tag.toLowerCase().includes(searchTerm)
-
-    return projectTitle.includes(searchTerm) || projectTags.some(hasTag)
-  }
 
   return (
     <Layout>
@@ -31,15 +15,7 @@ const IndexPage = () => {
       <Hero />
   
       <section className="wrapper section">
-        <input type="text" value={search} onChange={(e) => setSearch(e.target.value)} />
-
-        {
-          search ? projects.filter(project => filterProjects(project) )
-            .map(project => <li key={project.title}>{project.title}</li>
-            ) : (
-            projects.map(project => <li key={project.title}>{project.title}</li> )
-          )
-        }
+        <Projects />
       </section>
   
     </Layout>

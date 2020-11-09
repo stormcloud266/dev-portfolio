@@ -1,7 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-import Header from "@components/header"
+import Header from "@global/header"
+import Footer from "@global/footer"
 // import Footer from "@components/footer"
 // import CookieBanner from "@components/CookieBanner"
 import { GlobalStyle } from "@styles"
@@ -14,7 +15,7 @@ const Layout = ({ children }) => (
       
     <main>{children}</main>
 
-    {/* <Footer /> */}
+    <Footer />
     {/* <CookieBanner /> */}
   </>
 )

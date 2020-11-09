@@ -2,6 +2,10 @@ import styled, { css } from "styled-components"
 
 const Container = styled.div`
 
+  ${props => props.bgAccent && css`
+    background-color: var(--color-bg-accent);
+  `}
+
   ${props => props.wrapper && css`
     width: 100%;
     max-width: 114rem;

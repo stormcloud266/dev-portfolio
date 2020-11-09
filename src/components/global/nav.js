@@ -50,7 +50,7 @@ const StyledNav = styled.nav`
   align-items: center;
 
   @media screen and (max-width: 900px) {
-    background-color: #d7e5e6;
+    background-color: var(--color-black);
 
     // positioning
     position: absolute;
@@ -100,6 +100,9 @@ const NavLinks = styled.ul`
   li { 
     margin-right: 2.8rem;
   }
+  a {
+    color: #fff;
+  }
 
   @media screen and (max-width: 900px) {
     flex-direction: column;
@@ -111,6 +114,8 @@ const NavLinks = styled.ul`
       margin-bottom: 1.8rem;
     }
   
-    a { padding: .4rem .8rem; }
+    a { 
+      padding: .4rem .8rem;
+    }
   }
 `

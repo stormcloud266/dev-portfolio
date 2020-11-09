@@ -3,9 +3,9 @@ import { graphql } from "gatsby"
 import Img from "gatsby-image"
 import BackgroundImage from 'gatsby-background-image'
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import StaticQuery from "../components/staticQuery"
+import Layout from "@global/layout"
+import SEO from "@global/seo"
+import StaticQuery from "@components/staticQuery"
 
 const IndexPage = ({ data, location }) => (
   <Layout>

@@ -8,11 +8,11 @@ const Hero = () => (
     <Container wrapper>
       <Text>
 
-        <h1>Hello and Welcome to my website</h1>
+        <h1>Hello and Welcome to My Website</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis amet impedit molestiae assumenda. Vel distinctio error exercitationem dolor odit, architecto iure?</p>
 
         <ButtonContainer>  
-          <Button primary as={Link} to="/about">Contact Me</Button>
+          <Button primary={1} as={Link} to="/about">Contact Me</Button>
           <Button as={Link} to="/about">See My Work</Button>
         </ButtonContainer>
 
