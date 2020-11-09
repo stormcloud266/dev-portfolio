@@ -6,7 +6,7 @@ import { Hamburger, Times, Logo } from '@images/icons'
 import styled from "styled-components"
 import { Container } from "@styles"
 
-const Header = () => {
+const Header = ({ isDark, themeContext }) => {
   const [isOpen, toggleNav] = useState(false)
 
   return (
