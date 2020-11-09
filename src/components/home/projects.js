@@ -33,6 +33,7 @@ const Projects = () => {
         .filter(project => filterProjects(project) )
         .map(project => (
           <Project 
+            key={project.title}
             title={project.title}
             tags={project.tags}
           />

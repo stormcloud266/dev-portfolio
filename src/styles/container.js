@@ -3,7 +3,7 @@ import styled, { css } from "styled-components"
 const Container = styled.div`
 
   ${props => props.bgAccent && css`
-    background-color: var(--color-bg-accent);
+    background-color: var(--color-bg-secondary);
   `}
 
   ${props => props.wrapper && css`

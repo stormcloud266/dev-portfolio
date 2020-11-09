@@ -18,8 +18,11 @@ const GlobalStyle = createGlobalStyle`
 
     --color-cta: #f199b9;
     --color-black: #111213;
-    --color-bg: #fff;
-    --color-bg-accent: #eee;
+    --color-bg: ${props => props.theme.colorBg};
+    --color-bg-secondary: ${props => props.theme.colorBgSecondary};
+    --color-text: ${props => props.theme.colorText};
+    --color-text-headers: ${props => props.theme.colorTextHeaders};
+    --color-btn-primary: ${props => props.theme.colorBtnPrimary};
   }
 
   *,
@@ -35,8 +38,8 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background-color: #fff;
-    color: #222;
+    background-color: var(--color-bg);
+    color: var(--color-text);
     box-sizing: border-box;
     font-size: var(--s-6);
     font-family: "Open Sans", sans-serif;
@@ -44,14 +47,10 @@ const GlobalStyle = createGlobalStyle`
     position: relative;
   }
 
-  body.dark {
-    color: #fff;
-    background-color: #222;
-  }
-
   h1,h2,h3,h4,h5,h6 { 
     font-family: 'Yantramanav', sans-serif;
     line-height: 1.3;
+    color: var(--color-text-header);
   }
 
   h1 {

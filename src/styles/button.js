@@ -23,8 +23,8 @@ const Button = styled.button`
 
   ${props => props.primary && css`
     color: #fff;
-    border: 2px solid var(--color-black);
-    background-color: var(--color-black);
+    border: 2px solid var(--color-btn-primary);
+    background-color: var(--color-btn-primary);
     :hover {
       background-color: var(--color-black);
       color: var(--color-cta);
