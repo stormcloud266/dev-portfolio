@@ -45,12 +45,13 @@ const GlobalStyle = createGlobalStyle`
     font-family: "Open Sans", sans-serif;
     line-height: 1.6;
     position: relative;
+    overflow-x: hidden;
   }
 
   h1,h2,h3,h4,h5,h6 { 
     font-family: 'Yantramanav', sans-serif;
     line-height: 1.3;
-    color: var(--color-text-header);
+    color: var(--color-text-headers);
   }
 
   h1 {

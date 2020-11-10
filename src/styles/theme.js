@@ -8,7 +8,7 @@ exports.darkTheme = {
 
 exports.lightTheme = {
   colorText: '#5a5967',
-  colorTextHeaders: '#1d1a50',
+  colorTextHeaders: '#2b2d2f',
   colorBg: '#ffffff',
   colorBgSecondary: '#f4f3fb',
   colorBtnPrimary: '#000000',

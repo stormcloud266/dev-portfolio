@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
-import { Hamburger, Times, Logo } from '@images/icons'
+import { Hamburger, Times, Logo, Sun, Moon } from '@images/icons'
 
 import styled, { css } from "styled-components"
 import { Container } from "@styles"
@@ -24,7 +24,6 @@ const Header = ({ isDark, themeContext }) => {
         </NavToggle>
   
         <Nav isOpen={isOpen}>
-
           <NavLinks>
             <li>
               <Link to="/">Home</Link>
@@ -43,13 +42,12 @@ const Header = ({ isDark, themeContext }) => {
             </li>
           </NavLinks>
 
-          <button 
+          <ThemeToggle 
             onClick={() => themeContext.toggleDark()}
             aria-label="toggle dark mode"
           >
-            {/* {isDark ? <Sun /> : <Moon />} */}
-            {isDark ? 'sun' : 'moon'}
-          </button>
+            {isDark ? <Sun /> : <Moon />}
+          </ThemeToggle>
 
         </Nav>
   
@@ -61,7 +59,7 @@ const Header = ({ isDark, themeContext }) => {
 export default Header
 
 const SiteHeader = styled.header`
-  background-color: var(--color-bg);
+  /* background-color: var(--color-bg); */
 
   // positioning
   position: fixed;
@@ -70,6 +68,10 @@ const SiteHeader = styled.header`
   z-index: 1000;
   width: 100%;
 
+  svg {
+    stroke: var(--color-text);
+  }
+
 `
 const NavContainer = styled(Container)`
   display: flex;
@@ -77,14 +79,29 @@ const NavContainer = styled(Container)`
   align-items: center;
 `
 
+const ThemeToggle = styled.button`
+  border: none;
+  padding: .1rem;
+  line-height: 1;
+  background-color: transparent;
+
+  svg {
+    display: block;
+  }
+`
+
 const NavToggle = styled.button`
   display: none;
+
+  svg {
+    display: block;
+  }
   
   @media screen and (max-width: 900px) {
     display: block;
     // overwrite default button styles
     border: none;
-    padding: 1rem;
+    padding: .5rem;
     line-height: 1;
     background-color: transparent;
     
