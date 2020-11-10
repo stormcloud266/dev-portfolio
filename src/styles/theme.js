@@ -1,15 +1,15 @@
 exports.darkTheme = {
-  colorText: '#a5a4bb',
+  colorText: '#b3bec3',
   colorTextHeaders: '#ffffff',
   colorBg: '#181a1b',
-  colorBgSecondary: '#252438',
+  colorBgSecondary: '#212527',
   colorBtnPrimary: '#f199b9',
 }
 
 exports.lightTheme = {
-  colorText: '#5a5967',
+  colorText: '#3e474c',
   colorTextHeaders: '#2b2d2f',
   colorBg: '#ffffff',
-  colorBgSecondary: '#f4f3fb',
+  colorBgSecondary: '#eff4f7',
   colorBtnPrimary: '#000000',
 }

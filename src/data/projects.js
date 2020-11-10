@@ -1,11 +1,13 @@
 const projects = [
   {
     title: 'Project One',
-    tags: ['Javascript', 'react', 'css', 'scss'],
+    filterTags: ['Javascript', 'react', 'css', 'scss'],
+    tags: ['Javascript', 'React', 'SCSS'],
   },
   {
     title: 'Project Two',
-    tags: ['Javascript', 'react', 'styled components'],
+    filterTags: ['Javascript', 'react', 'styled components'],
+    tags: ['Javascript', 'React', 'Gatsby'],
   }
 ]
 

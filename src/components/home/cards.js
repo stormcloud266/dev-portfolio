@@ -2,6 +2,7 @@ import React from "react"
 import { Container } from "@styles"
 import styled, { css } from "styled-components"
 import { Code } from '@images/icons'
+import dots from '@images/dots.svg'
 
 const Cards = () => (
   <CardsContainer>
@@ -36,15 +37,25 @@ const CardsContainer = styled.div`
 const CardsInner = styled(Container)`
   display: flex;
   justify-content: space-between;
+  position: relative;
+  z-index: 1;
 `
 
 const Card = styled.div`
   background-color: var(--color-bg);
   flex: 1;
   margin-right: var(--s-8);
-  padding: var(--s-11) var(--s-9);
-  box-shadow: 0px 3px 20px -2px rgba(0, 0, 0, 0.3) ;
+  padding: var(--s-11) var(--s-8);
+  /* box-shadow: 0px 3px 20px -2px rgba(0, 0, 0, 0.3); */
   border-radius: 4px;
+  position: relative;
+  border: 2px solid #5B3C68;
+  box-shadow: 6px 6px 0 -2px #5B3C68;
+
+  ${props => props.theme.isDark && css`
+    border: 1px solid var(--color-cta);
+    box-shadow: 6px 6px 0 -2px var(--color-cta);
+  `}
 
   svg {
     stroke: #4de6da;
@@ -67,5 +78,19 @@ const Card = styled.div`
 
   :last-child {
     margin-right: 0;
+  }
+
+  ::before {
+    position: absolute;
+    content: '';
+    display: block;
+    top: 2px;
+    right: 2px;
+    height: 70px;
+    width: 140px;
+    background-image: url(${dots});
+    background-size: 70px;
+    /* z-index: -1; */
+    opacity: .7;
   }
 `

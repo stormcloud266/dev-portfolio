@@ -35,7 +35,7 @@ const Text = styled.div`
 
   h1 {
     margin-bottom: var(--s-8);
-    font-size: 5.2rem;
+    font-size: 4.8rem;
   }
 
   p {
@@ -43,9 +43,11 @@ const Text = styled.div`
   }
 
   ${Button} {
-    margin-right: var(--s-8);
-    font-size: var(--s-7);
-    min-width: 20rem;
+    min-width: 18rem;
+
+    :first-child {
+      margin-right: var(--s-8);
+    }
   }
 `
 
@@ -60,7 +62,7 @@ const BG = styled.div`
   position: absolute;
   z-index: -1;
   transform: skewX(-30deg);
-  border-bottom-left-radius: 40px;
+  /* border-bottom-left-radius: 40px; */
   left: 60%;
 `
 
@@ -70,9 +72,9 @@ const Dots = styled.div`
   display: block;
   bottom: 0;
   left: 0;
-  height: 230px;
+  height: 210px;
   width: 70px;
   background-image: url(${dots});
   background-size: 70px;
-  z-index: -1;
+  z-index: 3;
 `

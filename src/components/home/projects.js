@@ -13,35 +13,58 @@ const Projects = () => {
 
     const searchTerm = search.toLowerCase().trim(),
           projectTitle = project.title.toLowerCase(),
-          projectTags = project.tags,
+          tags = project.filterTags,
           hasTag = tag => tag.toLowerCase().includes(searchTerm)
 
-    return projectTitle.includes(searchTerm) || projectTags.some(hasTag)
+    return projectTitle.includes(searchTerm) || tags.some(hasTag)
   }
 
   return (
-  <Container wrapper>
-    <h2>Projects</h2>
-    <input 
-      type="text" 
-      value={search} 
-      onChange={(e) => setSearch(e.target.value)}
-    />
+  <Container bgAccent section>
+    <Container wrapper>
+      <Title>My Recent Projects</Title>
 
-    {
-      projects
-        .filter(project => filterProjects(project) )
-        .map(project => (
-          <Project 
-            key={project.title}
-            title={project.title}
-            tags={project.tags}
-          />
-        ))
-    }
+      <Search 
+        type="text" 
+        value={search} 
+        onChange={(e) => setSearch(e.target.value)}
+      />
 
+      <ProjectsContainer>
+      {
+        projects
+          .filter(project => filterProjects(project) )
+          .map(project => (
+            <Project 
+              key={project.title}
+              title={project.title}
+              tags={project.tags}
+            />
+          ))
+      }
+      </ProjectsContainer>
+
+    </Container>
   </Container>
   )
 }
 
 export default Projects
+
+const Title = styled.h2`
+  text-align: center;
+`
+
+const Search = styled.input`
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  margin-top: var(--s-7);
+  padding: var(--s-0) var(--s-3);
+`
+
+const ProjectsContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-top: var(--s-11);
+`
