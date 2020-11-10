@@ -8,7 +8,7 @@ const Container = styled.div`
 
   ${props => props.wrapper && css`
     width: 100%;
-    max-width: 114rem;
+    max-width: 124rem;
     padding-left: 1.4rem;
     padding-right: 1.4rem;
     margin-left: auto;

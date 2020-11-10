@@ -56,6 +56,7 @@ const BG = styled.div`
   width: 80%;
   height: 100%;
   background-image: linear-gradient(90deg, #B1EDE8 30%, #5F5566 30%);
+  background-image: linear-gradient(90deg, #B1EDE8 30%, #5B3C68 30%);
   position: absolute;
   z-index: -1;
   transform: skewX(-30deg);

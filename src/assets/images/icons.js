@@ -69,6 +69,23 @@ export const Moon = () => (
     </svg>
 )
 
+export const Code = () => (
+  <svg
+    className="prefix__icon prefix__icon-tabler prefix__icon-tabler-code"
+    width={60}
+    height={60}
+    viewBox="0 0 24 24"
+    strokeWidth={2}
+    stroke="currentCode"
+    fill="none"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M0 0h24v24H0z" stroke="none" />
+    <path d="M7 8l-4 4 4 4M17 8l4 4-4 4M14 4l-4 16" />
+  </svg>
+)
+
 export const Logo = () => (
   <svg
     viewBox="0 0 495 137"

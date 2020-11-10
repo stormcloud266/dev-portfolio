@@ -15,6 +15,7 @@ const GlobalStyle = createGlobalStyle`
     --s-8: 2.9rem;
     --s-9: 3.5rem;
     --s-10: 4.2rem;
+    --s-11: 5.1rem;
 
     --color-cta: #f199b9;
     --color-black: #111213;

@@ -1,7 +1,7 @@
 exports.darkTheme = {
   colorText: '#a5a4bb',
   colorTextHeaders: '#ffffff',
-  colorBg: '#151425',
+  colorBg: '#181a1b',
   colorBgSecondary: '#252438',
   colorBtnPrimary: '#f199b9',
 }
