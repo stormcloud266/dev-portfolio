@@ -24,6 +24,12 @@ const Container = styled.div`
     padding-bottom: 14rem;
   `}
 
+  ${props => props.fcc && css`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  `}
+
   ${props => props.sectionTop && css`
     padding-top: 14rem;
   `}

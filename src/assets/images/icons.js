@@ -37,8 +37,8 @@ export const Times = () => (
 export const Sun = () => (
   <svg
       className="prefix__icon prefix__icon-tabler prefix__icon-tabler-sun"
-      width={28}
-      height={28}
+      width={24}
+      height={24}
       viewBox="0 0 24 24"
       strokeWidth={2}
       stroke="currentColor"
@@ -55,8 +55,8 @@ export const Sun = () => (
 export const Moon = () => (
   <svg
       className="prefix__icon prefix__icon-tabler prefix__icon-tabler-moon"
-      width={28}
-      height={28}
+      width={24}
+      height={24}
       viewBox="0 0 24 24"
       strokeWidth={2}
       stroke="currentColor"

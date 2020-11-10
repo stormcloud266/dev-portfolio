@@ -19,12 +19,14 @@ const Button = styled.button`
     background-color: #efefef;
     color: var(--color-black);
     box-shadow: 4px 4px 0 var(--color-cta);
+    transform: translateY(-1px);
   }
 
   ${props => props.primary && css`
-    color: #fff;
     border: 2px solid var(--color-btn-primary);
     background-color: var(--color-btn-primary);
+    color: ${props => props.theme.isDark ? 'var(--color-black)' : '#fff'};
+
     :hover {
       background-color: var(--color-black);
       color: var(--color-cta);

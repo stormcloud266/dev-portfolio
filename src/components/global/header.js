@@ -13,7 +13,7 @@ const Header = ({ isDark, themeContext }) => {
       <NavContainer wrapper>
   
         <LogoLink to="/">
-          <Logo />
+          Tawnee.dev
         </LogoLink>
   
         <NavToggle 
@@ -29,16 +29,13 @@ const Header = ({ isDark, themeContext }) => {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/examples">Examples</Link>
+              <Link to="/projects">Projects</Link>
             </li>
             <li>
-              <Link to="/">Page</Link>
+              <Link to="/about">About</Link>
             </li>
             <li>
-              <Link to="/">Page</Link>
-            </li>
-            <li>
-              <Link to="/">Page</Link>
+              <Link to="/contact">Contact</Link>
             </li>
           </NavLinks>
 
@@ -59,7 +56,8 @@ const Header = ({ isDark, themeContext }) => {
 export default Header
 
 const SiteHeader = styled.header`
-  /* background-color: var(--color-bg); */
+  background-color: var(--color-bg);
+  border-bottom: 2px solid var(--color-cta);
 
   // positioning
   position: fixed;
@@ -113,14 +111,14 @@ const NavToggle = styled.button`
 `
 
 const LogoLink = styled(Link)`
-  padding: .8rem 0;
+  padding: 1.2rem 0;
   position: relative;
   z-index: 1000;
 
   svg {
     fill: var(--color-text);
     width: 100%;
-    max-width: 15rem;
+    max-width: 13rem;
     display: block;
   }
 `
@@ -181,6 +179,9 @@ const NavLinks = styled.ul`
   }
   a {
     color: var(--color-text);
+    font-family: 'Yantramanav', sans-serif;
+    font-weight: bold;
+    letter-spacing: 1px;
   }
 
   @media screen and (max-width: 900px) {

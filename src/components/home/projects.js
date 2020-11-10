@@ -1,6 +1,8 @@
 import React, { useState } from "react"
+import { Link } from "gatsby"
+
 import styled from "styled-components"
-import { Container } from "@styles"
+import { Container, Button } from "@styles"
 import Project from "@components/home/projectCard"
 
 import projects from '../../data/projects'
@@ -21,7 +23,7 @@ const Projects = () => {
 
   return (
   <Container bgAccent section>
-    <Container wrapper>
+    <Container wrapper fcc>
       <Title>My Recent Projects</Title>
 
       <Search 
@@ -44,6 +46,8 @@ const Projects = () => {
       }
       </ProjectsContainer>
 
+      <Button as={Link} to="/projects">View All Projects</Button>
+
     </Container>
   </Container>
   )
@@ -52,19 +56,26 @@ const Projects = () => {
 export default Projects
 
 const Title = styled.h2`
-  text-align: center;
+  /* text-align: center; */
 `
 
 const Search = styled.input`
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
   margin-top: var(--s-7);
   padding: var(--s-0) var(--s-3);
+  border: 2px solid var(--color-black);
+  
+  :focus {
+    border: 2px solid var(--color-cta);
+    border-radius: 0;
+    outline: 0;
+  }
 `
 
 const ProjectsContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  gap: var(--s-7);
+  grid-template-columns: repeat(3, 1fr);
   margin-top: var(--s-11);
+  margin-bottom: var(--s-11);
 `
+

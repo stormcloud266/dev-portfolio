@@ -9,7 +9,7 @@ const GlobalStyle = createGlobalStyle`
     --s-3: .98rem;
     --s-4: 1.2rem;
 
-    --s-5: 1.4rem;
+    --s-5: 1.5rem;
     --s-6: 1.7rem;
     --s-7: 2rem;
     --s-8: 2.9rem;
