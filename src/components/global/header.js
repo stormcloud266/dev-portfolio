@@ -175,7 +175,7 @@ const NavLinks = styled.ul`
   display: flex;
 
   li { 
-    margin-right: 2.8rem;
+    margin-right: var(--s-8);
   }
   a {
     color: var(--color-text);

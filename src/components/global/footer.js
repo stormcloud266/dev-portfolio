@@ -2,12 +2,21 @@ import React from "react"
 import { Link } from "gatsby"
 import { Container } from "@styles"
 import styled from "styled-components"
+import { Github, Codepen, Twitter, Mail } from '@images/icons'
 
 const Footer = () => (
   <Container bgAccent as="footer">
     <FooterInner wrapper>
 
+      <Flex>
       <h3>Tawnee</h3>
+      <Social>
+        <a href=""><Github /></a>
+        <a href=""><Codepen /></a>
+        <a href=""><Twitter /></a>
+        <a href=""><Mail /></a>
+      </Social>
+      </Flex>
 
       <Nav>
         <Link to="/">Home</Link>
@@ -31,11 +40,39 @@ const FooterInner = styled(Container)`
   padding-bottom: var(--s-4);
 `
 
+const Flex = styled.div`
+  display: flex;
+  align-items: center;
+`
+
+const Social = styled.div`
+  display: flex;
+  margin-left: var(--s-9);
+
+  a {
+    display: block;
+    margin-right: var(--s-4);
+    padding: 4px;
+    border-radius: 3px;
+    transition: all .2s;
+    color: ${props => props.theme.isDark ? 'var(--color-black)' : '#fff'};
+    background-color: ${props => props.theme.isDark ? 'var(--color-cta)' : 'var(--color-black)'};
+    :hover {
+      background-color: ${props => props.theme.isDark ? '#fff' : 'var(--color-cta)'};
+      color: var(--color-black);
+    }
+  }
+  svg {
+    display: block;
+  }
+`
+
 const Nav = styled.nav`
   a {
-    margin-left: 3rem;
-    text-transform: uppercase;
-    font-size: 1.5rem;
+    margin-right: var(--s-8);
+    color: var(--color-text);
+    font-family: 'Yantramanav', sans-serif;
+    font-weight: bold;
     letter-spacing: 1px;
   }
 `

@@ -15,17 +15,17 @@ const projects = [
     tags: ['GatsbyJS', 'Styled Components'],
   },
   {
-    title: 'Project Four',
+    title: '$Alex',
     filterTags: ['Javascript', 'react', 'styled components'],
     tags: ['Javascript', 'React', 'Gatsby'],
   },
   {
-    title: 'Project Five',
+    title: 'AABS',
     filterTags: ['Javascript', 'react', 'css', 'scss'],
     tags: ['Javascript', 'React', 'SCSS'],
   },
   {
-    title: 'Project Six',
+    title: 'Cinnanym',
     filterTags: ['Javascript', 'react', 'styled components'],
     tags: ['Javascript', 'React', 'Gatsby'],
   },
