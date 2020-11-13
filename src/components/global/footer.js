@@ -11,10 +11,10 @@ const Footer = () => (
       <Flex>
       <h3>Tawnee</h3>
       <Social>
-        <a href=""><Github /></a>
-        <a href=""><Codepen /></a>
-        <a href=""><Twitter /></a>
-        <a href=""><Mail /></a>
+        <a href="/"><Github /></a>
+        <a href="/"><Codepen /></a>
+        <a href="/"><Twitter /></a>
+        <a href="/"><Mail /></a>
       </Social>
       </Flex>
 

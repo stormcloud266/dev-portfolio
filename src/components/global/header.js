@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
-import { Hamburger, Times, Logo, Sun, Moon } from '@images/icons'
+import { Hamburger, Times, Sun, Moon, Github, Codepen, Twitter, Mail } from '@images/icons'
 
 import styled, { css } from "styled-components"
 import { Container } from "@styles"
@@ -45,6 +45,13 @@ const Header = ({ isDark, themeContext }) => {
           >
             {isDark ? <Sun /> : <Moon />}
           </ThemeToggle>
+
+          <Social>
+            <a href="/"><Github /></a>
+            <a href="/"><Codepen /></a>
+            <a href="/"><Twitter /></a>
+            <a href="/"><Mail /></a>
+          </Social>
 
         </Nav>
   
@@ -102,6 +109,7 @@ const NavToggle = styled.button`
     padding: .5rem;
     line-height: 1;
     background-color: transparent;
+    cursor: pointer;
     
     // positioning
     display: block;
@@ -151,9 +159,19 @@ const Nav = styled.nav`
       transform: translateY(1rem);
     }
 
+    svg {
+      opacity: 0;
+      transition: opacity 0s;
+    }
+
     ${props => props.isOpen && css`
       opacity: 1;
       visibility: visible;
+
+      svg {
+        opacity: 1;
+        transition: opacity .5s;
+      }
     
       // needs to be kept here due to parent props
       li {
@@ -196,6 +214,29 @@ const NavLinks = styled.ul`
   
     a { 
       padding: .4rem .8rem;
+    }
+  }
+`
+
+const Social = styled.div`
+  display: none;
+
+  @media only screen and (max-width: 900px) {
+    display: flex;
+    margin-top: var(--s-8);
+
+    a {
+      display: block;
+      margin-right: var(--s-7);
+      :last-child {
+        margin-right: 0;
+      }
+    }
+
+    svg {
+      display: block;
+      height: 2.4rem;
+      width: 2.4rem;
     }
   }
 `
