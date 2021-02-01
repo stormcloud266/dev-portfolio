@@ -5,7 +5,6 @@ import { ThemeManagerContext } from "gatsby-styled-components-dark-mode"
 import Header from "@global/header"
 import Footer from "@global/footer"
 import Form from "@global/form"
-// import Footer from "@components/footer"
 // import CookieBanner from "@components/CookieBanner"
 import { GlobalStyle } from "@styles"
 

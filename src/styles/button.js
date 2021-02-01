@@ -7,7 +7,9 @@ const Button = styled.button`
   letter-spacing: 0.5px;
   text-transform: uppercase;
   color: var(--color-black);
-  border: 2px solid var(--color-black);
+  border: 2px solid;
+  border-color: ${props =>
+    props.theme.isDark ? "white" : "var(--color-black)"};
   background-color: #fff;
   display: inline-block;
   cursor: pointer;
@@ -19,7 +21,8 @@ const Button = styled.button`
     background-color: #efefef;
     color: var(--color-black);
     box-shadow: 4px 4px 0 var(--color-cta);
-    /* transform: translateY(-1px); */
+    border-color: ${props =>
+      props.theme.isDark ? "var(--color-cta)" : "var(--color-black)"};
   }
 
   ${props =>

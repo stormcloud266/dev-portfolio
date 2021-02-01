@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
-import BackgroundImage from 'gatsby-background-image'
+import BackgroundImage from "gatsby-background-image"
 
 import Layout from "@global/layout"
 import SEO from "@global/seo"
@@ -9,28 +9,14 @@ import StaticQuery from "@components/staticQuery"
 
 const IndexPage = ({ data, location }) => (
   <Layout>
-
-    <SEO 
+    <SEO
       title="Home"
       description="My example description"
       url={location.href}
-      imageUrl={'https://url.to/image.png'}
+      imageUrl={"https://url.to/image.png"}
     />
 
-    <BackgroundImage
-      Tag="section"
-      className="mt-10 section"
-      fluid={[
-        `linear-gradient(rgba(255,255,255, 0.9), rgba(255,255,255, 0.9))`,
-        data.image.childImageSharp.fluid
-      ]}
-    >
-      <div className="flex flex--2 wrapper">
-        <Img fluid={data.image.childImageSharp.fluid}></Img>
-        <StaticQuery />
-      </div>
-    </BackgroundImage>
-
+    <h1 style={{ margin: "400px 0" }}>Examples</h1>
   </Layout>
 )
 

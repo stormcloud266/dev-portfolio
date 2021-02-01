@@ -4,7 +4,7 @@ import styled, { css } from "styled-components"
 import ex from "@images/ex.png"
 
 const Project = ({ title, tags }) => (
-  <Card to="/">
+  <Card to="/examples">
     <Image />
     <Text>
       <Title>{title}</Title>
@@ -28,7 +28,7 @@ const Card = styled(Link)`
   background-color: var(--color-bg);
   color: var(--color-text);
   border: 1px solid;
-  border-color: ${props => (props.theme.isDark ? "#485052" : "#bdcbd4")};
+  border-color: ${props => (props.theme.isDark ? "transparent" : "#bdcbd4")};
   transition: color 0s, border 0.2s, border-color 0.2s, box-shadow 0.2s;
   font-size: var(--s-5);
   overflow: hidden;

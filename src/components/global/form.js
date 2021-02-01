@@ -7,21 +7,23 @@ const Footer = () => (
     <Flex>
       <Form>
         <InputContainer half>
-          <Label htmlFor="name">Name</Label>
           <Input id="name" type="text" />
+          <Label htmlFor="name">Name</Label>
         </InputContainer>
 
         <InputContainer half>
-          <Label htmlFor="email">Email</Label>
           <Input id="email" type="text" />
+          <Label htmlFor="email">Email</Label>
         </InputContainer>
 
         <InputContainer textarea>
-          <Label htmlFor="message">Message</Label>
           <Textarea id="message" type="text" as="textarea" />
+          <Label htmlFor="message">Message</Label>
         </InputContainer>
 
-        <Button primary>Submit</Button>
+        <ButtonContainer>
+          <Button primary>Submit</Button>
+        </ButtonContainer>
       </Form>
 
       <TextContainer>
@@ -55,7 +57,7 @@ const Form = styled.form`
 const InputContainer = styled.div`
   flex-basis: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   margin-bottom: var(--s-6);
 
   ${props =>
@@ -70,6 +72,12 @@ const Textarea = styled(Input)`
   height: 12rem;
 `
 
+const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  flex: 1;
+`
+
 const Label = styled.label`
   font-family: "Yantramanav", sans-serif;
   font-weight: bold;
@@ -77,10 +85,15 @@ const Label = styled.label`
   line-height: 1;
   background-color: var(--color-contrast);
   padding: 6px var(--s-3) 4px;
+  transition: color 0.2s;
   color: ${props => (props.theme.isDark ? "var(--color-black)" : "white")};
+
+  ${Input}:focus + & {
+    color: var(--color-cta);
+  }
 `
 
-const TextContainer = styled.form`
+const TextContainer = styled.div`
   flex: 1;
   line-height: 1.8;
 `

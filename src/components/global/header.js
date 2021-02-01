@@ -1,6 +1,15 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
-import { Hamburger, Times, Sun, Moon, Github, Codepen, Twitter, Mail } from '@images/icons'
+import {
+  Hamburger,
+  Times,
+  Sun,
+  Moon,
+  Github,
+  Codepen,
+  Twitter,
+  Mail,
+} from "@images/icons"
 
 import styled, { css } from "styled-components"
 import { Container } from "@styles"
@@ -8,28 +17,36 @@ import { Container } from "@styles"
 const Header = ({ isDark, themeContext }) => {
   const [isOpen, toggleNav] = useState(false)
 
+  /*
+  Stops scroll when mobile nav open.
+  Causes a jump if scrollbars are on 'show always'
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden"
+    }
+    if (!isOpen) {
+      document.body.style.overflow = "unset"
+    }
+  }, [isOpen])
+  */
+
   return (
     <SiteHeader>
       <NavContainer wrapper>
-  
-        <LogoLink to="/">
-          Tawnee.dev
-        </LogoLink>
-  
-        <NavToggle 
-          id="nav-toggle"
-          onClick={() => toggleNav(!isOpen)}
-        >
+        <LogoLink to="/">Tawnee.dev</LogoLink>
+
+        <NavToggle id="nav-toggle" onClick={() => toggleNav(!isOpen)}>
           {isOpen ? <Times /> : <Hamburger />}
         </NavToggle>
-  
+
         <Nav isOpen={isOpen}>
           <NavLinks>
             <li>
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/projects">Projects</Link>
+              <Link to="/examples">Projects</Link>
             </li>
             <li>
               <Link to="/about">About</Link>
@@ -39,7 +56,7 @@ const Header = ({ isDark, themeContext }) => {
             </li>
           </NavLinks>
 
-          <ThemeToggle 
+          <ThemeToggle
             onClick={() => themeContext.toggleDark()}
             aria-label="toggle dark mode"
           >
@@ -47,14 +64,20 @@ const Header = ({ isDark, themeContext }) => {
           </ThemeToggle>
 
           <Social>
-            <a href="/"><Github /></a>
-            <a href="/"><Codepen /></a>
-            <a href="/"><Twitter /></a>
-            <a href="/"><Mail /></a>
+            <a href="/">
+              <Github />
+            </a>
+            <a href="/">
+              <Codepen />
+            </a>
+            <a href="/">
+              <Twitter />
+            </a>
+            <a href="/">
+              <Mail />
+            </a>
           </Social>
-
         </Nav>
-  
       </NavContainer>
     </SiteHeader>
   )
@@ -76,7 +99,6 @@ const SiteHeader = styled.header`
   svg {
     stroke: var(--color-text);
   }
-
 `
 const NavContainer = styled(Container)`
   display: flex;
@@ -86,7 +108,7 @@ const NavContainer = styled(Container)`
 
 const ThemeToggle = styled.button`
   border: none;
-  padding: .1rem;
+  padding: 0.1rem;
   line-height: 1;
   background-color: transparent;
 
@@ -101,16 +123,16 @@ const NavToggle = styled.button`
   svg {
     display: block;
   }
-  
+
   @media screen and (max-width: 900px) {
     display: block;
     // overwrite default button styles
     border: none;
-    padding: .5rem;
+    padding: 0.5rem;
     line-height: 1;
     background-color: transparent;
     cursor: pointer;
-    
+
     // positioning
     display: block;
     position: relative;
@@ -139,7 +161,9 @@ const Nav = styled.nav`
     background-color: var(--color-bg);
     // positioning
     position: absolute;
-    top:0; left:0; right: 0;
+    top: 0;
+    left: 0;
+    right: 0;
     min-height: 100vh;
 
     // flex
@@ -151,7 +175,7 @@ const Nav = styled.nav`
     // transition set up
     opacity: 0;
     visibility: hidden;
-    transition: opacity .2s;
+    transition: opacity 0.2s;
 
     // set up styles before transition
     li {
@@ -164,40 +188,52 @@ const Nav = styled.nav`
       transition: opacity 0s;
     }
 
-    ${props => props.isOpen && css`
-      opacity: 1;
-      visibility: visible;
-
-      svg {
+    ${props =>
+      props.isOpen &&
+      css`
         opacity: 1;
-        transition: opacity .5s;
-      }
-    
-      // needs to be kept here due to parent props
-      li {
-        transform: translateY(0);
-        opacity: 1;
-        transition: opacity .2s, transform .2s;
+        visibility: visible;
 
-        &:nth-child(1) { transition-delay: .1s;}
-        &:nth-child(2) { transition-delay: .15s;}
-        &:nth-child(3) { transition-delay: .2s;}
-        &:nth-child(4) { transition-delay: .25s;}
-        &:nth-child(5) { transition-delay: .3s;}
-      }
-    `} // end of isOpen
+        svg {
+          opacity: 1;
+          transition: opacity 0.5s;
+        }
+
+        // needs to be kept here due to parent props
+        li {
+          transform: translateY(0);
+          opacity: 1;
+          transition: opacity 0.2s, transform 0.2s;
+
+          &:nth-child(1) {
+            transition-delay: 0.1s;
+          }
+          &:nth-child(2) {
+            transition-delay: 0.15s;
+          }
+          &:nth-child(3) {
+            transition-delay: 0.2s;
+          }
+          &:nth-child(4) {
+            transition-delay: 0.25s;
+          }
+          &:nth-child(5) {
+            transition-delay: 0.3s;
+          }
+        }
+      `}// end of isOpen
   }
 `
 
 const NavLinks = styled.ul`
   display: flex;
 
-  li { 
+  li {
     margin-right: var(--s-8);
   }
   a {
     color: var(--color-text);
-    font-family: 'Yantramanav', sans-serif;
+    font-family: "Yantramanav", sans-serif;
     font-weight: bold;
     letter-spacing: 1px;
   }
@@ -206,14 +242,14 @@ const NavLinks = styled.ul`
     flex-direction: column;
     align-items: center;
     font-size: 2.4rem;
-  
+
     li {
       margin-right: 0;
       margin-bottom: 1.8rem;
     }
-  
-    a { 
-      padding: .4rem .8rem;
+
+    a {
+      padding: 0.4rem 0.8rem;
     }
   }
 `

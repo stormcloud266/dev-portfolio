@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 import { Container, Button } from "@styles"
-import dots from '@images/dots.svg'
+import dots from "@images/dots.svg"
 
 const Hero = () => (
   <HomeHero>
@@ -10,10 +10,16 @@ const Hero = () => (
     <BG />
     <Container wrapper>
       <Text>
-        <h1>Hi I'm Tawnee and I'm a Front End Web Developer</h1>
-        <ButtonContainer>  
-          <Button primary={1} as={Link} to="/about">Contact Me</Button>
-          <Button as={Link} to="/about">See My Work</Button>
+        <Title>
+          Hi I'm <Pink>Tawnee</Pink> and I'm a Front End Web Developer
+        </Title>
+        <ButtonContainer>
+          <Button primary={1} as={Link} to="/about">
+            Contact Me
+          </Button>
+          <Button as={Link} to="/about">
+            See My Work
+          </Button>
         </ButtonContainer>
       </Text>
     </Container>
@@ -33,15 +39,6 @@ const HomeHero = styled.section`
 const Text = styled.div`
   max-width: 60ch;
 
-  h1 {
-    margin-bottom: var(--s-8);
-    font-size: 4.8rem;
-  }
-
-  p {
-    margin-bottom: var(--s-8);
-  }
-
   ${Button} {
     min-width: 18rem;
 
@@ -51,14 +48,27 @@ const Text = styled.div`
   }
 `
 
-const ButtonContainer = styled.div`
-
+const Pink = styled.span`
+  color: var(--color-cta);
 `
+
+const Title = styled.h1`
+  margin-bottom: var(--s-8);
+  font-size: 4.8rem;
+`
+
+const ButtonContainer = styled.div``
 const BG = styled.div`
   width: 80%;
   height: 100%;
-  background-image: linear-gradient(90deg, #B1EDE8 30%, #5F5566 30%);
-  background-image: linear-gradient(90deg, #B1EDE8 28%, #4de6da 28%, #4de6da 30%, #5B3C68 30%);
+  background-image: linear-gradient(90deg, #b1ede8 30%, #5f5566 30%);
+  background-image: linear-gradient(
+    90deg,
+    #b1ede8 28%,
+    #4de6da 28%,
+    #4de6da 30%,
+    #5b3c68 30%
+  );
   position: absolute;
   z-index: -1;
   transform: skewX(-25deg);
@@ -68,7 +78,7 @@ const BG = styled.div`
 
 const Dots = styled.div`
   position: absolute;
-  content: '';
+  content: "";
   display: block;
   bottom: 0;
   left: 0;
