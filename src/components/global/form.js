@@ -3,7 +3,7 @@ import { Container, Input, Button } from "@styles"
 import styled, { css } from "styled-components"
 
 const Footer = () => (
-  <Container wrapper>
+  <Container wrapper sectionSm>
     <Flex>
       <Form>
         <InputContainer half>
@@ -42,7 +42,6 @@ export default Footer
 
 const Flex = styled.div`
   display: flex;
-  padding: 5.6rem 0;
 `
 
 const Form = styled.form`

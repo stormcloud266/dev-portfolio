@@ -46,10 +46,10 @@ const Header = ({ isDark, themeContext }) => {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/examples">Projects</Link>
+              <Link to="/projects">Projects</Link>
             </li>
             <li>
-              <Link to="/about">About</Link>
+              <Link to="/examples">About</Link>
             </li>
             <li>
               <Link to="/contact">Contact</Link>

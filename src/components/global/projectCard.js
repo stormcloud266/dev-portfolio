@@ -51,7 +51,7 @@ const Card = styled(Link)`
 const Image = styled.div`
   background-image: url(${ex});
   background-size: cover;
-  background-position: center;
+  background-position: top center;
   width: 100%;
   height: 17rem;
 `
