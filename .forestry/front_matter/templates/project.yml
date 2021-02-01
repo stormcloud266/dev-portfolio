@@ -35,5 +35,3 @@ fields:
   - nodejs
   - apis
   label: Filter Labels
-pages:
-- projects/title.md
