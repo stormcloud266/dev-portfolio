@@ -1,14 +1,14 @@
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
-const path = require('path')
+const path = require("path")
 
 module.exports = {
   siteMetadata: {
     title: `My Gatsby Starter`,
     description: `Gatsby default plus SCSS, web fonts, Google Analytics`,
     author: `@gatsbyjs`,
-    siteUrl: 'https://www.test.com' // This is required for gatsby-plugin-robots-txt and gatsby-plugin-sitemap plugins
+    siteUrl: "https://www.test.com", // This is required for gatsby-plugin-robots-txt and gatsby-plugin-sitemap plugins
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -19,46 +19,54 @@ module.exports = {
         path: `${__dirname}/src/assets/images`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `projects`,
+        path: `${__dirname}/projects`,
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-transformer-remark`,
     `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-plugin-web-font-loader`,
       options: {
         google: {
-          families: ['Open Sans:400', 'Yantramanav:700,400']
-        }
-      }
+          families: ["Open Sans:400", "Yantramanav:700,400"],
+        },
+      },
     },
     {
       resolve: `gatsby-plugin-gdpr-cookies`,
       options: {
         googleAnalytics: {
-          trackingId: '', // leave empty if you want to disable the tracker
-          cookieName: 'gatsby-gdpr-google-analytics', // default
-          anonymize: true // default
+          trackingId: "", // leave empty if you want to disable the tracker
+          cookieName: "gatsby-gdpr-google-analytics", // default
+          anonymize: true, // default
         },
         googleTagManager: {
-          trackingId: '', // leave empty if you want to disable the tracker
-          cookieName: 'gatsby-gdpr-google-tagmanager', // default
-          dataLayerName: 'dataLayer', // default
+          trackingId: "", // leave empty if you want to disable the tracker
+          cookieName: "gatsby-gdpr-google-tagmanager", // default
+          dataLayerName: "dataLayer", // default
         },
         facebookPixel: {
-          pixelId: '', // leave empty if you want to disable the tracker
-          cookieName: 'gatsby-gdpr-facebook-pixel', // default
+          pixelId: "", // leave empty if you want to disable the tracker
+          cookieName: "gatsby-gdpr-facebook-pixel", // default
         },
         // defines the environments where the tracking should be available  - default is ["production"]
-        environments: ['production']
+        environments: ["production"],
       },
     },
     `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-robots-txt`,
       options: {
-        host: 'https://www.example.com',
-        sitemap: 'https://www.example.com/sitemap.xml',
-        policy: [{ userAgent: '*', allow: '/' }]
-      }
+        host: "https://www.example.com",
+        sitemap: "https://www.example.com/sitemap.xml",
+        policy: [{ userAgent: "*", allow: "/" }],
+      },
     },
     {
       resolve: `gatsby-plugin-manifest`,
@@ -75,18 +83,18 @@ module.exports = {
     {
       resolve: `gatsby-styled-components-dark-mode`,
       options: {
-          light: require(`${__dirname}/src/styles/theme.js`).lightTheme,
-          dark: require(`${__dirname}/src/styles/theme.js`).darkTheme,
+        light: require(`${__dirname}/src/styles/theme.js`).lightTheme,
+        dark: require(`${__dirname}/src/styles/theme.js`).darkTheme,
       },
     },
     {
       resolve: `gatsby-plugin-alias-imports`,
       options: {
         alias: {
-          '@components': path.resolve(__dirname, 'src/components'),
-          '@global': path.resolve(__dirname, 'src/components/global'),
-          '@images': path.resolve(__dirname, 'src/assets/images'),
-          '@styles': path.resolve(__dirname, 'src/styles/'),
+          "@components": path.resolve(__dirname, "src/components"),
+          "@global": path.resolve(__dirname, "src/components/global"),
+          "@images": path.resolve(__dirname, "src/assets/images"),
+          "@styles": path.resolve(__dirname, "src/styles/"),
         },
       },
     },

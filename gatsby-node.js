@@ -1,28 +1,30 @@
-// exports.createPages = async function ({ actions, graphql }) {
+exports.createPages = async function ({ actions, graphql }) {
+  const { data } = await graphql(`
+    query {
+      projects: allMarkdownRemark {
+        edges {
+          node {
+            frontmatter {
+              slug
+            }
+          }
+        }
+      }
+    }
+  `)
 
-//   const { data } = await graphql(`
-//     query {
-//       posts: allBlogPosts {
-//         edges {
-//           node {
-//             slug
-//           }
-//         }
-//       }
-//     }
-//   `)
+  const projects = data.projects.edges
+  console.log("projects: ", projects)
 
-//   const posts = data.posts.edges
+  projects.forEach(edge => {
+    console.log("edge: ", edge)
+    const slug = edge.node.frontmatter.slug
+    console.log("slug: ", slug)
 
-//   posts.forEach(edge => {
-
-//     const slug = edge.node.slug
-
-//     actions.createPage({
-//       path: `blog-posts/${slug}`,
-//       component: require.resolve(`./src/templates/blogPostTemplate.js`),
-//       context: { slug: slug },
-//     })
-//   })
-
-// }
+    actions.createPage({
+      path: `projects${slug}`,
+      component: require.resolve(`./src/templates/projectTemplate.js`),
+      context: { slug: slug },
+    })
+  })
+}
