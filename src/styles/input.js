@@ -9,7 +9,8 @@ const Input = styled.input`
   padding: var(--s-0) var(--s-3);
   resize: none;
   width: 100%;
-
+  border-color: ${props =>
+    props.theme.isDark ? "#8e9da9" : "var(--color-black)"};
   :focus {
     box-shadow: 3px 3px 0 var(--color-cta);
     border-radius: 0;

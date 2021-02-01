@@ -51,6 +51,11 @@ const Form = styled.form`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+
+  ${Input} {
+    border-color: ${props =>
+      props.theme.isDark ? "#546069" : "var(--color-black)"};
+  }
 `
 
 const InputContainer = styled.div`
@@ -86,6 +91,9 @@ const Label = styled.label`
   padding: 6px var(--s-3) 4px;
   transition: color 0.2s;
   color: ${props => (props.theme.isDark ? "var(--color-black)" : "white")};
+  color: white;
+  background-color: ${props =>
+    props.theme.isDark ? "#546069" : "var(--color-black)"};
 
   ${Input}:focus + & {
     color: var(--color-cta);
