@@ -1,5 +1,6 @@
-import Button from './button'
-import Container from './container'
-import GlobalStyle from './globalStyles'
+import Button from "./button"
+import Input from "./input"
+import Container from "./container"
+import GlobalStyle from "./globalStyles"
 
-export { Button, Container, GlobalStyle }
+export { Button, Container, GlobalStyle, Input }

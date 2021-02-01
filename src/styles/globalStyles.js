@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from "styled-components"
 
 const GlobalStyle = createGlobalStyle`
 
@@ -18,7 +18,9 @@ const GlobalStyle = createGlobalStyle`
     --s-11: 5.1rem;
 
     --color-cta: #f199b9;
+    --color-purple: #5b3c68;
     --color-black: #111213;
+    --color-contrast: ${props => props.theme.colorContrast};
     --color-bg: ${props => props.theme.colorBg};
     --color-bg-secondary: ${props => props.theme.colorBgSecondary};
     --color-text: ${props => props.theme.colorText};

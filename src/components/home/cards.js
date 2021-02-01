@@ -1,8 +1,8 @@
 import React from "react"
 import { Container } from "@styles"
 import styled, { css } from "styled-components"
-import { Code } from '@images/icons'
-import dots from '@images/dots.svg'
+import { Code } from "@images/icons"
+import dots from "@images/dots.svg"
 
 const Cards = () => (
   <CardsContainer>
@@ -10,19 +10,31 @@ const Cards = () => (
       <Card>
         <Code />
         <h3>Hello</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, dolorem. Perspiciatis aspernatur sunt impedit aliquid quos fuga error, ullam officia.</p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur,
+          dolorem. Perspiciatis aspernatur sunt impedit aliquid quos fuga error,
+          ullam officia.
+        </p>
       </Card>
 
       <Card>
         <Code />
         <h3>Hello</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, dolorem. Perspiciatis aspernatur sunt impedit aliquid quos fuga error, ullam officia.</p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur,
+          dolorem. Perspiciatis aspernatur sunt impedit aliquid quos fuga error,
+          ullam officia.
+        </p>
       </Card>
 
       <Card>
         <Code />
         <h3>Hello</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, dolorem. Perspiciatis aspernatur sunt impedit aliquid quos fuga error, ullam officia.</p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur,
+          dolorem. Perspiciatis aspernatur sunt impedit aliquid quos fuga error,
+          ullam officia.
+        </p>
       </Card>
     </CardsInner>
   </CardsContainer>
@@ -31,7 +43,7 @@ const Cards = () => (
 export default Cards
 
 const CardsContainer = styled.div`
-  background-image: linear-gradient(120deg, #B1EDE8, #4de6da);
+  background-image: linear-gradient(120deg, #b1ede8, #4de6da);
 `
 
 const CardsInner = styled(Container)`
@@ -46,34 +58,29 @@ const Card = styled.div`
   flex: 1;
   margin-right: var(--s-8);
   padding: var(--s-11) var(--s-8);
-  /* box-shadow: 0px 3px 20px -2px rgba(0, 0, 0, 0.3); */
   border-radius: 4px;
   position: relative;
-  border: 2px solid #5B3C68;
-  box-shadow: 6px 6px 0 -2px #5B3C68;
+  border: 1px solid #5b3c68;
+  box-shadow: 6px 6px 0 -2px #5b3c68;
 
-  ${props => props.theme.isDark && css`
-    border: 1px solid var(--color-cta);
-    box-shadow: 6px 6px 0 -2px var(--color-cta);
-  `}
+  ${props =>
+    props.theme.isDark &&
+    css`
+      border: 1px solid var(--color-cta);
+      box-shadow: 6px 6px 0 -2px var(--color-cta);
+    `}
 
   svg {
-    stroke: #4de6da;
+    stroke: ${props => (props.theme.isDark ? "#b1ede8" : "#4de6da")};
     margin-bottom: var(--s-6);
   }
-
-  ${props => props.theme.isDark && css`
-      svg {
-        stroke: #B1EDE8;
-      }
-  `}
 
   h3 {
     margin-bottom: var(--s-6);
   }
 
   p {
-    line-height: 2;
+    line-height: 1.8;
   }
 
   :last-child {
@@ -82,7 +89,7 @@ const Card = styled.div`
 
   ::before {
     position: absolute;
-    content: '';
+    content: "";
     display: block;
     top: 2px;
     right: 2px;
@@ -90,7 +97,6 @@ const Card = styled.div`
     width: 140px;
     background-image: url(${dots});
     background-size: 70px;
-    /* z-index: -1; */
-    opacity: .7;
+    opacity: 0.7;
   }
 `

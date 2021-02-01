@@ -2,21 +2,30 @@ import React from "react"
 import { Link } from "gatsby"
 import { Container } from "@styles"
 import styled from "styled-components"
-import { Github, Codepen, Twitter, Mail } from '@images/icons'
+import { Github, Codepen, Twitter, Mail } from "@images/icons"
 
 const Footer = () => (
   <Container bgAccent as="footer">
     <FooterInner wrapper>
-
       <Flex>
-      <h3>Tawnee</h3>
-      <Social>
-        <a href="/"><Github /></a>
-        <a href="/"><Codepen /></a>
-        <a href="/"><Twitter /></a>
-        <a href="/"><Mail /></a>
-      </Social>
+        <h3>Tawnee</h3>
+        <Social>
+          <a href="/">
+            <Github />
+          </a>
+          <a href="/">
+            <Codepen />
+          </a>
+          <a href="/">
+            <Twitter />
+          </a>
+          <a href="/">
+            <Mail />
+          </a>
+        </Social>
       </Flex>
+
+      <Legal>Copyright &copy; 2020 - {new Date().getFullYear()}</Legal>
 
       <Nav>
         <Link to="/">Home</Link>
@@ -24,7 +33,6 @@ const Footer = () => (
         <Link to="/">About</Link>
         <Link to="/">Contact</Link>
       </Nav>
-
     </FooterInner>
   </Container>
 )
@@ -54,11 +62,13 @@ const Social = styled.div`
     margin-right: var(--s-4);
     padding: 4px;
     border-radius: 3px;
-    transition: all .2s;
-    color: ${props => props.theme.isDark ? 'var(--color-black)' : '#fff'};
-    background-color: ${props => props.theme.isDark ? 'var(--color-cta)' : 'var(--color-black)'};
+    transition: all 0.2s;
+    color: ${props => (props.theme.isDark ? "var(--color-black)" : "#fff")};
+    background-color: ${props =>
+      props.theme.isDark ? "var(--color-cta)" : "var(--color-black)"};
     :hover {
-      background-color: ${props => props.theme.isDark ? '#fff' : 'var(--color-cta)'};
+      background-color: ${props =>
+        props.theme.isDark ? "#fff" : "var(--color-cta)"};
       color: var(--color-black);
     }
   }
@@ -67,11 +77,16 @@ const Social = styled.div`
   }
 `
 
+const Legal = styled.p`
+  font-size: var(--s-4);
+  text-transform: uppercase;
+`
+
 const Nav = styled.nav`
   a {
     margin-right: var(--s-8);
     color: var(--color-text);
-    font-family: 'Yantramanav', sans-serif;
+    font-family: "Yantramanav", sans-serif;
     font-weight: bold;
     letter-spacing: 1px;
   }
