@@ -6,8 +6,28 @@ import { Input } from "@styles"
 import Project from "@components/global/projectCard"
 import { CircleX } from "@images/icons"
 
-const Search = ({ projects }) => {
+const Search = ({ data }) => {
   const [search, setSearch] = useState("")
+
+  const projects = data.allMarkdownRemark.edges.map(project => {
+    const {
+      title,
+      excerpt,
+      slug,
+      featured_image,
+      filter_tags,
+      display_tags,
+    } = project.node.frontmatter
+
+    return {
+      title,
+      excerpt,
+      slug,
+      image: featured_image,
+      filterTags: filter_tags,
+      tags: display_tags,
+    }
+  })
 
   const filterProjects = project => {
     const searchTerm = search.toLowerCase().trim()

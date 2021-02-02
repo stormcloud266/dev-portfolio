@@ -3,10 +3,9 @@ import { Link } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
 
 import styled, { css } from "styled-components"
-import ex from "@images/ex.png"
 
 const Project = ({ title, tags, excerpt, slug, image }) => (
-  <Card to={`projects${slug}`}>
+  <Card to={`/projects${slug}`}>
     <BGImage
       Tag="div"
       fluid={image.childImageSharp.fluid}
@@ -52,9 +51,7 @@ const Card = styled(Link)`
 `
 
 const BGImage = styled(BackgroundImage)`
-  /* background-image: url(${ex});
-  background-size: cover;
-  background-position: top center; */
+  background-position: top center;
   width: 100%;
   height: 17rem;
 `
@@ -62,9 +59,7 @@ const Text = styled.div`
   padding: var(--s-8) var(--s-7);
 `
 
-const Title = styled.h3`
-  /* margin-bottom: var(--s-2); */
-`
+const Title = styled.h3``
 
 const Tags = styled.div`
   margin-bottom: var(--s-5);

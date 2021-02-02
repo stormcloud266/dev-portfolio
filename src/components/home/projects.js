@@ -7,7 +7,7 @@ import Search from "@global/search"
 
 const Projects = () => {
   const data = useStaticQuery(graphql`
-    query MyQuery {
+    query HomeProjects {
       allMarkdownRemark(limit: 6) {
         edges {
           node {
@@ -31,34 +31,12 @@ const Projects = () => {
     }
   `)
 
-  const projects = data.allMarkdownRemark.edges.map(project => {
-    const {
-      title,
-      excerpt,
-      slug,
-      featured_image,
-      filter_tags,
-      display_tags,
-    } = project.node.frontmatter
-
-    return {
-      title,
-      excerpt,
-      slug,
-      image: featured_image,
-      filterTags: filter_tags,
-      tags: display_tags,
-    }
-  })
-
-  console.log("projects: ", projects)
-
   return (
     <Container bgAccent section>
       <Container wrapper fcc>
         <h2>My Recent Projects</h2>
 
-        <Search projects={projects} />
+        <Search data={data} />
 
         <ButtonMargin as={Link} to="/projects">
           All Projects
