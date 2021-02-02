@@ -44,7 +44,10 @@ const Search = ({ projects }) => {
             <Project
               key={project.title}
               title={project.title}
+              excerpt={project.excerpt}
               tags={project.tags}
+              slug={project.slug}
+              image={project.image}
             />
           ))}
         </ProjectsContainer>
