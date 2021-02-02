@@ -53,7 +53,8 @@ const Form = styled.form`
   justify-content: space-between;
 
   ${Input} {
-    border-color: ${props => (props.theme.isDark ? "#546069" : "#212527")};
+    border-color: ${props =>
+      props.theme.isDark ? "#546069" : "var(--color-black)"};
   }
 `
 
@@ -89,8 +90,10 @@ const Label = styled.label`
   background-color: var(--color-contrast);
   padding: 6px var(--s-3) 4px;
   transition: color 0.2s;
+  color: ${props => (props.theme.isDark ? "var(--color-black)" : "white")};
   color: white;
-  background-color: ${props => (props.theme.isDark ? "#546069" : "#212527")};
+  background-color: ${props =>
+    props.theme.isDark ? "#546069" : "var(--color-black)"};
 
   ${Input}:focus + & {
     color: var(--color-cta);
