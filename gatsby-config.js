@@ -22,8 +22,30 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `static`,
+        path: `${__dirname}/static`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: `projects`,
         path: `${__dirname}/projects`,
+      },
+    },
+    {
+      resolve: `gatsby-remark-images`,
+      options: {
+        maxWidth: 590,
+      },
+    },
+    `gatsby-remark-normalize-paths`,
+    {
+      resolve: `gatsby-remark-relative-images`,
+      options: {
+        // [Optional] The root of "media_folder" in your config.yml
+        // Defaults to "static"
+        staticFolderName: "/",
       },
     },
     `gatsby-transformer-sharp`,

@@ -14,12 +14,9 @@ exports.createPages = async function ({ actions, graphql }) {
   `)
 
   const projects = data.projects.edges
-  console.log("projects: ", projects)
 
   projects.forEach(edge => {
-    console.log("edge: ", edge)
     const slug = edge.node.frontmatter.slug
-    console.log("slug: ", slug)
 
     actions.createPage({
       path: `projects${slug}`,
