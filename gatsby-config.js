@@ -19,8 +19,31 @@ module.exports = {
         path: `${__dirname}/src/assets/images`,
       },
     },
-    `gatsby-transformer-sharp`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `src`,
+        path: `${__dirname}/src`,
+      },
+    },
     `gatsby-plugin-sharp`,
+
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          `gatsby-remark-relative-images`,
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 750,
+              linkImagesToOriginal: false,
+            },
+          },
+        ],
+      },
+    },
+    `gatsby-transformer-sharp`,
     `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-plugin-web-font-loader`,
@@ -90,8 +113,6 @@ module.exports = {
         },
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
 }
