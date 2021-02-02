@@ -82,7 +82,7 @@ const ButtonContainer = styled.div`
 `
 
 const Label = styled.label`
-  font-family: "Yantramanav", sans-serif;
+  font-family: var(--font-header);
   font-weight: bold;
   font-size: var(--s-6);
   line-height: 1;

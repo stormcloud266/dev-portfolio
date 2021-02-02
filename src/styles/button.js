@@ -2,7 +2,7 @@ import styled, { css } from "styled-components"
 
 const Button = styled.button`
   padding: var(--s-3) var(--s-7) var(--s-1);
-  font-family: "Yantramanav", sans-serif;
+  font-family: var(--font-header);
   font-weight: bold;
   letter-spacing: 0.5px;
   text-transform: uppercase;

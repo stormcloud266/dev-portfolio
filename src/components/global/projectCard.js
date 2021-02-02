@@ -1,8 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
-
 import styled, { css } from "styled-components"
+import Tags from "@components/global/tags"
 
 const Project = ({ title, tags, excerpt, slug, image }) => (
   <Card to={`/projects${slug}`}>
@@ -13,11 +13,7 @@ const Project = ({ title, tags, excerpt, slug, image }) => (
     />
     <Text>
       <Title>{title}</Title>
-      <Tags>
-        {tags.map(tag => (
-          <span key={tag}>{tag}</span>
-        ))}
-      </Tags>
+      <Tags tags={tags} />
       <p>{excerpt}</p>
     </Text>
   </Card>
@@ -60,21 +56,3 @@ const Text = styled.div`
 `
 
 const Title = styled.h3``
-
-const Tags = styled.div`
-  margin-bottom: var(--s-5);
-  display: flex;
-  flex-wrap: wrap;
-
-  span {
-    background-color: var(--color-bg-secondary);
-    border-radius: 40px;
-    padding: 2px 12px;
-    margin-right: var(--s-1);
-    font-size: var(--s-4);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    display: block;
-    margin-top: var(--s-2);
-  }
-`

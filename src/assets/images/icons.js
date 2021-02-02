@@ -136,6 +136,25 @@ export const Moon = () => (
   </svg>
 )
 
+export const LinkIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    className="prefix__icon prefix__icon-tabler prefix__icon-tabler-link"
+    width={20}
+    height={20}
+    viewBox="0 0 24 24"
+    strokeWidth={2}
+    stroke="currentColor"
+    fill="none"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M0 0h24v24H0z" stroke="none" />
+    <path d="M10 14a3.5 3.5 0 005 0l4-4a3.5 3.5 0 00-5-5l-.5.5" />
+    <path d="M14 10a3.5 3.5 0 00-5 0l-4 4a3.5 3.5 0 005 5l.5-.5" />
+  </svg>
+)
+
 export const Code = () => (
   <svg
     className="prefix__icon prefix__icon-tabler prefix__icon-tabler-code"
@@ -143,7 +162,7 @@ export const Code = () => (
     height={60}
     viewBox="0 0 24 24"
     strokeWidth={2}
-    stroke="currentCode"
+    stroke="currentColor"
     fill="none"
     strokeLinecap="round"
     strokeLinejoin="round"

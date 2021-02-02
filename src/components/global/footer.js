@@ -86,7 +86,7 @@ const Nav = styled.nav`
   a {
     margin-right: var(--s-8);
     color: var(--color-text);
-    font-family: "Yantramanav", sans-serif;
+    font-family: var(--font-header);
     font-weight: bold;
     letter-spacing: 1px;
   }
