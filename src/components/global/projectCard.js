@@ -1,11 +1,16 @@
 import React from "react"
 import { Link } from "gatsby"
-import styled, { css } from "styled-components"
-import ex from "@images/ex.png"
+import BackgroundImage from "gatsby-background-image"
 
-const Project = ({ title, tags }) => (
-  <Card to="/examples">
-    <Image />
+import styled, { css } from "styled-components"
+
+const Project = ({ title, tags, excerpt, slug, image }) => (
+  <Card to={`/projects${slug}`}>
+    <BGImage
+      Tag="div"
+      fluid={image.childImageSharp.fluid}
+      backgroundColor={`#040e18`}
+    />
     <Text>
       <Title>{title}</Title>
       <Tags>
@@ -13,10 +18,7 @@ const Project = ({ title, tags }) => (
           <span key={tag}>{tag}</span>
         ))}
       </Tags>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, at
-        unde? Soluta.
-      </p>
+      <p>{excerpt}</p>
     </Text>
   </Card>
 )
@@ -48,9 +50,7 @@ const Card = styled(Link)`
   }
 `
 
-const Image = styled.div`
-  background-image: url(${ex});
-  background-size: cover;
+const BGImage = styled(BackgroundImage)`
   background-position: top center;
   width: 100%;
   height: 17rem;
@@ -59,9 +59,7 @@ const Text = styled.div`
   padding: var(--s-8) var(--s-7);
 `
 
-const Title = styled.h3`
-  /* margin-bottom: var(--s-2); */
-`
+const Title = styled.h3``
 
 const Tags = styled.div`
   margin-bottom: var(--s-5);
