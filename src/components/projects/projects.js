@@ -6,7 +6,7 @@ import Search from "@global/search"
 const Projects = () => {
   const data = useStaticQuery(graphql`
     query ProjectsProjects {
-      allMarkdownRemark {
+      allMarkdownRemark(sort: { order: ASC, fields: frontmatter___order }) {
         edges {
           node {
             frontmatter {

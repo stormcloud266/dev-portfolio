@@ -1,11 +1,13 @@
 ---
 slug: "/example"
 title: "Example"
+order: 10
 featured_image: "./featured.png"
 excerpt: "This is an example excerpt for a project post."
 live_link: https://example.com/
 github_link: https://github.com/stormcloud266/example
 filter_tags:
+  - concept
   - javascript
   - react
   - scss
@@ -24,7 +26,9 @@ filter_tags:
   - react native
   - website
   - web app
-  - concept
+  - contentful
+  - prismic
+  - datocms
 display_tags:
   - Concept
   - JavaScript

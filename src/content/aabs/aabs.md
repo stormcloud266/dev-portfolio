@@ -1,5 +1,6 @@
 ---
 slug: "/aabs"
+order: 10
 title: "All American Building Services"
 featured_image: ./featured.png
 excerpt: "This is an example excerpt for a project post. What happens if it's a little longer. Just a tad bit longer to test things."

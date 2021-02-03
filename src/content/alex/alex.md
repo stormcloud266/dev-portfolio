@@ -1,5 +1,6 @@
 ---
 slug: "/alex"
+order: 20
 title: "$ALEX"
 featured_image: ./featured.png
 excerpt: "This is an example excerpt for a project post."

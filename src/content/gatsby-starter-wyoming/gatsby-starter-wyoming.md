@@ -1,6 +1,7 @@
 ---
 slug: "/gatsby-starter-wyoming"
 title: "Gatsby Starter Wyoming"
+order: 40
 featured_image: ./featured.png
 excerpt: "This is an example excerpt for a project post."
 live_link: https://ufo-sightings.vercel.app/

@@ -1,6 +1,7 @@
 ---
 slug: "/ufo-sightings"
 title: "UFO Sightings"
+order: 60
 featured_image: ./featured.png
 excerpt: "This is an example excerpt for a project post."
 live_link: https://ufo-sightings.vercel.app/

@@ -1,6 +1,7 @@
 ---
 slug: "/lawn-care"
 title: "Lawn Care"
+order: 70
 featured_image: ./featured.png
 excerpt: "This is an example excerpt for a project post."
 live_link: https://ufo-sightings.vercel.app/

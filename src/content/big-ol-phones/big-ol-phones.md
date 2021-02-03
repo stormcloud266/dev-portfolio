@@ -1,6 +1,7 @@
 ---
 slug: "/big-ol-phones"
 title: "Big Ol' Phones"
+order: 30
 featured_image: ./featured.png
 excerpt: "This is an example excerpt for a project post."
 live_link: https://ufo-sightings.vercel.app/

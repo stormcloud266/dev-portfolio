@@ -8,7 +8,10 @@ import Search from "@global/search"
 const Projects = () => {
   const data = useStaticQuery(graphql`
     query HomeProjects {
-      allMarkdownRemark(limit: 6) {
+      allMarkdownRemark(
+        sort: { order: ASC, fields: frontmatter___order }
+        limit: 6
+      ) {
         edges {
           node {
             frontmatter {
