@@ -27,6 +27,17 @@ const GlobalStyle = createGlobalStyle`
     --color-text: ${props => props.theme.colorText};
     --color-text-headers: ${props => props.theme.colorTextHeaders};
     --color-btn-primary: ${props => props.theme.colorBtnPrimary};
+    --color-gradient: linear-gradient(
+    120deg,
+    #f784ae,
+    #d4a5ec,
+    #a1c6ff,
+    #90defb,
+    #b1ede8
+  );
+
+    --font-header: 'Yantramanav', sans-serif;
+    --font-body: 'Open Sans', sans-serif;
   }
 
   *,
@@ -46,14 +57,14 @@ const GlobalStyle = createGlobalStyle`
     color: var(--color-text);
     box-sizing: border-box;
     font-size: var(--s-6);
-    font-family: "Open Sans", sans-serif;
+    font-family: var(--font-body);
     line-height: 1.6;
     position: relative;
     overflow-x: hidden;
   }
 
   h1,h2,h3,h4,h5,h6 { 
-    font-family: 'Yantramanav', sans-serif;
+    font-family: var(--font-header);
     line-height: 1.3;
     color: var(--color-text-headers);
   }

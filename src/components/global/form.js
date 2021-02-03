@@ -3,7 +3,7 @@ import { Container, Input, Button } from "@styles"
 import styled, { css } from "styled-components"
 
 const Footer = () => (
-  <Container wrapper sectionSm>
+  <Container wrapper sectionSm id="contact">
     <Flex>
       <Form>
         <InputContainer half>
@@ -82,7 +82,7 @@ const ButtonContainer = styled.div`
 `
 
 const Label = styled.label`
-  font-family: "Yantramanav", sans-serif;
+  font-family: var(--font-header);
   font-weight: bold;
   font-size: var(--s-6);
   line-height: 1;

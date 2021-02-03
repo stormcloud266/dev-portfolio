@@ -1,8 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
-
 import styled, { css } from "styled-components"
+import Tags from "@components/global/tags"
 
 const Project = ({ title, tags, excerpt, slug, image }) => (
   <Card to={`/projects${slug}`}>
@@ -13,11 +13,7 @@ const Project = ({ title, tags, excerpt, slug, image }) => (
     />
     <Text>
       <Title>{title}</Title>
-      <Tags>
-        {tags.map(tag => (
-          <span key={tag}>{tag}</span>
-        ))}
-      </Tags>
+      <Tags tags={tags} />
       <p>{excerpt}</p>
     </Text>
   </Card>
@@ -26,7 +22,7 @@ const Project = ({ title, tags, excerpt, slug, image }) => (
 export default Project
 
 const Card = styled(Link)`
-  border-radius: 4px;
+  border-radius: 6px;
   background-color: var(--color-bg);
   color: var(--color-text);
   border: 1px solid;
@@ -53,28 +49,11 @@ const Card = styled(Link)`
 const BGImage = styled(BackgroundImage)`
   background-position: top center;
   width: 100%;
-  height: 17rem;
+  height: 20rem;
+  border-bottom: 1px solid var(--color-bg-secondary);
 `
 const Text = styled.div`
   padding: var(--s-8) var(--s-7);
 `
 
 const Title = styled.h3``
-
-const Tags = styled.div`
-  margin-bottom: var(--s-5);
-  display: flex;
-  flex-wrap: wrap;
-
-  span {
-    background-color: var(--color-bg-secondary);
-    border-radius: 40px;
-    padding: 2px 12px;
-    margin-right: var(--s-1);
-    font-size: var(--s-4);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    display: block;
-    margin-top: var(--s-2);
-  }
-`
