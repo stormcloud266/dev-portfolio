@@ -67,7 +67,7 @@ export default ProjectTemplate
 const Header = styled(Container)`
   display: flex;
   justify-content: space-between;
-  margin-bottom: -7rem;
+  align-items: center;
 
   @media screen and (max-width: 68.75em) {
     margin-bottom: 0;
@@ -83,7 +83,7 @@ const Image = styled(Img)`
   width: 100%;
   max-width: 600px;
   height: 360px;
-  transform: translateY(-50%);
+  transform: translateY(-40%);
   border: 1px solid var(--color-purple);
   box-shadow: 6px 6px 0 -2px var(--color-purple);
   @media screen and (max-width: 68.75em) {
@@ -122,7 +122,7 @@ const LinksContainer = styled.div`
   }
 `
 const InfoContainer = styled.div`
-  padding: var(--s-9) var(--s-9) 0 0;
+  /* padding: var(--s-9) var(--s-9) 0 0; */
   @media screen and (max-width: 68.75em) {
     padding: 0;
   }
