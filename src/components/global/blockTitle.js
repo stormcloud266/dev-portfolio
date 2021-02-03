@@ -25,4 +25,16 @@ const Title = styled.h1`
   line-height: 1.8;
   box-shadow: -7px 0 0 10px var(--color-black), 7px 0 0 10px var(--color-black);
   text-shadow: 2px 2px var(--color-cta);
+
+  @media screen and (max-width: 61.25em) {
+    font-size: 4rem;
+    text-shadow: 1.5px 1.5px var(--color-cta);
+    line-height: 2;
+  }
+
+  @media screen and (max-width: 25em) {
+    font-size: 3.2rem;
+    text-shadow: 1px 1px var(--color-cta);
+    line-height: 2.2;
+  }
 `

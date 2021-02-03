@@ -20,7 +20,7 @@ const Layout = ({ children }) => {
       <main>{children}</main>
 
       <Form />
-      <Footer />
+      <Footer isDark={themeContext.isDark} />
       {/* <CookieBanner /> */}
     </>
   )

@@ -58,7 +58,7 @@ const Container = styled.div`
       padding-bottom: 14rem;
     `}
 
-  @media screen and (max-width: 900px) {
+  @media screen and (max-width: 61.25em) {
     ${props =>
       props.wrapperSmOnTab &&
       css`
@@ -82,6 +82,13 @@ const Container = styled.div`
       props.sectionBottom &&
       css`
         padding-bottom: 10rem;
+      `}
+
+      ${props =>
+      props.sectionSm &&
+      css`
+        padding-top: 7.2rem;
+        padding-bottom: 7.2rem;
       `}
   } // end of 900px
 

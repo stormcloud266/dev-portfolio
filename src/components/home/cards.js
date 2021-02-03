@@ -58,6 +58,10 @@ const CardsInner = styled(Container)`
   justify-content: space-between;
   position: relative;
   z-index: 1;
+  @media screen and (max-width: 61.25em) {
+    flex-direction: column;
+    align-items: center;
+  }
 `
 
 const Card = styled.div`
@@ -71,6 +75,12 @@ const Card = styled.div`
   border-color: ${props =>
     props.theme.isDark ? "var(--color-cta)" : "var(--color-purple)"};
   box-shadow: 6px 6px 0 -2px ${props => (props.theme.isDark ? "var(--color-cta)" : "var(--color-purple)")};
+  max-width: 54rem;
+
+  @media screen and (max-width: 61.25em) {
+    margin-right: 0;
+    margin-bottom: var(--s-8);
+  }
 
   svg {
     stroke: var(--color-blue);

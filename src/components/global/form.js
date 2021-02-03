@@ -3,7 +3,7 @@ import { Container, Input, Button } from "@styles"
 import styled, { css } from "styled-components"
 
 const Footer = () => (
-  <Container wrapper sectionSm id="contact">
+  <Container wrapper wrapperSmOnTab sectionSm id="contact">
     <Flex>
       <Form>
         <InputContainer half>
@@ -42,6 +42,10 @@ export default Footer
 
 const Flex = styled.div`
   display: flex;
+
+  @media screen and (max-width: 61.25em) {
+    flex-direction: column-reverse;
+  }
 `
 
 const Form = styled.form`
@@ -54,6 +58,9 @@ const Form = styled.form`
 
   ${Input} {
     border-color: ${props => (props.theme.isDark ? "#546069" : "#212527")};
+  }
+  @media screen and (max-width: 61.25em) {
+    padding-right: 0;
   }
 `
 
@@ -100,6 +107,9 @@ const Label = styled.label`
 const TextContainer = styled.div`
   flex: 1;
   line-height: 1.8;
+  @media screen and (max-width: 61.25em) {
+    margin-bottom: var(--s-11);
+  }
 `
 
 const Title = styled.h2`

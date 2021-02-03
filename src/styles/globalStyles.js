@@ -81,6 +81,8 @@ const GlobalStyle = createGlobalStyle`
     font-size: var(--s-8);
   }
 
+
+
   li { list-style: none; }
 
   img {
@@ -103,6 +105,20 @@ const GlobalStyle = createGlobalStyle`
     font-family: inherit;
     font-size: inherit;
     line-height: inherit;
+  }
+
+  @media screen and (max-width: 61.25em) {
+    h1 {
+      font-size: var(--s-9);
+    }
+
+    h2 {
+      font-size: var(--s-8);
+    }
+
+    h3 {
+      font-size: 2.4rem;
+    }
   }
 `
 

@@ -28,9 +28,16 @@ const StyledHero = styled.section`
     justify-content: space-between;
     align-items: center;
   }
+
+  @media screen and (max-width: 61.25em) {
+    min-height: 38rem;
+  }
 `
 
 const Spacer = styled.div`
   width: 100%;
   max-width: 620px;
+  @media screen and (max-width: 68.75em) {
+    display: none;
+  }
 `

@@ -45,7 +45,12 @@ const ProjectTemplate = ({ data }) => {
           <Tags tags={display_tags} />
           <Excerpt>{excerpt}</Excerpt>
         </InfoContainer>
-        <Image fluid={featured_image.childImageSharp.fluid} />
+        <Image
+          fluid={featured_image.childImageSharp.fluid}
+          imgStyle={{
+            objectPosition: "top center",
+          }}
+        />
       </Header>
 
       <Container bgAccent>
@@ -63,6 +68,14 @@ const Header = styled(Container)`
   display: flex;
   justify-content: space-between;
   margin-bottom: -7rem;
+
+  @media screen and (max-width: 68.75em) {
+    margin-bottom: 0;
+    flex-direction: column-reverse;
+    padding-top: var(--s-11);
+    padding-bottom: var(--s-11);
+    align-items: center;
+  }
 `
 
 const Image = styled(Img)`
@@ -73,6 +86,13 @@ const Image = styled(Img)`
   transform: translateY(-50%);
   border: 1px solid var(--color-purple);
   box-shadow: 6px 6px 0 -2px var(--color-purple);
+  @media screen and (max-width: 68.75em) {
+    transform: translateY(0);
+  }
+
+  @media screen and (max-width: 36.25em) {
+    height: 260px;
+  }
 `
 
 const LinksContainer = styled.div`
@@ -90,9 +110,22 @@ const LinksContainer = styled.div`
   svg {
     margin-right: var(--s-1);
   }
+
+  @media screen and (max-width: 36.25em) {
+    flex-direction: column;
+    max-width: 22rem;
+
+    ${Button}:first-child {
+      margin-right: 0;
+      margin-bottom: var(--s-4);
+    }
+  }
 `
 const InfoContainer = styled.div`
   padding: var(--s-9) var(--s-9) 0 0;
+  @media screen and (max-width: 68.75em) {
+    padding: 0;
+  }
 `
 const Excerpt = styled.p`
   max-width: 56rem;

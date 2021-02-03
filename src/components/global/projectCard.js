@@ -30,6 +30,7 @@ const Card = styled(Link)`
   transition: color 0s, border 0.2s, border-color 0.2s, box-shadow 0.2s;
   font-size: var(--s-5);
   overflow: hidden;
+  max-width: 54rem;
 
   :hover {
     color: var(--color-text);
