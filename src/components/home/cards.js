@@ -65,17 +65,12 @@ const Card = styled.div`
   flex: 1;
   margin-right: var(--s-8);
   padding: var(--s-11) var(--s-8);
-  border-radius: 4px;
+  border-radius: 6px;
   position: relative;
-  border: 1px solid #5b3c68;
-  box-shadow: 6px 6px 0 -2px #5b3c68;
-
-  ${props =>
-    props.theme.isDark &&
-    css`
-      border: 1px solid var(--color-cta);
-      box-shadow: 6px 6px 0 -2px var(--color-cta);
-    `}
+  border: 1px solid;
+  border-color: ${props =>
+    props.theme.isDark ? "var(--color-cta)" : "var(--color-purple)"};
+  box-shadow: 6px 6px 0 -2px ${props => (props.theme.isDark ? "var(--color-cta)" : "var(--color-purple)")};
 
   svg {
     stroke: var(--color-blue);

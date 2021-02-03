@@ -172,6 +172,40 @@ export const Code = () => (
   </svg>
 )
 
+export const LogoGradient = ({ isDark }) => (
+  <svg
+    viewBox="0 0 300 36"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlnsXlink="http://www.w3.org/1999/xlink"
+    fillRule="evenodd"
+    clipRule="evenodd"
+    strokeLinejoin="round"
+    strokeMiterlimit={2}
+  >
+    <path
+      d="M26.803.334v6.345h-9.325v28.968H9.257V6.679h-9.27V.334h26.816zM48.293 35.647L46.25 28.75H35.106l-1.987 6.897h-8.221L36.264.334h8.829l11.421 35.313h-8.221zm-7.67-25.823L36.982 22.46h7.449L40.789 9.824h-.166zM81.14.334l6.29 23.174h.11L92.174.334h7.946l-8.111 35.313h-7.725L78.38 13.852h-.165l-5.849 21.795h-7.725L56.475.334h7.946l4.634 23.174h.166L75.456.334h5.683zM132.581.334v35.313h-8.166l-12.911-22.512-.166.055v22.457h-8.221V.334h8.221l12.912 22.512.165-.055V.334h8.166zM160.212 14.238v6.29h-13.85v8.829h16.333v6.29H138.14V.334h24.609v6.345h-16.387v7.56h13.849zM188.474 14.238v6.29h-13.85v8.829h16.333v6.29h-24.554V.334h24.61v6.345h-16.388v7.56h13.85z"
+      fill={isDark ? "#ffffff" : "#111213"}
+      fillRule="nonzero"
+    />
+    <g>
+      <use
+        xlinkHref="#prefix___Image1"
+        x={197.663}
+        width={104.076}
+        height={35.647}
+        transform="matrix(.9912 0 0 .9902 0 0)"
+      />
+    </g>
+    <defs>
+      <image
+        id="prefix___Image1"
+        width={105}
+        height={36}
+        xlinkHref="data:image/png;base64,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"
+      />
+    </defs>
+  </svg>
+)
 export const Logo = ({ isDark }) => (
   <svg
     viewBox="0 0 300 36"

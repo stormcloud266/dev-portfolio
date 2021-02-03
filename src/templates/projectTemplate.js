@@ -75,14 +75,15 @@ const Image = styled(Img)`
   max-width: 600px;
   height: 360px;
   transform: translateY(-50%);
+  box-shadow: 6px 6px 0 -2px ${props => (props.theme.isDark ? "var(--color-cta)" : "var(--color-purple)")};
 `
 const Spacer = styled.div`
   width: 100%;
-  max-width: 590px;
+  max-width: 620px;
 `
 const LinksContainer = styled.div`
   display: flex;
-  margin: var(--s-8) 0 var(--s-6);
+  margin: var(--s-8) 0 var(--s-5);
 
   ${Button} {
     padding: var(--s-4) var(--s-7);
@@ -105,6 +106,7 @@ const InfoContainer = styled.div`
 `
 const Excerpt = styled.p`
   max-width: 56rem;
+  padding-top: var(--s-3);
 `
 
 export const query = graphql`

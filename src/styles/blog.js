@@ -5,6 +5,10 @@ const Blog = styled.section`
     margin-top: 0;
   }
 
+  & > *:last-child {
+    margin-bottom: 0;
+  }
+
   h1,
   h2,
   h3,

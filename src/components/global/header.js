@@ -110,9 +110,15 @@ const ThemeToggle = styled.button`
   padding: 0.1rem;
   line-height: 1;
   background-color: transparent;
+  cursor: pointer;
   svg {
     display: block;
     stroke: var(--color-text);
+    transition: stroke 0.2s;
+
+    :hover {
+      stroke: var(--color-cta);
+    }
   }
 `
 
@@ -122,6 +128,11 @@ const NavToggle = styled.button`
   svg {
     display: block;
     stroke: var(--color-text);
+    transition: stroke 0.2s;
+
+    :hover {
+      stroke: var(--color-cta);
+    }
   }
 
   @media screen and (max-width: 900px) {
@@ -235,6 +246,11 @@ const NavLinks = styled.ul`
     font-family: var(--font-header);
     font-weight: bold;
     letter-spacing: 1px;
+    transition: color 0.2s;
+
+    :hover {
+      color: var(--color-cta);
+    }
   }
 
   @media screen and (max-width: 900px) {
@@ -272,6 +288,12 @@ const Social = styled.div`
       display: block;
       height: 2.4rem;
       width: 2.4rem;
+      stroke: var(--color-text);
+      transition: stroke 0.2s;
+
+      :hover {
+        stroke: var(--color-cta);
+      }
     }
   }
 `

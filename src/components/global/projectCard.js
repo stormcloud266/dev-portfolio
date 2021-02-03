@@ -22,7 +22,7 @@ const Project = ({ title, tags, excerpt, slug, image }) => (
 export default Project
 
 const Card = styled(Link)`
-  border-radius: 4px;
+  border-radius: 6px;
   background-color: var(--color-bg);
   color: var(--color-text);
   border: 1px solid;
@@ -49,7 +49,8 @@ const Card = styled(Link)`
 const BGImage = styled(BackgroundImage)`
   background-position: top center;
   width: 100%;
-  height: 17rem;
+  height: 20rem;
+  border-bottom: 1px solid var(--color-bg-secondary);
 `
 const Text = styled.div`
   padding: var(--s-8) var(--s-7);
