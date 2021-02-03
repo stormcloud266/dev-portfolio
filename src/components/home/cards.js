@@ -43,9 +43,8 @@ const Cards = () => (
 export default Cards
 
 const CardsContainer = styled.div`
-  background-image: linear-gradient(120deg, #b1ede8, #4de6da);
   background-image: linear-gradient(
-    to right bottom,
+    120deg,
     #f784ae,
     #d4a5ec,
     #a1c6ff,

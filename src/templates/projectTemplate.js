@@ -5,11 +5,13 @@ import Img from "gatsby-image"
 import Layout from "@components/global/layout"
 import { Container, Button } from "@styles"
 import Tags from "@components/global/tags"
+import BlockTitle from "@components/global/blockTitle"
 import { LinkIcon, Github } from "@images/icons"
 
 const IndexPage = ({ data }) => {
   const {
     title,
+    excerpt,
     display_tags,
     featured_image,
     live_link,
@@ -20,12 +22,15 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
-      <Container wrapper section>
-        <Img fluid={featured_image.childImageSharp.fluid} />
+      <Hero>
+        <Container wrapper>
+          <BlockTitle>{title}</BlockTitle>
+          <Image fluid={featured_image.childImageSharp.fluid} />
+        </Container>
+      </Hero>
 
+      <Container wrapper>
         <InfoContainer>
-          <Title>{title}</Title>
-
           <LinksContainer>
             <Button
               primary
@@ -43,22 +48,32 @@ const IndexPage = ({ data }) => {
           </LinksContainer>
 
           <Tags tags={display_tags} />
+          <p>{excerpt}</p>
         </InfoContainer>
 
-        <div dangerouslySetInnerHTML={{ __html: html }} />
+        <Container wrapper wrapperSm>
+          <div dangerouslySetInnerHTML={{ __html: html }} />
+        </Container>
       </Container>
     </Layout>
   )
 }
-
 export default IndexPage
+
+const Image = styled(Img)`
+  border-radius: 6px;
+  width: 100%;
+  max-width: 560px;
+  height: 400px;
+  transform: translateY(50%);
+`
 
 const LinksContainer = styled.div`
   display: flex;
-  margin: var(--s-4) 0;
+  margin: var(--s-7) 0 var(--s-8);
 
   ${Button} {
-    padding: var(--s-2) var(--s-4);
+    padding: var(--s-4) var(--s-7);
     margin-right: var(--s-6);
     display: flex;
     align-items: center;
@@ -76,7 +91,6 @@ const InfoContainer = styled.div`
   border-bottom: 1px solid;
   border-color: ${props => (props.theme.isDark ? "#454b4e" : "#bdcbd4")};
 `
-const Title = styled.h1``
 
 export const query = graphql`
   query getCaseStudy($slug: String!) {
@@ -84,6 +98,7 @@ export const query = graphql`
       frontmatter {
         title
         slug
+        excerpt
         live_link
         github_link
         display_tags
@@ -97,5 +112,29 @@ export const query = graphql`
       }
       html
     }
+  }
+`
+
+const Hero = styled.section`
+  min-height: 40rem;
+  background-color: #48175d;
+  background-image: linear-gradient(
+    120deg,
+    #f784ae,
+    #d4a5ec,
+    #a1c6ff,
+    #90defb,
+    #b1ede8
+  );
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 5.5rem;
+
+  ${Container} {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 `

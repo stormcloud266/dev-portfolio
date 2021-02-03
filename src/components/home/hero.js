@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 import { Container, Button } from "@styles"
 import dots from "@images/dots.svg"
+import BlockTitle from "@components/global/blockTitle"
 
 const Hero = () => (
   <HomeHero>
@@ -10,9 +11,9 @@ const Hero = () => (
     <BG />
     <Container wrapper>
       <Text>
-        <Title>
-          Hi I'm <Pink>Tawnee</Pink> and I'm a Front End Web Developer
-        </Title>
+        <BlockTitle wide>
+          I'm Tawnee and I'm a Front End Web Developer
+        </BlockTitle>
         <ButtonContainer>
           <Button primary={1} as={Link} to="/about">
             Contact Me
@@ -37,7 +38,7 @@ const HomeHero = styled.section`
 `
 
 const Text = styled.div`
-  max-width: 60ch;
+  /* max-width: 60ch; */
 
   ${Button} {
     min-width: 18rem;
@@ -47,17 +48,9 @@ const Text = styled.div`
     }
   }
 `
-
-const Pink = styled.span`
-  color: var(--color-cta);
+const ButtonContainer = styled.div`
+  margin-top: var(--s-8);
 `
-
-const Title = styled.h1`
-  margin-bottom: var(--s-8);
-  font-size: 4.8rem;
-`
-
-const ButtonContainer = styled.div``
 const BG = styled.div`
   width: 80%;
   height: 100%;
@@ -72,7 +65,6 @@ const BG = styled.div`
   position: absolute;
   z-index: -1;
   transform: skewX(-25deg);
-  /* border-bottom-left-radius: 40px; */
   left: 60%;
 `
 
@@ -86,5 +78,5 @@ const Dots = styled.div`
   width: 70px;
   background-image: url(${dots});
   background-size: 70px;
-  z-index: 3;
+  z-index: -1;
 `
