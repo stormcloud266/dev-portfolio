@@ -55,7 +55,7 @@ const Header = ({ isDark, themeContext }) => {
               <Link to="/examples">About</Link>
             </li>
             <li>
-              <Link to="/contact">Contact</Link>
+              <Link to="#contact">Contact</Link>
             </li>
           </NavLinks>
 

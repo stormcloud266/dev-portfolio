@@ -5,10 +5,10 @@ import Img from "gatsby-image"
 import Layout from "@components/global/layout"
 import { Container, Button, Blog } from "@styles"
 import Tags from "@components/global/tags"
-import BlockTitle from "@components/global/blockTitle"
 import { LinkIcon, Github } from "@images/icons"
+import Hero from "@global/hero"
 
-const IndexPage = ({ data }) => {
+const ProjectTemplate = ({ data }) => {
   const {
     title,
     excerpt,
@@ -22,12 +22,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
-      <Hero>
-        <Container wrapper>
-          <BlockTitle>{title}</BlockTitle>
-          <Spacer />
-        </Container>
-      </Hero>
+      <Hero title={title} spacer />
 
       <Header wrapper>
         <InfoContainer>
@@ -61,7 +56,8 @@ const IndexPage = ({ data }) => {
     </Layout>
   )
 }
-export default IndexPage
+
+export default ProjectTemplate
 
 const Header = styled(Container)`
   display: flex;
@@ -75,23 +71,20 @@ const Image = styled(Img)`
   max-width: 600px;
   height: 360px;
   transform: translateY(-50%);
-  box-shadow: 6px 6px 0 -2px ${props => (props.theme.isDark ? "var(--color-cta)" : "var(--color-purple)")};
+  border: 1px solid var(--color-purple);
+  box-shadow: 6px 6px 0 -2px var(--color-purple);
 `
-const Spacer = styled.div`
-  width: 100%;
-  max-width: 620px;
-`
+
 const LinksContainer = styled.div`
   display: flex;
   margin: var(--s-8) 0 var(--s-5);
 
   ${Button} {
     padding: var(--s-4) var(--s-7);
-    margin-right: var(--s-6);
-    display: flex;
-    align-items: center;
-    line-height: 1;
     text-transform: unset;
+    :first-child {
+      margin-right: var(--s-7);
+    }
   }
 
   svg {
@@ -100,9 +93,6 @@ const LinksContainer = styled.div`
 `
 const InfoContainer = styled.div`
   padding: var(--s-9) var(--s-9) 0 0;
-  /* margin-bottom: var(--s-9); */
-  /* border-bottom: 1px solid; */
-  /* border-color: ${props => (props.theme.isDark ? "#454b4e" : "#bdcbd4")}; */
 `
 const Excerpt = styled.p`
   max-width: 56rem;
@@ -121,7 +111,7 @@ export const query = graphql`
         display_tags
         featured_image {
           childImageSharp {
-            fluid(maxWidth: 750, quality: 100) {
+            fluid(maxWidth: 950, quality: 100) {
               ...GatsbyImageSharpFluid
             }
           }
@@ -129,29 +119,5 @@ export const query = graphql`
       }
       html
     }
-  }
-`
-
-const Hero = styled.section`
-  min-height: 44rem;
-  background-color: #48175d;
-  background-image: linear-gradient(
-    120deg,
-    #f784ae,
-    #d4a5ec,
-    #a1c6ff,
-    #90defb,
-    #b1ede8
-  );
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 5.5rem;
-
-  ${Container} {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
   }
 `

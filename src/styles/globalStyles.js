@@ -27,6 +27,14 @@ const GlobalStyle = createGlobalStyle`
     --color-text: ${props => props.theme.colorText};
     --color-text-headers: ${props => props.theme.colorTextHeaders};
     --color-btn-primary: ${props => props.theme.colorBtnPrimary};
+    --color-gradient: linear-gradient(
+    120deg,
+    #f784ae,
+    #d4a5ec,
+    #a1c6ff,
+    #90defb,
+    #b1ede8
+  );
 
     --font-header: 'Yantramanav', sans-serif;
     --font-body: 'Open Sans', sans-serif;

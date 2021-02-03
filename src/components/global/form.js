@@ -3,7 +3,7 @@ import { Container, Input, Button } from "@styles"
 import styled, { css } from "styled-components"
 
 const Footer = () => (
-  <Container wrapper sectionSm>
+  <Container wrapper sectionSm id="contact">
     <Flex>
       <Form>
         <InputContainer half>

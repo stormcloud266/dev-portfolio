@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components"
 
 const Button = styled.button`
-  padding: var(--s-3) var(--s-7) var(--s-1);
+  padding: var(--s-5) var(--s-7) var(--s-4);
   font-family: var(--font-header);
   font-weight: bold;
   letter-spacing: 0.5px;
@@ -11,11 +11,14 @@ const Button = styled.button`
   border-color: ${props =>
     props.theme.isDark ? "white" : "var(--color-black)"};
   background-color: #fff;
-  display: inline-block;
   cursor: pointer;
   transition: all 0.2s;
   min-width: 16rem;
   text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
 
   :hover {
     background-color: #efefef;
