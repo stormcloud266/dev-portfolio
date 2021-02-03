@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { Link, graphql } from "gatsby"
 import Img from "gatsby-image"
 import Layout from "@components/global/layout"
-import { Container, Button } from "@styles"
+import { Container, Button, Blog } from "@styles"
 import Tags from "@components/global/tags"
 import BlockTitle from "@components/global/blockTitle"
 import { LinkIcon, Github } from "@images/icons"
@@ -25,11 +25,11 @@ const IndexPage = ({ data }) => {
       <Hero>
         <Container wrapper>
           <BlockTitle>{title}</BlockTitle>
-          <Image fluid={featured_image.childImageSharp.fluid} />
+          <Spacer />
         </Container>
       </Hero>
 
-      <Container wrapper>
+      <Header wrapper>
         <InfoContainer>
           <LinksContainer>
             <Button
@@ -48,11 +48,14 @@ const IndexPage = ({ data }) => {
           </LinksContainer>
 
           <Tags tags={display_tags} />
-          <p>{excerpt}</p>
+          <Excerpt>{excerpt}</Excerpt>
         </InfoContainer>
+        <Image fluid={featured_image.childImageSharp.fluid} />
+      </Header>
 
-        <Container wrapper wrapperSm>
-          <div dangerouslySetInnerHTML={{ __html: html }} />
+      <Container bgAccent>
+        <Container wrapper wrapperSm sectionSm>
+          <Blog dangerouslySetInnerHTML={{ __html: html }} />
         </Container>
       </Container>
     </Layout>
@@ -60,17 +63,26 @@ const IndexPage = ({ data }) => {
 }
 export default IndexPage
 
+const Header = styled(Container)`
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: -7rem;
+`
+
 const Image = styled(Img)`
   border-radius: 6px;
   width: 100%;
-  max-width: 560px;
-  height: 400px;
-  transform: translateY(50%);
+  max-width: 600px;
+  height: 360px;
+  transform: translateY(-50%);
 `
-
+const Spacer = styled.div`
+  width: 100%;
+  max-width: 590px;
+`
 const LinksContainer = styled.div`
   display: flex;
-  margin: var(--s-7) 0 var(--s-8);
+  margin: var(--s-8) 0 var(--s-6);
 
   ${Button} {
     padding: var(--s-4) var(--s-7);
@@ -86,10 +98,13 @@ const LinksContainer = styled.div`
   }
 `
 const InfoContainer = styled.div`
-  padding: var(--s-9) 0;
-  margin-bottom: var(--s-9);
-  border-bottom: 1px solid;
-  border-color: ${props => (props.theme.isDark ? "#454b4e" : "#bdcbd4")};
+  padding: var(--s-9) var(--s-9) 0 0;
+  /* margin-bottom: var(--s-9); */
+  /* border-bottom: 1px solid; */
+  /* border-color: ${props => (props.theme.isDark ? "#454b4e" : "#bdcbd4")}; */
+`
+const Excerpt = styled.p`
+  max-width: 56rem;
 `
 
 export const query = graphql`
@@ -116,7 +131,7 @@ export const query = graphql`
 `
 
 const Hero = styled.section`
-  min-height: 40rem;
+  min-height: 44rem;
   background-color: #48175d;
   background-image: linear-gradient(
     120deg,

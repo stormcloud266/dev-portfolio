@@ -24,7 +24,7 @@ const ProjectsPage = () => {
 export default ProjectsPage
 
 const Hero = styled.section`
-  min-height: 40rem;
+  min-height: 44rem;
   background-color: #48175d;
   background-image: linear-gradient(
     120deg,

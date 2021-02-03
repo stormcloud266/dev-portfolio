@@ -9,6 +9,7 @@ import {
   Codepen,
   Twitter,
   Mail,
+  Logo,
 } from "@images/icons"
 
 import styled, { css } from "styled-components"
@@ -34,7 +35,9 @@ const Header = ({ isDark, themeContext }) => {
   return (
     <SiteHeader>
       <NavContainer wrapper>
-        <LogoLink to="/">Tawnee.dev</LogoLink>
+        <LogoLink to="/">
+          <Logo isDark={isDark} />
+        </LogoLink>
 
         <NavToggle id="nav-toggle" onClick={() => toggleNav(!isOpen)}>
           {isOpen ? <Times /> : <Hamburger />}
@@ -95,10 +98,6 @@ const SiteHeader = styled.header`
   left: 0;
   z-index: 1000;
   width: 100%;
-
-  svg {
-    stroke: var(--color-text);
-  }
 `
 const NavContainer = styled(Container)`
   display: flex;
@@ -111,9 +110,9 @@ const ThemeToggle = styled.button`
   padding: 0.1rem;
   line-height: 1;
   background-color: transparent;
-
   svg {
     display: block;
+    stroke: var(--color-text);
   }
 `
 
@@ -122,6 +121,7 @@ const NavToggle = styled.button`
 
   svg {
     display: block;
+    stroke: var(--color-text);
   }
 
   @media screen and (max-width: 900px) {
@@ -141,14 +141,13 @@ const NavToggle = styled.button`
 `
 
 const LogoLink = styled(Link)`
-  padding: 1.2rem 0;
+  padding: 1.8rem 0;
   position: relative;
   z-index: 1000;
 
   svg {
-    fill: var(--color-text);
     width: 100%;
-    max-width: 13rem;
+    max-width: 15rem;
     display: block;
   }
 `
