@@ -35,6 +35,16 @@ const HomeHero = styled.section`
   align-items: center;
   position: relative;
   overflow-x: hidden;
+
+  /* #f784ae,
+    #d4a5ec,
+    #a1c6ff,
+    #90defb,
+    #b1ede8 */
+  background-color: #8378ff;
+  background-image: radial-gradient(ellipse at 60% -20%, #f784ae, transparent),
+    radial-gradient(ellipse at bottom right, #90defb, transparent),
+    radial-gradient(ellipse at bottom left, #90defb, transparent);
 `
 
 const Text = styled.div`
@@ -42,6 +52,7 @@ const Text = styled.div`
 
   ${Button} {
     min-width: 18rem;
+    border-color: var(--color-black);
 
     :first-child {
       margin-right: var(--s-8);
@@ -54,14 +65,6 @@ const ButtonContainer = styled.div`
 const BG = styled.div`
   width: 80%;
   height: 100%;
-  background-image: linear-gradient(90deg, #b1ede8 30%, #5f5566 30%);
-  background-image: linear-gradient(
-    90deg,
-    #b1ede8 28%,
-    #4de6da 28%,
-    #4de6da 30%,
-    #5b3c68 30%
-  );
   position: absolute;
   z-index: -1;
   transform: skewX(-25deg);

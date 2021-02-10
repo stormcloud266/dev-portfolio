@@ -22,6 +22,10 @@ const StyledHero = styled.section`
   display: flex;
   align-items: center;
   padding-top: 5.5rem;
+  background-color: #8378ff;
+  background-image: radial-gradient(ellipse at 60% 10%, #f784ae, transparent),
+    radial-gradient(ellipse at bottom right, #90defb, transparent),
+    radial-gradient(ellipse at bottom left, #90defb, transparent);
 
   ${Container} {
     display: flex;
@@ -31,6 +35,9 @@ const StyledHero = styled.section`
 
   @media screen and (max-width: 61.25em) {
     min-height: 38rem;
+  }
+  @media screen and (max-width: 36.25em) {
+    min-height: 30rem;
   }
 `
 

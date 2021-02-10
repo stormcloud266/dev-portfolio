@@ -5,7 +5,7 @@ import { Code } from "@images/icons"
 import dots from "@images/dots.svg"
 
 const Cards = () => (
-  <CardsContainer>
+  <CardsContainer id="about">
     <CardsInner section wrapper>
       <Card>
         <Code />

@@ -19,8 +19,9 @@ const GlobalStyle = createGlobalStyle`
 
     --color-cta: #f199b9;
     --color-purple: #5b3c68;
-    --color-blue: #4de6da;
+    --color-blue: #A1E6F1;
     --color-black: #111213;
+    --color-gray-medium: #536169;
     --color-contrast: ${props => props.theme.colorContrast};
     --color-bg: ${props => props.theme.colorBg};
     --color-bg-secondary: ${props => props.theme.colorBgSecondary};

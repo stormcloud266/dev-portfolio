@@ -97,7 +97,8 @@ const Label = styled.label`
   padding: 6px var(--s-3) 4px;
   transition: color 0.2s;
   color: white;
-  background-color: ${props => (props.theme.isDark ? "#546069" : "#212527")};
+  background-color: ${props =>
+    props.theme.isDark ? "var(--color-gray-medium)" : "#212527"};
 
   ${Input}:focus + & {
     color: var(--color-cta);

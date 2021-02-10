@@ -10,7 +10,7 @@ const BlockTitle = ({ children, wide }) => (
 export default BlockTitle
 
 const Container = styled.div`
-  max-width: ${props => (props.wide ? "68rem" : "50rem")};
+  max-width: ${props => (props.wide ? "68rem" : "47rem")};
   margin: 0 1.7rem;
 `
 
@@ -20,10 +20,10 @@ const Title = styled.h1`
   text-transform: uppercase;
   display: inline;
   background-color: var(--color-black);
-  margin-bottom: 90px;
+  background-color: #181a1b;
   box-decoration-break: clone;
   line-height: 1.8;
-  box-shadow: -7px 0 0 10px var(--color-black), 7px 0 0 10px var(--color-black);
+  box-shadow: -7px 0 0 10px #181a1b, 7px 0 0 10px #181a1b;
   text-shadow: 2px 2px var(--color-cta);
 
   @media screen and (max-width: 61.25em) {

@@ -84,8 +84,9 @@ const Image = styled(Img)`
   max-width: 600px;
   height: 360px;
   transform: translateY(-40%);
-  border: 1px solid var(--color-purple);
-  box-shadow: 6px 6px 0 -2px var(--color-purple);
+  border: 1px solid var(--color-gray-medium);
+  box-shadow: 6px 6px 0 -2px var(--color-gray-medium);
+
   @media screen and (max-width: 68.75em) {
     transform: translateY(0);
   }
@@ -97,7 +98,7 @@ const Image = styled(Img)`
 
 const LinksContainer = styled.div`
   display: flex;
-  margin: var(--s-8) 0 var(--s-5);
+  margin: var(--s-8) 0 var(--s-7);
 
   ${Button} {
     padding: var(--s-4) var(--s-7);
@@ -122,7 +123,7 @@ const LinksContainer = styled.div`
   }
 `
 const InfoContainer = styled.div`
-  /* padding: var(--s-9) var(--s-9) 0 0; */
+  padding-right: var(--s-8);
   @media screen and (max-width: 68.75em) {
     padding: 0;
   }
