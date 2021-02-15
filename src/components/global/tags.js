@@ -1,8 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
-import BackgroundImage from "gatsby-background-image"
-
-import styled, { css } from "styled-components"
+import styled from "styled-components"
 
 const Tags = ({ tags }) => (
   <TagsList>

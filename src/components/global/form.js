@@ -28,11 +28,11 @@ const Footer = () => (
 
       <TextContainer>
         <Title>Ready to work together?</Title>
-        <p>
+        <Body>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi, totam
           mollitia? Enim, fuga libero hic iste voluptas molestiae nesciunt a
           nisi sunt, in magnam? Provident aperiam sit quod hic voluptas esse.
-        </p>
+        </Body>
       </TextContainer>
     </Flex>
   </Container>

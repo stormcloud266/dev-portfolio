@@ -1,6 +1,6 @@
 import React from "react"
 import { Container } from "@styles"
-import styled, { css } from "styled-components"
+import styled from "styled-components"
 import { Code } from "@images/icons"
 import dots from "@images/dots.svg"
 
