@@ -206,7 +206,7 @@ const Nav = styled.nav`
 
         svg {
           opacity: 1;
-          transition: opacity 0.5s;
+          transition: opacity 0.7s, stroke 0.3s;
         }
 
         // needs to be kept here due to parent props
@@ -289,7 +289,6 @@ const Social = styled.div`
       height: 2.4rem;
       width: 2.4rem;
       stroke: var(--color-text);
-      transition: stroke 0.2s;
 
       :hover {
         stroke: var(--color-cta);
