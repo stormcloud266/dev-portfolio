@@ -27,19 +27,28 @@ const ProjectTemplate = ({ data }) => {
       <Header wrapper>
         <InfoContainer>
           <LinksContainer>
-            <Button
-              primary
-              as="a"
-              href={live_link}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <LinkIcon /> Visit Live Site
-            </Button>
+            {live_link && (
+              <Button
+                primary
+                as="a"
+                href={live_link}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <LinkIcon /> Visit Live Site
+              </Button>
+            )}
 
-            <Button as="a" href={github_link} target="_blank" rel="noreferrer">
-              <Github /> View on Github
-            </Button>
+            {github_link && (
+              <Button
+                as="a"
+                href={github_link}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Github /> View on Github
+              </Button>
+            )}
           </LinksContainer>
 
           <Tags tags={display_tags} />

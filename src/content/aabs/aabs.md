@@ -3,45 +3,42 @@ slug: "/aabs"
 order: 10
 title: "All American Building Services"
 featured_image: ./featured.png
-excerpt: "This is an example excerpt for a project post. What happens if it's a little longer. Just a tad bit longer to test things."
-live_link: https://ufo-sightings.vercel.app/
-github_link: https://github.com/stormcloud266/ufo-sightings
+excerpt: "A complete redesign and rebuild from a WordPress blog to a faster, more secure static site and blog built with Gatsby JS and Contentful."
+live_link: www.aabscorp.com
 filter_tags:
   - javascript
   - react
   - scss
   - css
-  - styled components
-  - html
   - apis
   - gatsby
   - gatsbyjs
-  - next
-  - nextjs
-  - node
-  - firebase
-  - redux
-  - vue
-  - react native
+  - contentful
+  - blog
+  - cms
 display_tags:
-  - JavaScript
+  - Gatsby
   - React
   - SCSS
-  - Gatsby
+  - Headless CMS
 ---
 
-## Example
+## Build a dark themed, mobile responsive website
 
-This is the example body for a project. Talk about all the cool stuff you build.
+AABS wanted a redesign and rebuild their existing WordPress website. They were looking for a faster, more secure site that provided a better experience for mobile users.
 
-### thing one
+They wanted a sophisticated dark theme with a bold call-to-action, a content overhaul that included a blog and local landing pages, analytics integration, and a way for both potential clients and applicants to get in touch.
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem eligendi quisquam commodi incidunt cumque nobis soluta fugit exercitationem, quia architecto necessitatibus, quaerat, veniam ipsam saepe natus recusandae dolor nam ut.
+## A multi-page website and blog built on a modern framework
 
-### thing two
+I worked with AABS to map out the website's new architecture according to their content needs, providing a more intuitive and easily navigable experience for users.
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem eligendi quisquam commodi incidunt cumque nobis soluta fugit exercitationem, quia architecto necessitatibus, quaerat, veniam ipsam saepe natus recusandae dolor nam ut.
+Our model included several new content types such as services pages, local landing pages, and blog posts from which pages would be generated. A static site generator, Gatsby, was used in conjunction with Contentful CMS so the client could easily edit or add these pages.
 
-## another big point
+I integrated separate contact forms for clients and applicants, and Google Analytics to keep track of website traffic.
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem eligendi quisquam commodi incidunt cumque nobis soluta fugit exercitationem, quia architecto necessitatibus, quaerat, veniam ipsam saepe natus recusandae dolor nam ut.
+## Final Result
+
+The site features a bold, dark theme with high contrast call-to-action buttons that grab attention. Clients can add new blog posts and service pages easily from the content management system.
+
+An improved experience for mobile users, accessibility, and on-page SEO were built into the website from the very beginning. Optimized, lazy-loaded images and the static site setup provide quicker page load speeds. The result is faster, safer website secured with https.

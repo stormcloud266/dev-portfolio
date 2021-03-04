@@ -56,6 +56,20 @@ const Blog = styled.section`
     list-style: decimal;
   }
 
+  a {
+    font-weight: 700;
+    color: ${props =>
+      props.theme.isDark ? "var(--color-cta)" : "var(--color-purple)"};
+    border-bottom: 2px solid;
+    border-color: var(--color-cta);
+    transition: all 0.2s;
+
+    &:hover {
+      color: var(--color-blue);
+      border-color: var(--color-blue);
+    }
+  }
+
   :global(.gatsby-image-wrapper) {
     margin-bottom: 3.6rem;
     margin-top: 3.6rem;
