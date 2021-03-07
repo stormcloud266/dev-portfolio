@@ -3,33 +3,26 @@ slug: "/cinnanym"
 title: "Cinnanym"
 order: 50
 featured_image: ./featured.png
-excerpt: "This is an example excerpt for a project post."
-live_link: https://ufo-sightings.vercel.app/
-github_link: https://github.com/stormcloud266/ufo-sightings
+excerpt: "A related words finder app built on React using the WordsAPI. It gets a list of synonyms, related words, and rhymes."
+live_link: https://cinnanym.netlify.app/
+github_link: https://github.com/stormcloud266/cinnanym
 filter_tags:
   - javascript
   - react
-  - scss
   - css
-  - styled components
-  - html
+  - css modules
   - apis
-  - gatsby
-  - gatsbyjs
-  - next
-  - nextjs
-  - node
-  - firebase
-  - redux
-  - vue
-  - react native
+  - lambda functions
 display_tags:
-  - JavaScript
   - React
-  - SCSS
-  - Gatsby
+  - CSS Modules
+  - Lambda Functions
 ---
 
-## Example
+## Details
 
-This is the example body for a project. Talk about all the cool stuff you build.
+This is a related words finder app built on React using the WordsAPI through RapidAPI. It gets a list of synonyms, related words, and rhymes.
+
+## Tech
+This project is built with Create React App, uses Netlify for hosting and Netlify's lambda functions for backend services. It's styled using CSS modules.
+
