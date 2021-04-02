@@ -57,16 +57,14 @@ const Blog = styled.section`
   }
 
   a {
-    font-weight: 700;
-    color: ${props =>
-      props.theme.isDark ? "var(--color-cta)" : "var(--color-purple)"};
-    border-bottom: 2px solid;
-    border-color: var(--color-cta);
-    transition: all 0.2s;
+    color: var(--color-text);
+    padding-bottom: 2px;
+    border-bottom: 2px solid var(--color-cta);
+    transition: color 0.2s, background-color 0.2s;
 
     &:hover {
-      color: var(--color-blue);
-      border-color: var(--color-blue);
+      background-color: var(--color-cta);
+      color: var(--color-black);
     }
   }
 
