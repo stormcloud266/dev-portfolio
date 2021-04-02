@@ -3,33 +3,21 @@ slug: "/gatsby-starter-wyoming"
 title: "Gatsby Starter Wyoming"
 order: 40
 featured_image: ./featured.png
-excerpt: "This is an example excerpt for a project post."
-live_link: https://ufo-sightings.vercel.app/
-github_link: https://github.com/stormcloud266/ufo-sightings
+excerpt: "This is a GatsbyJS V2 starter template designed with small business website projects in mind."
+live_link: https://gatsby-starter-wyoming.netlify.app/
+github_link: https://github.com/stormcloud266/gatsby-starter-wyoming
 filter_tags:
-  - javascript
   - react
+  - javascript
   - scss
-  - css
-  - styled components
-  - html
-  - apis
   - gatsby
   - gatsbyjs
-  - next
-  - nextjs
-  - node
-  - firebase
-  - redux
-  - vue
-  - react native
 display_tags:
-  - JavaScript
+  - Gatsby
   - React
   - SCSS
-  - Gatsby
 ---
 
-## Example
+## About This Project
 
-This is the example body for a project. Talk about all the cool stuff you build.
+This is a GatsbyJS V2 starter template designed with small business website projects in mind. It is a fully-responsive, one-page site with a contact form, SEO, and GDPR-compliant FB Pixel and Google Analytics integration to help get small business websites up and running fast with Gatsby.

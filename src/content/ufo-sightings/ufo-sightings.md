@@ -3,38 +3,29 @@ slug: "/ufo-sightings"
 title: "UFO Sightings"
 order: 60
 featured_image: ./featured.png
-excerpt: "This is an example excerpt for a project post."
+excerpt: "NextJS project that displays UFO sightings on a map."
 live_link: https://ufo-sightings.vercel.app/
 github_link: https://github.com/stormcloud266/ufo-sightings
 filter_tags:
   - javascript
   - react
-  - scss
-  - css
   - styled components
-  - html
   - apis
-  - gatsby
-  - gatsbyjs
+  - mapbox
   - next
   - nextjs
-  - node
-  - firebase
-  - redux
-  - vue
-  - react native
+  - vercel
 display_tags:
-  - JavaScript
-  - React
-  - SCSS
-  - Gatsby
+  - NextJS
+  - Styled Components
+  - Mapbox API
 ---
 
 ## Example
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum quisquam deserunt nemo, facilis ea culpa doloribus in nobis vel dolor alias natus quam qui molestias quidem. Sequi blanditiis voluptas amet quidem dicta doloribus neque! Non autem rem delectus a suscipit!
-This is the example body for a project. Talk about all the cool stuff you build.
+This website displays instances of UFO sightings as pins on a map. Results are filtered by state.
 
-### One More
-
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum quisquam deserunt nemo, facilis ea culpa doloribus in nobis vel dolor alias natus quam qui molestias quidem. Sequi blanditiis voluptas amet quidem dicta doloribus neque! Non autem rem delectus a suscipit!
+* Technologies
+* NextJS
+* Styled Components
+* Vercel
