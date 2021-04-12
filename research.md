@@ -15,3 +15,24 @@ https://skillcrush.com/blog/portfolio-advice-2/
 https://amberwilson.co.uk/blog/writing-a-winning-web-developer-resume/
 
 https://news.codecademy.com/technical-portfolio-guide-tips/
+
+## outline
+
+1. Background and description
+   _overall purpose of project_
+
+2. The problem
+   _why? explain problem that lead to project_
+   _goals for personal project_
+
+3. Goals objectives
+   _any quantifiable metrics. tangible goals and objectives_
+
+4. The Process and Insight
+   _opportunity for you to walk your prospective client through the research, workflow, and iterations of your design work_
+
+_When writing content for this section, you want to illustrate how you got from The Challenge to The Solution_
+
+5. Solution
+   _final project_
+   _To really get the most from this section, be sure to include written descriptions about your design work_
