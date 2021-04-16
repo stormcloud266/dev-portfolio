@@ -155,6 +155,27 @@ export const LinkIcon = () => (
   </svg>
 )
 
+export const Palette = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    className="prefix__icon prefix__icon-tabler prefix__icon-tabler-palette"
+    width={56}
+    height={56}
+    viewBox="0 0 24 24"
+    strokeWidth={2}
+    stroke="currentColor"
+    fill="none"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M0 0h24v24H0z" stroke="none" />
+    <path d="M12 21a9 9 0 110-18 9 8 0 019 8 4.5 4 0 01-4.5 4H14a2 2 0 00-1 3.75A1.3 1.3 0 0112 21" />
+    <circle cx={7.5} cy={10.5} r={0.5} fill="currentColor" />
+    <circle cx={12} cy={7.5} r={0.5} fill="currentColor" />
+    <circle cx={16.5} cy={10.5} r={0.5} fill="currentColor" />
+  </svg>
+)
+
 export const Code = () => (
   <svg
     className="prefix__icon prefix__icon-tabler prefix__icon-tabler-code"

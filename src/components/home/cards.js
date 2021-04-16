@@ -1,15 +1,15 @@
 import React from "react"
 import { Container } from "@styles"
 import styled from "styled-components"
-import { Code } from "@images/icons"
+import { Code, Palette } from "@images/icons"
 import dots from "@images/dots.svg"
 
 const Cards = () => (
   <CardsContainer id="about">
     <CardsInner section wrapper>
       <Card>
-        <Code />
-        <h3>Hello</h3>
+        <Palette />
+        <h3>Web Design</h3>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur,
           dolorem. Perspiciatis aspernatur sunt impedit aliquid quos fuga error,
@@ -19,7 +19,7 @@ const Cards = () => (
 
       <Card>
         <Code />
-        <h3>Hello</h3>
+        <h3>Web Development</h3>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur,
           dolorem. Perspiciatis aspernatur sunt impedit aliquid quos fuga error,
