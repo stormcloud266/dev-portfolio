@@ -52,8 +52,6 @@ const Card = styled(Link)`
 
 const CoverImage = styled.span`
   display: block;
-  overflow: hidden;
-  height: 22rem;
   border-bottom: 1px solid var(--color-bg-secondary);
 `
 const Text = styled.span`

@@ -1,4 +1,5 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
+import { Helmet } from "react-helmet"
 import { Link } from "gatsby"
 import {
   Hamburger,
@@ -12,14 +13,21 @@ import {
   Logo,
 } from "@images/icons"
 
-import styled, { css } from "styled-components"
+import styled, { css, keyframes } from "styled-components"
 import { Container } from "@styles"
+import { useCurrentWidth } from "@hooks"
 
 const Header = ({ isDark, toggleDark }) => {
   const [isOpen, toggleNav] = useState(false)
+  const width = useCurrentWidth()
+
+  useEffect(() => width > 900 && toggleNav(false), [width])
 
   return (
     <SiteHeader>
+      <Helmet>
+        <body data-locked={isOpen ? "true" : "false"} />
+      </Helmet>
       <NavContainer wrapper>
         <LogoLink to="/">
           <Logo isDark={isDark} />
@@ -148,6 +156,16 @@ const LogoLink = styled(Link)`
     display: block;
   }
 `
+const fadeIn = keyframes`
+  from {
+		opacity: 0;
+		border-radius: 200px;
+	}
+	to {
+		opacity: 1;
+		border-radius: 0px;
+	}
+`
 
 const Nav = styled.nav`
   display: flex;
@@ -189,6 +207,7 @@ const Nav = styled.nav`
       css`
         opacity: 1;
         visibility: visible;
+        animation: ${fadeIn} 0.3s forwards;
 
         svg {
           opacity: 1;

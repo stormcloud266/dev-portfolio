@@ -64,6 +64,10 @@ const GlobalStyle = createGlobalStyle`
     overflow-x: hidden;
   }
 
+  body[data-locked='true'] {
+    overflow-y: hidden;
+  }
+
   h1,h2,h3,h4,h5,h6 { 
     font-family: var(--font-header);
     line-height: 1.3;
