@@ -2,45 +2,52 @@ import React from "react"
 import { Container } from "@styles"
 import styled from "styled-components"
 import { Code, Palette } from "@images/icons"
+import { Fade } from "@animations"
 import dots from "@images/dots.svg"
+import { useCurrentWidth } from "@hooks"
 
-const Cards = () => (
-  <CardsContainer id="about">
-    <CardsInner section wrapper>
-      <Card>
-        <Palette />
-        <h3>Web Design</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur,
-          dolorem. Perspiciatis aspernatur sunt impedit aliquid quos fuga error,
-          ullam officia.
-        </p>
-      </Card>
+const Cards = () => {
+  const width = useCurrentWidth()
 
-      <Card>
-        <Code />
-        <h3>Web Development</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur,
-          dolorem. Perspiciatis aspernatur sunt impedit aliquid quos fuga error,
-          ullam officia.
-        </p>
-      </Card>
-
-      <Card>
-        <Code />
-        <h3>Hello</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur,
-          dolorem. Perspiciatis aspernatur sunt impedit aliquid quos fuga error,
-          ullam officia.
-        </p>
-      </Card>
-    </CardsInner>
-  </CardsContainer>
-)
+  return (
+    <CardsContainer id="about">
+      <CardsInner section wrapper>
+        {data.map(({ icon, title, description }, i) => (
+          <CardContainer x={-20} delay={width > 980 ? i * 0.3 : 0} key={i}>
+            <Card>
+              {icon}
+              <h3>{title}</h3>
+              <p>{description}</p>
+            </Card>
+          </CardContainer>
+        ))}
+      </CardsInner>
+    </CardsContainer>
+  )
+}
 
 export default Cards
+
+const data = [
+  {
+    icon: <Palette />,
+    title: "Web Design",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur,dolorem. Perspiciatis aspernatur sunt impedit aliquid quos fuga error, ullam officia.",
+  },
+  {
+    icon: <Code />,
+    title: "Web Development",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur,dolorem. Perspiciatis aspernatur sunt impedit aliquid quos fuga error, ullam officia.",
+  },
+  {
+    icon: <Code />,
+    title: "Hello",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur,dolorem. Perspiciatis aspernatur sunt impedit aliquid quos fuga error, ullam officia. lksdj lasdkj ladkj ladkjs sd",
+  },
+]
 
 const CardsContainer = styled.div`
   background-image: linear-gradient(
@@ -64,10 +71,24 @@ const CardsInner = styled(Container)`
   }
 `
 
-const Card = styled.div`
-  background-color: var(--color-bg);
+const CardContainer = styled(Fade)`
   flex: 1;
   margin-right: var(--s-8);
+  max-width: 54rem;
+
+  :last-child {
+    margin-right: 0;
+  }
+
+  @media screen and (max-width: 61.25em) {
+    margin-right: 0;
+    margin-bottom: var(--s-8);
+  }
+`
+
+const Card = styled.div`
+  height: 100%;
+  background-color: var(--color-bg);
   padding: var(--s-11) var(--s-8);
   border-radius: 6px;
   position: relative;
@@ -75,12 +96,6 @@ const Card = styled.div`
   border-color: ${props =>
     props.theme.isDark ? "var(--color-cta)" : "var(--color-purple)"};
   box-shadow: 6px 6px 0 -2px ${props => (props.theme.isDark ? "var(--color-cta)" : "var(--color-purple)")};
-  max-width: 54rem;
-
-  @media screen and (max-width: 61.25em) {
-    margin-right: 0;
-    margin-bottom: var(--s-8);
-  }
 
   svg {
     stroke: var(--color-blue);
@@ -93,10 +108,6 @@ const Card = styled.div`
 
   p {
     line-height: 1.8;
-  }
-
-  :last-child {
-    margin-right: 0;
   }
 
   ::before {

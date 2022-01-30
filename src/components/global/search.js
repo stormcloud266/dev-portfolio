@@ -1,5 +1,4 @@
 import React, { useState } from "react"
-
 import styled from "styled-components"
 import NoResults from "@components/home/noResults"
 import { Input } from "@styles"
@@ -60,7 +59,7 @@ const Search = ({ data }) => {
 
       {filteredProjects.length > 0 ? (
         <ProjectsContainer>
-          {filteredProjects.map(project => (
+          {filteredProjects.map((project, i) => (
             <Project
               key={project.title}
               title={project.title}

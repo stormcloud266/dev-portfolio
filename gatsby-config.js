@@ -44,6 +44,7 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-image`,
     `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-plugin-web-font-loader`,
@@ -111,6 +112,7 @@ module.exports = {
           "@images": path.resolve(__dirname, "src/assets/images"),
           "@styles": path.resolve(__dirname, "src/styles/"),
           "@animations": path.resolve(__dirname, "src/components/animations"),
+          "@hooks": path.resolve(__dirname, "src/hooks"),
         },
       },
     },

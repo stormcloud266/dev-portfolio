@@ -1,7 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import styled from "styled-components"
-
+import { Fade } from "@animations"
 import { Container, Button } from "@styles"
 import Search from "@global/search"
 
@@ -43,9 +43,11 @@ const Projects = () => {
 
         <Search data={data} />
 
-        <ButtonMargin as={Link} to="/projects">
-          All Projects
-        </ButtonMargin>
+        <Fade y={20}>
+          <ButtonMargin as={Link} to="/projects">
+            All Projects
+          </ButtonMargin>
+        </Fade>
       </Container>
     </Container>
   )

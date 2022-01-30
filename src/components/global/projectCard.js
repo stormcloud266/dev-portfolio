@@ -3,23 +3,28 @@ import { Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import styled, { css } from "styled-components"
 import Tags from "@components/global/tags"
+import { Fade } from "@animations"
 
 const Project = ({ title, tags, excerpt, slug, image }) => (
-  <Card to={`/projects${slug}`}>
-    <CoverImage>
-      <GatsbyImage image={getImage(image)} alt="" />
-    </CoverImage>
-    <Text>
-      <Title>{title}</Title>
-      <Tags tags={tags} />
-      <p>{excerpt}</p>
-    </Text>
-  </Card>
+  <Fade y={20} threshold={0}>
+    <Card to={`/projects${slug}`}>
+      <CoverImage>
+        <GatsbyImage image={getImage(image)} alt="" />
+      </CoverImage>
+      <Text>
+        <Title>{title}</Title>
+        <Tags tags={tags} />
+        <p>{excerpt}</p>
+      </Text>
+    </Card>
+  </Fade>
 )
 
 export default Project
 
 const Card = styled(Link)`
+  display: block;
+  height: 100%;
   border-radius: 6px;
   background-color: var(--color-bg);
   color: var(--color-text);
@@ -45,12 +50,14 @@ const Card = styled(Link)`
   }
 `
 
-const CoverImage = styled.div`
+const CoverImage = styled.span`
+  display: block;
   overflow: hidden;
   height: 22rem;
   border-bottom: 1px solid var(--color-bg-secondary);
 `
-const Text = styled.div`
+const Text = styled.span`
+  display: block;
   padding: var(--s-8) var(--s-7);
 `
 

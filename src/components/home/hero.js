@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 import { Container, Button } from "@styles"
+import { Fade } from "@animations"
 import dots from "@images/dots.svg"
 import BlockTitle from "@components/global/blockTitle"
 
@@ -14,13 +15,19 @@ const Hero = () => (
         <BlockTitle wide>
           I'm Tawnee and I'm a Front End Web Developer
         </BlockTitle>
+
         <ButtonContainer>
-          <Button primary={1} as={Link} to="/about">
-            Contact Me
-          </Button>
-          <Button as={Link} to="/about">
-            See My Work
-          </Button>
+          <Fade y={20}>
+            <Button primary={1} as={Link} to="/contact">
+              Contact Me
+            </Button>
+          </Fade>
+
+          <Fade y={20} delay={0.2}>
+            <Button as={Link} to="/about">
+              See My Work
+            </Button>
+          </Fade>
         </ButtonContainer>
       </Text>
     </Container>
@@ -61,6 +68,7 @@ const Text = styled.div`
 `
 const ButtonContainer = styled.div`
   margin-top: var(--s-8);
+  display: flex;
 `
 const BG = styled.div`
   width: 80%;
