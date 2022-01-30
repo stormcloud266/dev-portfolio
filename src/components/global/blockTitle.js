@@ -1,9 +1,12 @@
 import React from "react"
 import styled from "styled-components"
+import { Fade } from "@animations"
 
 const BlockTitle = ({ children, wide }) => (
   <Container wide={wide}>
-    <Title>{children}</Title>
+    <Fade duration={0.7}>
+      <Title>{children}</Title>
+    </Fade>
   </Container>
 )
 
