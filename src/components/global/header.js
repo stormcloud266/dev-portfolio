@@ -15,22 +15,8 @@ import {
 import styled, { css } from "styled-components"
 import { Container } from "@styles"
 
-const Header = ({ isDark, themeContext }) => {
+const Header = ({ isDark, toggleDark }) => {
   const [isOpen, toggleNav] = useState(false)
-
-  /*
-  Stops scroll when mobile nav open.
-  Causes a jump if scrollbars are on 'show always'
-
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden"
-    }
-    if (!isOpen) {
-      document.body.style.overflow = "unset"
-    }
-  }, [isOpen])
-  */
 
   return (
     <SiteHeader>
@@ -60,7 +46,7 @@ const Header = ({ isDark, themeContext }) => {
           </NavLinks>
 
           <ThemeToggle
-            onClick={() => themeContext.toggleDark()}
+            onClick={() => toggleDark()}
             aria-label="toggle dark mode"
           >
             {isDark ? <Sun /> : <Moon />}

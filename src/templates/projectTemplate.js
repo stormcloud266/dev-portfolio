@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { graphql } from "gatsby"
-import Img from "gatsby-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "@components/global/layout"
 import { Container, Button, Blog } from "@styles"
 import Tags from "@components/global/tags"
@@ -55,7 +55,7 @@ const ProjectTemplate = ({ data }) => {
           <Excerpt>{excerpt}</Excerpt>
         </InfoContainer>
         <Image
-          fluid={featured_image.childImageSharp.fluid}
+          image={getImage(featured_image)}
           imgStyle={{
             objectPosition: "top center",
           }}
@@ -87,7 +87,7 @@ const Header = styled(Container)`
   }
 `
 
-const Image = styled(Img)`
+const Image = styled(GatsbyImage)`
   border-radius: 6px;
   width: 100%;
   max-width: 600px;
@@ -154,9 +154,7 @@ export const query = graphql`
         display_tags
         featured_image {
           childImageSharp {
-            fluid(maxWidth: 950, quality: 100) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 950, quality: 100, placeholder: BLURRED)
           }
         }
       }

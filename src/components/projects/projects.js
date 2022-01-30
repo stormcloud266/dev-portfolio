@@ -17,9 +17,11 @@ const Projects = () => {
               filter_tags
               featured_image {
                 childImageSharp {
-                  fluid(maxWidth: 750, quality: 100) {
-                    ...GatsbyImageSharpFluid
-                  }
+                  gatsbyImageData(
+                    width: 750
+                    quality: 100
+                    placeholder: BLURRED
+                  )
                 }
               }
             }
