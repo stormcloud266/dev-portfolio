@@ -7,6 +7,7 @@
   "dependencies": {
     "babel-plugin-styled-components": "^2.0.2",
     "dotenv": "^14.3.2",
+    "framer-motion": "^6.2.3",
     "gatsby": "^4.6.0",
     "gatsby-plugin-alias-imports": "^1.0.5",
     "gatsby-plugin-gdpr-cookies": "^2.0.8",
