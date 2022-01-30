@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 import { Container } from "@styles"
 import styled from "styled-components"
 import { Github, Codepen, Twitter, Mail, Logo } from "@images/icons"
+import { navLinks, socialLinks } from "@data"
 
 const Footer = ({ isDark }) => (
   <Container bgAccent as="footer">
@@ -12,28 +13,20 @@ const Footer = ({ isDark }) => (
           <Logo isDark={isDark} />
         </LogoContainer>
         <Social>
-          <a href="/">
-            <Github />
-          </a>
-          <a href="/">
-            <Codepen />
-          </a>
-          <a href="/">
-            <Twitter />
-          </a>
-          <a href="/">
-            <Mail />
-          </a>
+          {socialLinks.map(({ href, icon, label }) => (
+            <a href={href} target="_blank" rel="noreferrer" aria-label={label}>
+              {icon}
+            </a>
+          ))}
         </Social>
       </Flex>
 
       <Legal>Copyright &copy; 2020 - {new Date().getFullYear()}</Legal>
 
       <Nav>
-        <Link to="/">Home</Link>
-        <Link to="/">Projects</Link>
-        <Link to="/">About</Link>
-        <Link to="/">Contact</Link>
+        {navLinks.map(({ text, href }) => (
+          <Link to={href}>{text}</Link>
+        ))}
       </Nav>
     </FooterInner>
   </Container>

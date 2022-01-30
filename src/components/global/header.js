@@ -1,27 +1,17 @@
 import React, { useEffect, useState } from "react"
 import { Helmet } from "react-helmet"
 import { Link } from "gatsby"
-import {
-  Hamburger,
-  Times,
-  Sun,
-  Moon,
-  Github,
-  Codepen,
-  Twitter,
-  Mail,
-  Logo,
-} from "@images/icons"
-
 import styled, { css, keyframes } from "styled-components"
+import { Hamburger, Times, Sun, Moon, Logo } from "@images/icons"
 import { Container } from "@styles"
 import { useCurrentWidth } from "@hooks"
+import { navLinks, socialLinks } from "@data"
 
 const Header = ({ isDark, toggleDark }) => {
-  const [isOpen, toggleNav] = useState(false)
+  const [isOpen, setIsOpen] = useState(false)
   const width = useCurrentWidth()
 
-  useEffect(() => width > 900 && toggleNav(false), [width])
+  useEffect(() => width > 900 && setIsOpen(false), [width])
 
   return (
     <SiteHeader>
@@ -33,24 +23,19 @@ const Header = ({ isDark, toggleDark }) => {
           <Logo isDark={isDark} />
         </LogoLink>
 
-        <NavToggle id="nav-toggle" onClick={() => toggleNav(!isOpen)}>
+        <NavToggle id="nav-toggle" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <Times /> : <Hamburger />}
         </NavToggle>
 
         <Nav isOpen={isOpen}>
           <NavLinks>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/projects">Projects</Link>
-            </li>
-            <li>
-              <Link to="/#about">About</Link>
-            </li>
-            <li>
-              <Link to="#contact">Contact</Link>
-            </li>
+            {navLinks.map(({ text, href }) => (
+              <li key={href}>
+                <Link to={href} onClick={() => setIsOpen(false)}>
+                  {text}
+                </Link>
+              </li>
+            ))}
           </NavLinks>
 
           <ThemeToggle
@@ -61,18 +46,16 @@ const Header = ({ isDark, toggleDark }) => {
           </ThemeToggle>
 
           <Social>
-            <a href="/">
-              <Github />
-            </a>
-            <a href="/">
-              <Codepen />
-            </a>
-            <a href="/">
-              <Twitter />
-            </a>
-            <a href="/">
-              <Mail />
-            </a>
+            {socialLinks.map(({ href, icon, label }) => (
+              <a
+                href={href}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={label}
+              >
+                {icon}
+              </a>
+            ))}
           </Social>
         </Nav>
       </NavContainer>

@@ -113,6 +113,7 @@ module.exports = {
           "@styles": path.resolve(__dirname, "src/styles/"),
           "@animations": path.resolve(__dirname, "src/components/animations"),
           "@hooks": path.resolve(__dirname, "src/hooks"),
+          "@data": path.resolve(__dirname, "src/data.js"),
         },
       },
     },
