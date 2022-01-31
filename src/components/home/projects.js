@@ -39,7 +39,9 @@ const Projects = () => {
   return (
     <Container bgAccent section>
       <Container wrapper fcc>
-        <Title>Recent Projects</Title>
+        <Fade>
+          <Title>Recent Projects</Title>
+        </Fade>
 
         <Search data={data} />
 

@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import styled from "styled-components"
 import NoResults from "@components/home/noResults"
 import { Input } from "@styles"
+import { Fade } from "@animations"
 import Project from "@components/global/projectCard"
 import { CircleX } from "@images/icons"
 
@@ -43,16 +44,20 @@ const Search = ({ data }) => {
   return (
     <>
       <SearchContainer>
-        <SearchInput
-          type="text"
-          placeholder="Search by Name or Tag"
-          value={search}
-          onChange={e => setSearch(e.target.value)}
-        />
+        <Fade>
+          <SearchInput
+            type="text"
+            placeholder="Search by Name or Tag"
+            value={search}
+            onChange={e => setSearch(e.target.value)}
+          />
+        </Fade>
 
         {search && (
           <Delete onClick={() => setSearch("")}>
-            <CircleX />
+            <Fade inline duration={0.1} style={{ display: "block" }}>
+              <CircleX />
+            </Fade>
           </Delete>
         )}
       </SearchContainer>

@@ -2,6 +2,7 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 import { Container } from "@styles"
+import { Fade } from "@animations"
 import Search from "@global/search"
 
 const Projects = () => {
@@ -35,7 +36,9 @@ const Projects = () => {
   return (
     <Container bgAccent sectionSm>
       <Container wrapper fcc>
-        <Title>Search Projects</Title>
+        <Fade>
+          <Title>Search Projects</Title>
+        </Fade>
 
         <Search data={data} />
       </Container>
