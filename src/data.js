@@ -12,7 +12,7 @@ export const navLinks = [
   },
   {
     text: "About",
-    href: "/about",
+    href: "/#about",
   },
   {
     text: "Contact",
@@ -22,17 +22,17 @@ export const navLinks = [
 
 export const socialLinks = [
   {
-    href: "/",
+    href: "https://github.com/stormcloud266",
     icon: <Github />,
     label: "Visit my Github profile.",
   },
   {
-    href: "/",
+    href: "https://codepen.io/stormcloud266",
     icon: <Codepen />,
     label: "Visit my Codepen profile.",
   },
   {
-    href: "/",
+    href: "https://twitter.com/stormcloud266",
     icon: <Twitter />,
     label: "Visit my Twitter profile.",
   },

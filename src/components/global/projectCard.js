@@ -59,4 +59,6 @@ const Text = styled.span`
   padding: var(--s-8) var(--s-7);
 `
 
-const Title = styled.h3``
+const Title = styled.h3`
+  margin-bottom: 10px;
+`
