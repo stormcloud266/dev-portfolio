@@ -1,5 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
+import styled from "styled-components"
 import { Container } from "@styles"
 import Search from "@global/search"
 
@@ -34,7 +35,7 @@ const Projects = () => {
   return (
     <Container bgAccent sectionSm>
       <Container wrapper fcc>
-        <h2>Search Projects</h2>
+        <Title>Search Projects</Title>
 
         <Search data={data} />
       </Container>
@@ -43,3 +44,12 @@ const Projects = () => {
 }
 
 export default Projects
+
+const Title = styled.h2`
+  margin-bottom: var(--s-4);
+  font-size: var(--s-11);
+
+  @media screen and (max-width: 61.25em) {
+    font-size: var(--s-10);
+  }
+`

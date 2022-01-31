@@ -2,10 +2,10 @@ import React from "react"
 import styled from "styled-components"
 import { Fade } from "@animations"
 
-const BlockTitle = ({ children, wide }) => (
+const BlockTitle = ({ children, wide, smText }) => (
   <Container wide={wide}>
     <Fade duration={0.7}>
-      <Title>{children}</Title>
+      <Title smText={smText}>{children}</Title>
     </Fade>
   </Container>
 )
@@ -13,13 +13,14 @@ const BlockTitle = ({ children, wide }) => (
 export default BlockTitle
 
 const Container = styled.div`
-  max-width: ${props => (props.wide ? "68rem" : "47rem")};
+  max-width: ${props => (props.wide ? "76rem" : "47rem")};
   margin: 0 1.7rem;
 `
 
 const Title = styled.h1`
+  font-size: ${props => (props.smText ? "var(--s-11)" : "var(--s-12)")};
+
   color: white;
-  font-size: 5.4rem;
   text-transform: uppercase;
   display: inline;
   background-color: var(--color-black);
@@ -30,14 +31,18 @@ const Title = styled.h1`
   text-shadow: 1.5px 1.5px var(--color-cta);
 
   @media screen and (max-width: 61.25em) {
-    font-size: 4rem;
+    font-size: var(--s-11);
     text-shadow: 1.5px 1.5px var(--color-cta);
     line-height: 2;
   }
 
-  @media screen and (max-width: 25em) {
-    font-size: 3.2rem;
+  @media screen and (max-width: 40em) {
+    font-size: ${props => (props.smText ? "var(--s-9)" : "var(--s-10)")};
     text-shadow: 1px 1px var(--color-cta);
     line-height: 2.2;
+  }
+
+  @media screen and (max-width: 25em) {
+    font-size: var(--s-9);
   }
 `

@@ -39,15 +39,17 @@ const Projects = () => {
   return (
     <Container bgAccent section>
       <Container wrapper fcc>
-        <h2>My Recent Projects</h2>
+        <Title>Recent Projects</Title>
 
         <Search data={data} />
 
-        <Fade y={20}>
-          <ButtonMargin as={Link} to="/projects">
-            All Projects
-          </ButtonMargin>
-        </Fade>
+        <ButtonContainer>
+          <Fade y={20}>
+            <Button as={Link} to="/projects">
+              All Projects
+            </Button>
+          </Fade>
+        </ButtonContainer>
       </Container>
     </Container>
   )
@@ -55,6 +57,15 @@ const Projects = () => {
 
 export default Projects
 
-const ButtonMargin = styled(Button)`
+const ButtonContainer = styled.div`
   margin-top: var(--s-11);
+`
+
+const Title = styled.h2`
+  margin-bottom: var(--s-4);
+  font-size: var(--s-11);
+
+  @media screen and (max-width: 61.25em) {
+    font-size: var(--s-10);
+  }
 `

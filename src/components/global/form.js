@@ -127,7 +127,11 @@ const TextContainer = styled.div`
 `
 
 const Title = styled.h2`
-  font-size: var(--s-8);
   margin-bottom: var(--s-6);
+  font-size: var(--s-10);
+
+  @media screen and (max-width: 61.25em) {
+    font-size: var(--s-9);
+  }
 `
 const Body = styled.p``

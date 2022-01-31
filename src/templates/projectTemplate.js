@@ -22,7 +22,7 @@ const ProjectTemplate = ({ data }) => {
 
   return (
     <Layout>
-      <Hero title={title} spacer />
+      <Hero title={title} smText spacer />
 
       <Header wrapper>
         <InfoContainer>
@@ -59,6 +59,7 @@ const ProjectTemplate = ({ data }) => {
           imgStyle={{
             objectPosition: "top center",
           }}
+          alt={`Home page for ${title}`}
         />
       </Header>
 

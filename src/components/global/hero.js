@@ -3,11 +3,11 @@ import styled from "styled-components"
 import { Container } from "@styles"
 import BlockTitle from "@components/global/blockTitle"
 
-const Hero = ({ title, spacer }) => {
+const Hero = ({ title, spacer, smText }) => {
   return (
     <StyledHero>
       <Container wrapper>
-        <BlockTitle>{title}</BlockTitle>
+        <BlockTitle smText={smText}>{title}</BlockTitle>
         {spacer && <Spacer />}
       </Container>
     </StyledHero>

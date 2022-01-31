@@ -111,7 +111,7 @@ const ProjectsContainer = styled.div`
   display: grid;
   gap: var(--s-7);
   grid-template-columns: repeat(3, 1fr);
-  margin-top: var(--s-11);
+  margin-top: var(--s-13);
   @media screen and (max-width: 61.25em) {
     grid-template-columns: repeat(2, 1fr);
   }
