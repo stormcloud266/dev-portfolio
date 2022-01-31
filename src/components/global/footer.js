@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import { Container } from "@styles"
 import styled from "styled-components"
-import { Github, Codepen, Twitter, Mail, Logo } from "@images/icons"
+import { Logo } from "@images/icons"
 import { navLinks, socialLinks } from "@data"
 
 const Footer = ({ isDark }) => (
@@ -14,7 +14,13 @@ const Footer = ({ isDark }) => (
         </LogoContainer>
         <Social>
           {socialLinks.map(({ href, icon, label }) => (
-            <a href={href} target="_blank" rel="noreferrer" aria-label={label}>
+            <a
+              href={href}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={label}
+              key={label}
+            >
               {icon}
             </a>
           ))}
@@ -25,7 +31,9 @@ const Footer = ({ isDark }) => (
 
       <Nav>
         {navLinks.map(({ text, href }) => (
-          <Link to={href}>{text}</Link>
+          <Link to={href} key={text}>
+            {text}
+          </Link>
         ))}
       </Nav>
     </FooterInner>

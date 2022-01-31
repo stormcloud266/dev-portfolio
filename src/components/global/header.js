@@ -30,7 +30,7 @@ const Header = ({ isDark, toggleDark }) => {
         <Nav isOpen={isOpen}>
           <NavLinks>
             {navLinks.map(({ text, href }) => (
-              <li key={href}>
+              <li key={text}>
                 <Link to={href} onClick={() => setIsOpen(false)}>
                   {text}
                 </Link>
@@ -52,6 +52,7 @@ const Header = ({ isDark, toggleDark }) => {
                 target="_blank"
                 rel="noreferrer"
                 aria-label={label}
+                key={label}
               >
                 {icon}
               </a>

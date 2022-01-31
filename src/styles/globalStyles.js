@@ -72,6 +72,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: var(--font-header);
     line-height: 1.3;
     color: var(--color-text-headers);
+    font-weight: 900;
   }
 
   h1 {

@@ -50,7 +50,7 @@ module.exports = {
       resolve: `gatsby-plugin-web-font-loader`,
       options: {
         google: {
-          families: ["Open Sans:400", "Yantramanav:700,400"],
+          families: ["Open Sans:400", "Yantramanav:900,400"],
         },
       },
     },

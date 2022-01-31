@@ -9,7 +9,7 @@ import BlockTitle from "@components/global/blockTitle"
 const Hero = () => (
   <HomeHero>
     <Dots />
-    <BG />
+    <Bg />
     <Container wrapper>
       <Text>
         <BlockTitle wide>
@@ -70,7 +70,7 @@ const ButtonContainer = styled.div`
   margin-top: var(--s-8);
   display: flex;
 `
-const BG = styled.div`
+const Bg = styled.div`
   width: 80%;
   height: 100%;
   position: absolute;

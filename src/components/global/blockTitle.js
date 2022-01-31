@@ -27,7 +27,7 @@ const Title = styled.h1`
   box-decoration-break: clone;
   line-height: 1.8;
   box-shadow: -7px 0 0 10px #181a1b, 7px 0 0 10px #181a1b;
-  text-shadow: 2px 2px var(--color-cta);
+  text-shadow: 1.5px 1.5px var(--color-cta);
 
   @media screen and (max-width: 61.25em) {
     font-size: 4rem;
