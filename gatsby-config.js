@@ -27,30 +27,36 @@ module.exports = {
       },
     },
     `gatsby-plugin-sharp`,
-
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
-          `gatsby-remark-relative-images`,
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 950,
-              linkImagesToOriginal: false,
-            },
-          },
-        ],
-      },
-    },
+    // {
+    //   resolve: `gatsby-transformer-remark`,
+    //   options: {
+    //     plugins: [
+    //       `gatsby-remark-relative-images`,
+    //       {
+    //         resolve: `gatsby-remark-images`,
+    //         options: {
+    //           maxWidth: 950,
+    //           linkImagesToOriginal: false,
+    //         },
+    //       },
+    //     ],
+    //   },
+    // },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-image`,
     `gatsby-plugin-styled-components`,
     {
+      resolve: "gatsby-source-contentful",
+      options: {
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+      },
+    },
+    {
       resolve: `gatsby-plugin-web-font-loader`,
       options: {
         google: {
-          families: ["Open Sans:400", "Yantramanav:900,400"],
+          families: ["Open Sans:400", "Poppins:700,400"],
         },
       },
     },

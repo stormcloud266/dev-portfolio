@@ -1,25 +1,68 @@
+// exports.createPages = async function ({ actions, graphql }) {
+//   const { data } = await graphql(`
+//     query {
+//       projects: allMarkdownRemark {
+//         edges {
+//           node {
+//             frontmatter {
+//               slug
+//             }
+//           }
+//         }
+//       }
+//     }
+//   `)
+
+//   const projects = data.projects.edges
+
+//   projects.forEach(edge => {
+//     const slug = edge.node.frontmatter.slug
+
+//     actions.createPage({
+//       path: `projects${slug}`,
+//       component: require.resolve(`./src/templates/projectTemplate.js`),
+//       context: { slug: slug },
+//     })
+//   })
+// }
+
 exports.createPages = async function ({ actions, graphql }) {
   const { data } = await graphql(`
     query {
-      projects: allMarkdownRemark {
+      resources: allContentfulResource {
         edges {
           node {
-            frontmatter {
-              slug
-            }
+            slug
+          }
+        }
+      }
+      studies: allContentfulCaseStudy {
+        edges {
+          node {
+            slug
           }
         }
       }
     }
   `)
 
-  const projects = data.projects.edges
+  // const resources = data.resources.edges
 
-  projects.forEach(edge => {
-    const slug = edge.node.frontmatter.slug
+  // resources.forEach((edge) => {
+  // 	const slug = edge.node.slug
+  // 	actions.createPage({
+  // 		path: `resources/${slug}`,
+  // 		component: require.resolve(`./src/templates/resourcesTemp.js`),
+  // 		context: { slug: slug },
+  // 	})
+  // })
 
+  const studies = data.studies.edges
+
+  studies.forEach(edge => {
+    const slug = edge.node.slug
     actions.createPage({
-      path: `projects${slug}`,
+      path: `projects/${slug}`,
       component: require.resolve(`./src/templates/projectTemplate.js`),
       context: { slug: slug },
     })

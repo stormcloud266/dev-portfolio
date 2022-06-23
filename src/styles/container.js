@@ -60,7 +60,7 @@ const Container = styled.div`
 
   @media screen and (max-width: 61.25em) {
     ${props =>
-      props.wrapperSmOnTab &&
+      props.wrapperSmOnMd &&
       css`
         max-width: 60rem;
       `}

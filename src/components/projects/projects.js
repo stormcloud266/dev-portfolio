@@ -8,24 +8,30 @@ import Search from "@global/search"
 const Projects = () => {
   const data = useStaticQuery(graphql`
     query ProjectsProjects {
-      allMarkdownRemark(sort: { order: ASC, fields: frontmatter___order }) {
+      allContentfulCaseStudy(
+        limit: 6
+        sort: { fields: last_updated, order: DESC }
+      ) {
         edges {
           node {
-            frontmatter {
-              slug
-              title
-              excerpt
-              display_tags
-              filter_tags
-              featured_image {
-                childImageSharp {
-                  gatsbyImageData(
-                    width: 750
-                    quality: 100
-                    placeholder: BLURRED
-                  )
-                }
-              }
+            title
+            slug
+            intro_text {
+              intro_text
+            }
+            display_tags {
+              list
+            }
+            filter_tags {
+              list
+            }
+            portfolio_image {
+              gatsbyImageData(
+                layout: CONSTRAINED
+                width: 1000
+                placeholder: BLURRED
+                quality: 100
+              )
             }
           }
         }

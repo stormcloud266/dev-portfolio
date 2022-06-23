@@ -155,6 +155,42 @@ export const LinkIcon = () => (
   </svg>
 )
 
+export const CheckCircle = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    className="icon icon-tabler icon-tabler-circle-check"
+    width={24}
+    height={24}
+    viewBox="0 0 24 24"
+    strokeWidth={1.5}
+    stroke="currentColor"
+    fill="none"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M0 0h24v24H0z" stroke="none" />
+    <circle cx={12} cy={12} r={9} />
+    <path d="m9 12 2 2 4-4" />
+  </svg>
+)
+export const ArrowCurve = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    className="icon icon-tabler icon-tabler-corner-down-right"
+    width={24}
+    height={24}
+    viewBox="0 0 24 24"
+    strokeWidth={1.5}
+    stroke="currentColor"
+    fill="none"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M0 0h24v24H0z" stroke="none" />
+    <path d="M6 6v6a3 3 0 0 0 3 3h10l-4-4m0 8 4-4" />
+  </svg>
+)
+
 export const Palette = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"

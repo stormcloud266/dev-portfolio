@@ -3,22 +3,29 @@ import styled from "styled-components"
 import { graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "@components/global/layout"
-import { Container, Button, Blog } from "@styles"
+import { Container, Button } from "@styles"
 import Tags from "@components/global/tags"
+import Overview from "@components/projectPage/overview"
+import DevicesImage from "@components/projectPage/devicesImage"
+import Process from "@components/projectPage/process"
+import Challenges from "@components/projectPage/challenges"
 import { LinkIcon, Github } from "@images/icons"
 import Hero from "@global/hero"
 
 const ProjectTemplate = ({ data }) => {
   const {
     title,
-    excerpt,
+    intro_text,
     display_tags,
-    featured_image,
-    live_link,
+    hero_image,
+    live_site_url,
     github_link,
-  } = data.project.frontmatter
-
-  const { html } = data.project
+    motivation_header,
+    motivation_body,
+    solution_header,
+    solution_body,
+    multi_device_image,
+  } = data.project
 
   return (
     <Layout>
@@ -27,11 +34,11 @@ const ProjectTemplate = ({ data }) => {
       <Header wrapper>
         <InfoContainer>
           <LinksContainer>
-            {live_link && (
+            {live_site_url && (
               <Button
                 primary
                 as="a"
-                href={live_link}
+                href={live_site_url}
                 target="_blank"
                 rel="noreferrer"
               >
@@ -51,11 +58,11 @@ const ProjectTemplate = ({ data }) => {
             )}
           </LinksContainer>
 
-          <Tags tags={display_tags} />
-          <Excerpt>{excerpt}</Excerpt>
+          <Tags tags={display_tags.list} />
+          <Excerpt>{intro_text.intro_text}</Excerpt>
         </InfoContainer>
         <Image
-          image={getImage(featured_image)}
+          image={getImage(hero_image)}
           imgStyle={{
             objectPosition: "top center",
           }}
@@ -63,11 +70,36 @@ const ProjectTemplate = ({ data }) => {
         />
       </Header>
 
-      <Container bgAccent>
-        <Container wrapper wrapperSm sectionSm>
-          <Blog dangerouslySetInnerHTML={{ __html: html }} />
-        </Container>
-      </Container>
+      <Overview
+        motivation_header={motivation_header}
+        motivation_body={motivation_body}
+        solution_header={solution_header}
+        solution_body={solution_body}
+      />
+
+      <DevicesImage image={multi_device_image} />
+
+      <Process
+        body={"s"}
+        list={[
+          "Built on Gatsby for generating blog posts",
+          "Styled using SCSS modules",
+          "Hosted on Netlify and uses Contentful as CMS",
+          "Google Ads and Facebook Pixel integration",
+          "Multiple contact forms for different needs",
+          "Generated local landing pages",
+          "Lighthouse optimized for better performance",
+        ]}
+      />
+
+      <Challenges
+        list={[
+          "Built on Gatsby for generating blog posts. Built on Gatsby for generating blog posts",
+          "Styled using SCSS modules. Styled using SCSS modules",
+          "Hosted on Netlify and uses Contentful as CMS. Hosted on Netlify and uses Contentful as CMS",
+          "Google Ads and Facebook Pixel integration. Google Ads and Facebook Pixel integration. Google Ads and Facebook Pixel integration. Google Ads and Facebook Pixel integration",
+        ]}
+      />
     </Layout>
   )
 }
@@ -145,21 +177,51 @@ const Excerpt = styled.p`
 
 export const query = graphql`
   query getCaseStudy($slug: String!) {
-    project: markdownRemark(frontmatter: { slug: { eq: $slug } }) {
-      frontmatter {
-        title
-        slug
-        excerpt
-        live_link
-        github_link
-        display_tags
-        featured_image {
-          childImageSharp {
-            gatsbyImageData(width: 950, quality: 100, placeholder: BLURRED)
-          }
-        }
+    project: contentfulCaseStudy(slug: { eq: $slug }) {
+      title
+      intro_text {
+        intro_text
       }
-      html
+      display_tags {
+        list
+      }
+      motivation_header
+      motivation_body {
+        raw
+      }
+      solution_header
+      solution_body {
+        raw
+      }
+      live_site_url
+      github_link
+      hero_image {
+        gatsbyImageData(
+          layout: CONSTRAINED
+          width: 1000
+          placeholder: TRACED_SVG
+          quality: 100
+        )
+      }
+      multi_device_image {
+        gatsbyImageData(
+          layout: CONSTRAINED
+          width: 1000
+          placeholder: TRACED_SVG
+          quality: 100
+        )
+      }
+      screenshot_gallery {
+        file {
+          url
+        }
+        gatsbyImageData(
+          layout: CONSTRAINED
+          width: 700
+          placeholder: BLURRED
+          quality: 100
+        )
+      }
     }
   }
 `

@@ -9,23 +9,23 @@ import { CircleX } from "@images/icons"
 const Search = ({ data }) => {
   const [search, setSearch] = useState("")
 
-  const projects = data.allMarkdownRemark.edges.map(project => {
+  const projects = data.allContentfulCaseStudy.edges.map(project => {
     const {
       title,
-      excerpt,
       slug,
-      featured_image,
+      portfolio_image,
+      intro_text,
       filter_tags,
       display_tags,
-    } = project.node.frontmatter
+    } = project.node
 
     return {
       title,
-      excerpt,
+      excerpt: intro_text.intro_text,
       slug,
-      image: featured_image,
-      filterTags: filter_tags,
-      tags: display_tags,
+      image: portfolio_image,
+      filterTags: filter_tags.list,
+      tags: display_tags.list,
     }
   })
 

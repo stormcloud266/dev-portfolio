@@ -4,7 +4,7 @@ import styled, { css } from "styled-components"
 import { Fade } from "@animations"
 
 const Footer = () => (
-  <Container wrapper wrapperSmOnTab sectionSm id="contact">
+  <Container wrapper wrapperSmOnMd section id="contact">
     <Flex>
       <FadeContainer>
         <Form>
@@ -71,6 +71,8 @@ const Form = styled.form`
 
   ${Input} {
     border-color: ${props => (props.theme.isDark ? "#546069" : "#212527")};
+    position: relative;
+    z-index: 3;
   }
   @media screen and (max-width: 61.25em) {
     padding-right: 0;
@@ -108,13 +110,15 @@ const Label = styled.label`
   line-height: 1;
   background-color: var(--color-contrast);
   padding: 6px var(--s-3) 4px;
-  transition: color 0.2s;
+  transition: all 0.2s;
   color: white;
+  position: relative;
   background-color: ${props =>
     props.theme.isDark ? "var(--color-gray-medium)" : "#212527"};
 
   ${Input}:focus + & {
     color: var(--color-cta);
+    box-shadow: 3px 3px var(--color-cta);
   }
 `
 
