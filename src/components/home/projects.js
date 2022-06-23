@@ -86,6 +86,9 @@ const Grid = styled.div`
   gap: 0.8rem;
   padding-left: 0.8rem;
   padding-right: 0.8rem;
+  max-width: 172rem;
+  margin-left: auto;
+  margin-right: auto;
 
   @media screen and (max-width: 61.25em) {
     grid-template-columns: repeat(2, 1fr);
@@ -96,10 +99,11 @@ const ProjectLink = styled(Link)`
   border: 1px solid;
   border-color: ${props =>
     props.theme.isDark ? "var(--color-gray-medium)" : "#bdcbd4"};
-  transition: opacity 0.2s, border 0.2s, border-color 0.2s, box-shadow 0.2s;
+  transition: border 0.2s, border-color 0.2s, box-shadow 0.2s;
+  background-color: ${props =>
+    props.theme.isDark ? "var(--color-cta)" : "var(--color-purple)"};
 
   :hover {
-    opacity: 0.8;
     border-color: var(--color-purple);
     box-shadow: ${props =>
       props.theme.isDark
@@ -113,6 +117,11 @@ const ProjectLink = styled(Link)`
 
 const ProjectImage = styled(GatsbyImage)`
   height: 30rem;
+  transition: opacity 0.2s;
+
+  ${ProjectLink}:hover & {
+    opacity: 0.5;
+  }
 
   @media screen and (max-width: 61.25em) {
     height: 26rem;

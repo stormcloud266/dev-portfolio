@@ -6,6 +6,7 @@ import Layout from "@components/global/layout"
 import { Container, Button, Blog } from "@styles"
 import Tags from "@components/global/tags"
 import Overview from "@components/projectPage/overview"
+import DevicesImage from "@components/projectPage/devicesImage"
 import { LinkIcon, Github } from "@images/icons"
 import Hero from "@global/hero"
 
@@ -21,9 +22,8 @@ const ProjectTemplate = ({ data }) => {
     motivation_body,
     solution_header,
     solution_body,
+    multi_device_image,
   } = data.project
-
-  // const { html } = data.project
 
   return (
     <Layout>
@@ -74,6 +74,8 @@ const ProjectTemplate = ({ data }) => {
         solution_header={solution_header}
         solution_body={solution_body}
       />
+
+      <DevicesImage image={multi_device_image} />
 
       {/* 
       <Container bgAccent>

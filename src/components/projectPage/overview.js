@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
 import { Container } from "@styles"
+import { Fade } from "@animations"
 
 const Overview = ({
   motivation_header,
@@ -13,18 +14,30 @@ const Overview = ({
     <Container bgAccent section>
       <Container wrapper>
         <Section>
-          <Label>The Motivation</Label>
+          <Label>
+            <Fade x={-10} inline>
+              The Motivation
+            </Fade>
+          </Label>
           <TextContainer>
-            <Title>{motivation_header}</Title>
-            {renderRichText(motivation_body)}
+            <Fade>
+              <Title>{motivation_header}</Title>
+            </Fade>
+            <Fade delay={0.2}>{renderRichText(motivation_body)}</Fade>
           </TextContainer>
         </Section>
 
         <Section>
-          <Label>The Solution</Label>
+          <Label>
+            <Fade x={-10} inline>
+              The Solution
+            </Fade>
+          </Label>
           <TextContainer>
-            <Title>{solution_header}</Title>
-            {renderRichText(solution_body)}
+            <Fade>
+              <Title>{solution_header}</Title>
+            </Fade>
+            <Fade delay={0.2}>{renderRichText(solution_body)}</Fade>
           </TextContainer>
         </Section>
       </Container>
