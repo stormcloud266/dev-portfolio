@@ -15,8 +15,8 @@ const Search = ({ data }) => {
       slug,
       portfolio_image,
       intro_text,
-      // filter_tags,
-      // display_tags,
+      filter_tags,
+      display_tags,
     } = project.node
 
     return {
@@ -24,8 +24,8 @@ const Search = ({ data }) => {
       excerpt: intro_text.intro_text,
       slug,
       image: portfolio_image,
-      // filterTags: filter_tags,
-      tags: ["react", "scss", "headless cms"],
+      filterTags: filter_tags.list,
+      tags: display_tags.list,
     }
   })
 

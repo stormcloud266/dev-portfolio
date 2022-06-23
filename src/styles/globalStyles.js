@@ -61,7 +61,7 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     font-size: var(--s-6);
     font-family: var(--font-body);
-    line-height: 1.6;
+    line-height: 1.7;
     position: relative;
     overflow-x: hidden;
   }

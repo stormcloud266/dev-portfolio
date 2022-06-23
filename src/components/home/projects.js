@@ -11,6 +11,7 @@ const Projects = () => {
       allContentfulCaseStudy(
         limit: 6
         sort: { fields: last_updated, order: DESC }
+        filter: { featured_study: { eq: true } }
       ) {
         edges {
           node {

@@ -5,33 +5,38 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "@components/global/layout"
 import { Container, Button, Blog } from "@styles"
 import Tags from "@components/global/tags"
+import Overview from "@components/projectPage/overview"
 import { LinkIcon, Github } from "@images/icons"
 import Hero from "@global/hero"
 
 const ProjectTemplate = ({ data }) => {
-  // const {
-  //   title,
-  //   excerpt,
-  //   display_tags,
-  //   featured_image,
-  //   live_link,
-  //   github_link,
-  // } = data.project.frontmatter
+  const {
+    title,
+    intro_text,
+    display_tags,
+    hero_image,
+    live_site_url,
+    github_link,
+    motivation_header,
+    motivation_body,
+    solution_header,
+    solution_body,
+  } = data.project
 
   // const { html } = data.project
 
   return (
     <Layout>
-      {/* <Hero title={title} smText spacer />
+      <Hero title={title} smText spacer />
 
       <Header wrapper>
         <InfoContainer>
           <LinksContainer>
-            {live_link && (
+            {live_site_url && (
               <Button
                 primary
                 as="a"
-                href={live_link}
+                href={live_site_url}
                 target="_blank"
                 rel="noreferrer"
               >
@@ -51,11 +56,11 @@ const ProjectTemplate = ({ data }) => {
             )}
           </LinksContainer>
 
-          <Tags tags={display_tags} />
-          <Excerpt>{excerpt}</Excerpt>
+          <Tags tags={display_tags.list} />
+          <Excerpt>{intro_text.intro_text}</Excerpt>
         </InfoContainer>
         <Image
-          image={getImage(featured_image)}
+          image={getImage(hero_image)}
           imgStyle={{
             objectPosition: "top center",
           }}
@@ -63,6 +68,14 @@ const ProjectTemplate = ({ data }) => {
         />
       </Header>
 
+      <Overview
+        motivation_header={motivation_header}
+        motivation_body={motivation_body}
+        solution_header={solution_header}
+        solution_body={solution_body}
+      />
+
+      {/* 
       <Container bgAccent>
         <Container wrapper wrapperSm sectionSm>
           <Blog dangerouslySetInnerHTML={{ __html: html }} />
@@ -143,23 +156,63 @@ const Excerpt = styled.p`
   padding-top: var(--s-3);
 `
 
-// export const query = graphql`
-//   query getCaseStudy($slug: String!) {
-//     project: markdownRemark(frontmatter: { slug: { eq: $slug } }) {
-//       frontmatter {
-//         title
-//         slug
-//         excerpt
-//         live_link
-//         github_link
-//         display_tags
-//         featured_image {
-//           childImageSharp {
-//             gatsbyImageData(width: 950, quality: 100, placeholder: BLURRED)
-//           }
-//         }
-//       }
-//       html
-//     }
-//   }
-// `
+export const query = graphql`
+  query getCaseStudy($slug: String!) {
+    project: contentfulCaseStudy(slug: { eq: $slug }) {
+      title
+      role
+      intro_text {
+        intro_text
+      }
+      display_tags {
+        list
+      }
+      motivation_header
+      motivation_body {
+        raw
+      }
+      solution_header
+      solution_body {
+        raw
+      }
+      final_result_body {
+        raw
+      }
+      live_site_url
+      github_link
+      hero_image {
+        gatsbyImageData(
+          layout: CONSTRAINED
+          width: 1000
+          placeholder: TRACED_SVG
+          quality: 100
+        )
+      }
+      multi_device_image {
+        gatsbyImageData(
+          layout: CONSTRAINED
+          width: 1000
+          placeholder: TRACED_SVG
+          quality: 100
+        )
+      }
+      final_result_image {
+        file {
+          url
+        }
+        gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED, quality: 100)
+      }
+      screenshot_gallery {
+        file {
+          url
+        }
+        gatsbyImageData(
+          layout: CONSTRAINED
+          width: 700
+          placeholder: BLURRED
+          quality: 100
+        )
+      }
+    }
+  }
+`

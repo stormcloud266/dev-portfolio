@@ -26,7 +26,7 @@ const Title = styled.h1`
   background-color: var(--color-black);
   background-color: #181a1b;
   box-decoration-break: clone;
-  line-height: 1.8;
+  line-height: 1.9;
   box-shadow: -7px 0 0 10px #181a1b, 7px 0 0 10px #181a1b;
   text-shadow: 1.5px 1.5px var(--color-cta);
 

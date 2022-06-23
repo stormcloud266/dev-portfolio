@@ -19,6 +19,12 @@ const Projects = () => {
             intro_text {
               intro_text
             }
+            display_tags {
+              list
+            }
+            filter_tags {
+              list
+            }
             portfolio_image {
               gatsbyImageData(
                 layout: CONSTRAINED
