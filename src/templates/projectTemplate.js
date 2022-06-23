@@ -179,7 +179,6 @@ export const query = graphql`
   query getCaseStudy($slug: String!) {
     project: contentfulCaseStudy(slug: { eq: $slug }) {
       title
-      role
       intro_text {
         intro_text
       }
