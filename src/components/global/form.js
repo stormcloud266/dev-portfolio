@@ -4,7 +4,7 @@ import styled, { css } from "styled-components"
 import { Fade } from "@animations"
 
 const Footer = () => (
-  <Container wrapper wrapperSmOnTab section id="contact">
+  <Container wrapper wrapperSmOnMd section id="contact">
     <Flex>
       <FadeContainer>
         <Form>

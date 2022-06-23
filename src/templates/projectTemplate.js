@@ -7,6 +7,7 @@ import { Container, Button, Blog } from "@styles"
 import Tags from "@components/global/tags"
 import Overview from "@components/projectPage/overview"
 import DevicesImage from "@components/projectPage/devicesImage"
+import Process from "@components/projectPage/process"
 import { LinkIcon, Github } from "@images/icons"
 import Hero from "@global/hero"
 
@@ -76,6 +77,21 @@ const ProjectTemplate = ({ data }) => {
       />
 
       <DevicesImage image={multi_device_image} />
+
+      <Process
+        body={"s"}
+        list={[
+          "Built on Gatsby for generating blog posts",
+          "Styled using SCSS modules",
+          "Hosted on Netlify and uses Contentful as CMS",
+          "Google Ads and Facebook Pixel integration",
+          "Multiple contact forms for different needs",
+          "Generated local landing pages",
+          "Lighthouse optimized for better performance",
+        ]}
+      />
+
+      {/* the challenges */}
 
       {/* 
       <Container bgAccent>
