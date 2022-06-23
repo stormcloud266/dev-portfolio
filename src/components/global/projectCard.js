@@ -7,9 +7,21 @@ import { Fade } from "@animations"
 
 const Project = ({ title, tags, excerpt, slug, image }) => (
   <Fade y={20} threshold={0}>
-    <Card to={`/projects${slug}`}>
+    <Card to={`/projects/${slug}`}>
       <CoverImage>
-        <GatsbyImage image={getImage(image)} alt="" />
+        <ProjectImage
+          image={getImage(image)}
+          alt=""
+          layout="constrained"
+          width={400}
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            height: "100%",
+            width: "100%",
+          }}
+        />
       </CoverImage>
       <Text>
         <Title>{title}</Title>
@@ -53,7 +65,12 @@ const Card = styled(Link)`
 const CoverImage = styled.span`
   display: block;
   border-bottom: 1px solid var(--color-bg-secondary);
+  height: 22rem;
+  position: relative;
 `
+
+const ProjectImage = styled(GatsbyImage)``
+
 const Text = styled.span`
   display: block;
   padding: var(--s-8) var(--s-7);
@@ -61,4 +78,5 @@ const Text = styled.span`
 
 const Title = styled.h3`
   margin-bottom: 10px;
+  font-size: 2.3rem;
 `

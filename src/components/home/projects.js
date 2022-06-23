@@ -1,34 +1,28 @@
 import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import styled from "styled-components"
 import { Fade } from "@animations"
 import { Container, Button } from "@styles"
-import Search from "@global/search"
 
 const Projects = () => {
   const data = useStaticQuery(graphql`
     query HomeProjects {
-      allMarkdownRemark(
-        sort: { order: ASC, fields: frontmatter___order }
+      allContentfulCaseStudy(
         limit: 6
+        sort: { fields: last_updated, order: DESC }
       ) {
         edges {
           node {
-            frontmatter {
-              slug
-              title
-              excerpt
-              display_tags
-              filter_tags
-              featured_image {
-                childImageSharp {
-                  gatsbyImageData(
-                    width: 750
-                    quality: 100
-                    placeholder: BLURRED
-                  )
-                }
-              }
+            title
+            slug
+            portfolio_image {
+              gatsbyImageData(
+                layout: CONSTRAINED
+                width: 1000
+                placeholder: BLURRED
+                quality: 100
+              )
             }
           }
         }
@@ -38,17 +32,30 @@ const Projects = () => {
 
   return (
     <Container bgAccent section>
-      <Container wrapper fcc>
+      <Container wrappers fcc>
         <Fade>
           <Title>Recent Projects</Title>
         </Fade>
 
-        <Search data={data} />
+        <Grid>
+          {data.allContentfulCaseStudy.edges.map(({ node }) => {
+            console.log("node: ", node)
+            return (
+              <ProjectLink
+                to={`projects/${node.slug}`}
+                key={node.slug}
+                aria-label={`Go to ${node.title} project.`}
+              >
+                <ProjectImage image={getImage(node.portfolio_image)} alt="" />
+              </ProjectLink>
+            )
+          })}
+        </Grid>
 
         <ButtonContainer>
           <Fade y={20}>
             <Button as={Link} to="/projects">
-              All Projects
+              View All Projects
             </Button>
           </Fade>
         </ButtonContainer>
@@ -64,10 +71,53 @@ const ButtonContainer = styled.div`
 `
 
 const Title = styled.h2`
-  margin-bottom: var(--s-4);
-  font-size: var(--s-11);
+  margin-bottom: var(--s-12);
+  font-size: var(--s-12);
 
   @media screen and (max-width: 61.25em) {
     font-size: var(--s-10);
+  }
+`
+
+const Grid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.8rem;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+
+  @media screen and (max-width: 61.25em) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+`
+
+const ProjectLink = styled(Link)`
+  border: 1px solid;
+  border-color: ${props =>
+    props.theme.isDark ? "var(--color-gray-medium)" : "#bdcbd4"};
+  transition: opacity 0.2s, border 0.2s, border-color 0.2s, box-shadow 0.2s;
+
+  :hover {
+    opacity: 0.8;
+    border-color: var(--color-purple);
+    box-shadow: ${props =>
+      props.theme.isDark
+        ? "5px 5px 0 -2px var(--color-cta)"
+        : "5px 5px 0 -2px var(--color-purple)"};
+
+    border-color: ${props =>
+      props.theme.isDark ? "var(--color-cta)" : "var(--color-purple)"};
+  }
+`
+
+const ProjectImage = styled(GatsbyImage)`
+  height: 30rem;
+
+  @media screen and (max-width: 61.25em) {
+    height: 26rem;
+  }
+
+  @media screen and (max-width: 40em) {
+    height: 20rem;
   }
 `

@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 const Input = styled.input`
-  background-color: transparent;
+  background-color: var(--color-bg);
   border: 2px solid;
   border-color: var(--color-contrast);
   color: var(--color-text);

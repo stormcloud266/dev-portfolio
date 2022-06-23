@@ -17,7 +17,7 @@ const Hero = ({ title, spacer, smText }) => {
 export default Hero
 
 const StyledHero = styled.section`
-  min-height: 44rem;
+  min-height: 48rem;
   background-image: var(--color-gradient);
   display: flex;
   align-items: center;

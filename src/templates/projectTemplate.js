@@ -9,20 +9,20 @@ import { LinkIcon, Github } from "@images/icons"
 import Hero from "@global/hero"
 
 const ProjectTemplate = ({ data }) => {
-  const {
-    title,
-    excerpt,
-    display_tags,
-    featured_image,
-    live_link,
-    github_link,
-  } = data.project.frontmatter
+  // const {
+  //   title,
+  //   excerpt,
+  //   display_tags,
+  //   featured_image,
+  //   live_link,
+  //   github_link,
+  // } = data.project.frontmatter
 
-  const { html } = data.project
+  // const { html } = data.project
 
   return (
     <Layout>
-      <Hero title={title} smText spacer />
+      {/* <Hero title={title} smText spacer />
 
       <Header wrapper>
         <InfoContainer>
@@ -67,7 +67,7 @@ const ProjectTemplate = ({ data }) => {
         <Container wrapper wrapperSm sectionSm>
           <Blog dangerouslySetInnerHTML={{ __html: html }} />
         </Container>
-      </Container>
+      </Container> */}
     </Layout>
   )
 }
@@ -143,23 +143,23 @@ const Excerpt = styled.p`
   padding-top: var(--s-3);
 `
 
-export const query = graphql`
-  query getCaseStudy($slug: String!) {
-    project: markdownRemark(frontmatter: { slug: { eq: $slug } }) {
-      frontmatter {
-        title
-        slug
-        excerpt
-        live_link
-        github_link
-        display_tags
-        featured_image {
-          childImageSharp {
-            gatsbyImageData(width: 950, quality: 100, placeholder: BLURRED)
-          }
-        }
-      }
-      html
-    }
-  }
-`
+// export const query = graphql`
+//   query getCaseStudy($slug: String!) {
+//     project: markdownRemark(frontmatter: { slug: { eq: $slug } }) {
+//       frontmatter {
+//         title
+//         slug
+//         excerpt
+//         live_link
+//         github_link
+//         display_tags
+//         featured_image {
+//           childImageSharp {
+//             gatsbyImageData(width: 950, quality: 100, placeholder: BLURRED)
+//           }
+//         }
+//       }
+//       html
+//     }
+//   }
+// `

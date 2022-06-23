@@ -39,7 +39,7 @@ const GlobalStyle = createGlobalStyle`
     #b1ede8
   );
 
-    --font-header: 'Yantramanav', sans-serif;
+    --font-header: 'Poppins', sans-serif;
     --font-body: 'Open Sans', sans-serif;
   }
 
@@ -82,7 +82,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   h2 {
-    font-size: var(--s-9);
+    font-size: var(--s-12);
   }
 
   h3 {
