@@ -3,11 +3,12 @@ import styled from "styled-components"
 import { graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "@components/global/layout"
-import { Container, Button, Blog } from "@styles"
+import { Container, Button } from "@styles"
 import Tags from "@components/global/tags"
 import Overview from "@components/projectPage/overview"
 import DevicesImage from "@components/projectPage/devicesImage"
 import Process from "@components/projectPage/process"
+import Challenges from "@components/projectPage/challenges"
 import { LinkIcon, Github } from "@images/icons"
 import Hero from "@global/hero"
 
@@ -91,14 +92,14 @@ const ProjectTemplate = ({ data }) => {
         ]}
       />
 
-      {/* the challenges */}
-
-      {/* 
-      <Container bgAccent>
-        <Container wrapper wrapperSm sectionSm>
-          <Blog dangerouslySetInnerHTML={{ __html: html }} />
-        </Container>
-      </Container> */}
+      <Challenges
+        list={[
+          "Built on Gatsby for generating blog posts. Built on Gatsby for generating blog posts",
+          "Styled using SCSS modules. Styled using SCSS modules",
+          "Hosted on Netlify and uses Contentful as CMS. Hosted on Netlify and uses Contentful as CMS",
+          "Google Ads and Facebook Pixel integration. Google Ads and Facebook Pixel integration. Google Ads and Facebook Pixel integration. Google Ads and Facebook Pixel integration",
+        ]}
+      />
     </Layout>
   )
 }

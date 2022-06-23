@@ -86,7 +86,7 @@ const Title = styled.h2`
   margin-bottom: var(--s-7);
 
   @media screen and (max-width: 61.25em) {
-    font-size: var(--s-8);
+    font-size: var(--s-10);
     margin-top: -6px;
   }
 `
