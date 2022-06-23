@@ -193,9 +193,6 @@ export const query = graphql`
       solution_body {
         raw
       }
-      final_result_body {
-        raw
-      }
       live_site_url
       github_link
       hero_image {
@@ -213,12 +210,6 @@ export const query = graphql`
           placeholder: TRACED_SVG
           quality: 100
         )
-      }
-      final_result_image {
-        file {
-          url
-        }
-        gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED, quality: 100)
       }
       screenshot_gallery {
         file {
