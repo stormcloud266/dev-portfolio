@@ -4,7 +4,7 @@ import { Fade } from "@animations"
 import { Container } from "@styles"
 import { CheckCircle } from "@images/icons"
 
-const Challenges = ({ body, list }) => {
+const Challenges = ({ list }) => {
   return (
     <Container bgAccent section>
       <Container wrapper wrapperSmOnMd>
@@ -52,7 +52,6 @@ const List = styled.ul`
 const ListItem = styled.li`
   display: flex;
   align-items: flex-start;
-  color: var(--color-text-headers);
 
   svg {
     color: var(--color-cta);

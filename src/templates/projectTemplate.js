@@ -1,15 +1,11 @@
 import React from "react"
-import styled from "styled-components"
 import { graphql } from "gatsby"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "@components/global/layout"
-import { Container, Button } from "@styles"
-import Tags from "@components/global/tags"
+import Header from "@components/projectPage/header"
 import Overview from "@components/projectPage/overview"
 import DevicesImage from "@components/projectPage/devicesImage"
 import Process from "@components/projectPage/process"
 import Challenges from "@components/projectPage/challenges"
-import { LinkIcon, Github } from "@images/icons"
 import Hero from "@global/hero"
 
 const ProjectTemplate = ({ data }) => {
@@ -25,50 +21,23 @@ const ProjectTemplate = ({ data }) => {
     solution_header,
     solution_body,
     multi_device_image,
+    process_body,
+    process_list,
+    challenges_list,
   } = data.project
 
   return (
     <Layout>
       <Hero title={title} smText spacer />
 
-      <Header wrapper>
-        <InfoContainer>
-          <LinksContainer>
-            {live_site_url && (
-              <Button
-                primary
-                as="a"
-                href={live_site_url}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <LinkIcon /> Visit Live Site
-              </Button>
-            )}
-
-            {github_link && (
-              <Button
-                as="a"
-                href={github_link}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <Github /> View on Github
-              </Button>
-            )}
-          </LinksContainer>
-
-          <Tags tags={display_tags.list} />
-          <Excerpt>{intro_text.intro_text}</Excerpt>
-        </InfoContainer>
-        <Image
-          image={getImage(hero_image)}
-          imgStyle={{
-            objectPosition: "top center",
-          }}
-          alt={`Home page for ${title}`}
-        />
-      </Header>
+      <Header
+        site_url={live_site_url}
+        github_link={github_link}
+        tags={display_tags.list}
+        intro={intro_text.intro_text}
+        image={hero_image}
+        title={title}
+      />
 
       <Overview
         motivation_header={motivation_header}
@@ -78,112 +47,33 @@ const ProjectTemplate = ({ data }) => {
       />
 
       <DevicesImage image={multi_device_image} />
-
-      <Process
-        body={"s"}
-        list={[
-          "Built on Gatsby for generating blog posts",
-          "Styled using SCSS modules",
-          "Hosted on Netlify and uses Contentful as CMS",
-          "Google Ads and Facebook Pixel integration",
-          "Multiple contact forms for different needs",
-          "Generated local landing pages",
-          "Lighthouse optimized for better performance",
-        ]}
-      />
-
-      <Challenges
-        list={[
-          "Built on Gatsby for generating blog posts. Built on Gatsby for generating blog posts",
-          "Styled using SCSS modules. Styled using SCSS modules",
-          "Hosted on Netlify and uses Contentful as CMS. Hosted on Netlify and uses Contentful as CMS",
-          "Google Ads and Facebook Pixel integration. Google Ads and Facebook Pixel integration. Google Ads and Facebook Pixel integration. Google Ads and Facebook Pixel integration",
-        ]}
-      />
+      <Process body={process_body} list={process_list.list} />
+      <Challenges list={challenges_list.list} />
     </Layout>
   )
 }
 
 export default ProjectTemplate
 
-const Header = styled(Container)`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  @media screen and (max-width: 68.75em) {
-    margin-bottom: 0;
-    flex-direction: column-reverse;
-    padding-top: var(--s-11);
-    padding-bottom: var(--s-11);
-    align-items: center;
-  }
-`
-
-const Image = styled(GatsbyImage)`
-  border-radius: 6px;
-  width: 100%;
-  max-width: 600px;
-  height: 360px;
-  transform: translateY(-40%);
-  border: 1px solid var(--color-gray-medium);
-  box-shadow: 6px 6px 0 -2px var(--color-gray-medium);
-
-  @media screen and (max-width: 68.75em) {
-    transform: translateY(0);
-  }
-
-  @media screen and (max-width: 36.25em) {
-    height: 260px;
-  }
-`
-
-const LinksContainer = styled.div`
-  display: flex;
-  margin: var(--s-8) 0 var(--s-7);
-
-  ${Button} {
-    padding: var(--s-4) var(--s-7);
-    text-transform: unset;
-    :first-child {
-      margin-right: var(--s-7);
-    }
-  }
-
-  svg {
-    margin-right: var(--s-1);
-  }
-
-  @media screen and (max-width: 36.25em) {
-    flex-direction: column;
-    max-width: 22rem;
-
-    ${Button}:first-child {
-      margin-right: 0;
-      margin-bottom: var(--s-4);
-    }
-  }
-`
-const InfoContainer = styled.div`
-  padding-right: var(--s-8);
-  @media screen and (max-width: 68.75em) {
-    padding: 0;
-  }
-`
-const Excerpt = styled.p`
-  max-width: 56rem;
-  padding-top: var(--s-3);
-`
-
 export const query = graphql`
   query getCaseStudy($slug: String!) {
     project: contentfulCaseStudy(slug: { eq: $slug }) {
       title
+      live_site_url
+      github_link
       intro_text {
         intro_text
       }
       display_tags {
         list
+      }
+      hero_image {
+        gatsbyImageData(
+          layout: CONSTRAINED
+          width: 1000
+          placeholder: TRACED_SVG
+          quality: 100
+        )
       }
       motivation_header
       motivation_body {
@@ -193,16 +83,6 @@ export const query = graphql`
       solution_body {
         raw
       }
-      live_site_url
-      github_link
-      hero_image {
-        gatsbyImageData(
-          layout: CONSTRAINED
-          width: 1000
-          placeholder: TRACED_SVG
-          quality: 100
-        )
-      }
       multi_device_image {
         gatsbyImageData(
           layout: CONSTRAINED
@@ -210,6 +90,15 @@ export const query = graphql`
           placeholder: TRACED_SVG
           quality: 100
         )
+      }
+      process_body {
+        raw
+      }
+      process_list {
+        list
+      }
+      challenges_list {
+        list
       }
       screenshot_gallery {
         file {

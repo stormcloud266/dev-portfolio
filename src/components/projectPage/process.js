@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { motion } from "framer-motion"
+import { renderRichText } from "gatsby-source-contentful/rich-text"
 import { Fade } from "@animations"
 import { Container } from "@styles"
 import { ArrowCurve } from "@images/icons"
@@ -39,26 +40,7 @@ const Process = ({ body, list }) => {
       </Fade>
 
       <Content>
-        <TextContainer>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
-            laborum necessitatibus expedita accusamus officia vitae rerum
-            excepturi at nostrum quam eos, maxime, exercitationem quasi
-            quisquam? Quae rerum expedita similique incidunt!
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
-            laborum necessitatibus expedita accusamus officia vitae rerum
-            excepturi at nostrum quam eos, maxime, exercitationem quasi
-            quisquam? Quae rerum expedita similique incidunt!
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
-            laborum necessitatibus expedita accusamus officia vitae rerum
-            excepturi at nostrum quam eos, maxime, exercitationem quasi
-            quisquam? Quae rerum expedita similique incidunt!
-          </p>
-        </TextContainer>
+        <TextContainer>{renderRichText(body)}</TextContainer>
 
         <ListContainer>
           <List
