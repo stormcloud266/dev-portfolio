@@ -35,12 +35,11 @@ const Projects = () => {
     <Container bgAccent section>
       <Container wrappers fcc>
         <Fade>
-          <Title>Recent Projects</Title>
+          <Title>Featured Projects</Title>
         </Fade>
 
         <Grid>
           {data.allContentfulCaseStudy.edges.map(({ node }) => {
-            console.log("node: ", node)
             return (
               <ProjectLink
                 to={`projects/${node.slug}`}
@@ -116,7 +115,7 @@ const ProjectLink = styled(Link)`
 `
 
 const ProjectImage = styled(GatsbyImage)`
-  height: 30rem;
+  height: 28rem;
   transition: opacity 0.2s;
 
   ${ProjectLink}:hover & {

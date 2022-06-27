@@ -108,6 +108,7 @@ const List = styled(motion.ul)`
   svg {
     color: var(--color-cta);
     margin-right: var(--s-1);
+    flex-shrink: 0;
   }
 `
 
