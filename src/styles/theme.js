@@ -1,6 +1,6 @@
 exports.darkTheme = {
   colorText: "#b3bec3",
-  colorTextHeaders: "#ffffff",
+  colorTextPrimary: "#ffffff",
   colorBg: "#181a1b",
   colorBgSecondary: "#212527",
   colorBtnPrimary: "#f199b9",
@@ -9,7 +9,7 @@ exports.darkTheme = {
 
 exports.lightTheme = {
   colorText: "#3e474c",
-  colorTextHeaders: "#2b2d2f",
+  colorTextPrimary: "#2b2d2f",
   colorBg: "#ffffff",
   colorBgSecondary: "#eff4f7",
   colorBtnPrimary: "#000000",

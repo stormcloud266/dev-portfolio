@@ -115,6 +115,12 @@ const TextContainer = styled.div`
     margin-bottom: var(--s-7);
   }
 
+  a {
+    text-decoration: underline wavy var(--color-cta);
+    text-underline-offset: 3px;
+    color: var(--color-text-primary);
+  }
+
   @media screen and (max-width: 61.25em) {
     padding: 4rem 0 4rem 4rem;
   }
@@ -127,7 +133,7 @@ const Title = styled.h2`
   font-size: var(--s-9);
   margin-top: -12px;
   margin-bottom: var(--s-7);
-  line-height: 1.5;
+  line-height: 1.3;
 
   @media screen and (max-width: 61.25em) {
     font-size: var(--s-8);

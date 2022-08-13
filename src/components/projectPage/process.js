@@ -86,6 +86,12 @@ const TextContainer = styled(Fade)`
   p:not(:last-of-type) {
     margin-bottom: var(--s-7);
   }
+
+  a {
+    text-decoration: underline wavy var(--color-cta);
+    text-underline-offset: 3px;
+    color: var(--color-text-primary);
+  }
 `
 const ListContainer = styled.div`
   flex: 1;
@@ -116,5 +122,5 @@ const ListItem = styled(motion.li)`
   font-family: var(--font-header);
   font-weight: 700;
   display: flex;
-  color: var(--color-text-headers);
+  color: var(--color-text-primary);
 `

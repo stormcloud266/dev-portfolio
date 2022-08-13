@@ -28,7 +28,7 @@ const GlobalStyle = createGlobalStyle`
     --color-bg: ${props => props.theme.colorBg};
     --color-bg-secondary: ${props => props.theme.colorBgSecondary};
     --color-text: ${props => props.theme.colorText};
-    --color-text-headers: ${props => props.theme.colorTextHeaders};
+    --color-text-primary: ${props => props.theme.colorTextPrimary};
     --color-btn-primary: ${props => props.theme.colorBtnPrimary};
     --color-gradient: linear-gradient(
     120deg,
@@ -73,7 +73,7 @@ const GlobalStyle = createGlobalStyle`
   h1,h2,h3,h4,h5,h6 { 
     font-family: var(--font-header);
     line-height: 1.3;
-    color: var(--color-text-headers);
+    color: var(--color-text-primary);
     font-weight: 900;
   }
 
