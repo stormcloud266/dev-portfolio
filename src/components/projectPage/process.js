@@ -83,7 +83,8 @@ const Content = styled.div`
 const TextContainer = styled(Fade)`
   flex: 1;
 
-  p:not(:last-of-type) {
+  p:not(:last-of-type),
+  ul li:not(:last-child) {
     margin-bottom: var(--s-7);
   }
 
@@ -91,6 +92,19 @@ const TextContainer = styled(Fade)`
     text-decoration: underline wavy var(--color-cta);
     text-underline-offset: 3px;
     color: var(--color-text-primary);
+    &:hover {
+      color: var(--color-cta);
+    }
+  }
+
+  li {
+    list-style: disc;
+    margin-left: var(--s-7);
+  }
+
+  b {
+    font-family: var(--font-header);
+    font-weight: bold;
   }
 `
 const ListContainer = styled.div`

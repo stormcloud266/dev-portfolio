@@ -10,7 +10,7 @@ const Projects = () => {
     query HomeProjects {
       allContentfulCaseStudy(
         limit: 6
-        sort: { fields: last_updated, order: DESC }
+        sort: { fields: order, order: ASC }
         filter: { featured_study: { eq: true } }
       ) {
         edges {

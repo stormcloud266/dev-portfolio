@@ -119,6 +119,9 @@ const TextContainer = styled.div`
     text-decoration: underline wavy var(--color-cta);
     text-underline-offset: 3px;
     color: var(--color-text-primary);
+    &:hover {
+      color: var(--color-cta);
+    }
   }
 
   @media screen and (max-width: 61.25em) {
