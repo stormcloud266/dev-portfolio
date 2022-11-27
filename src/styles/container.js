@@ -25,6 +25,14 @@ const Container = styled.div`
     `}
 
   ${props =>
+    props.wrapperSmOnMd &&
+    css`
+      @media screen and (max-width: 61.25em) {
+        max-width: 60rem;
+      }
+    `}
+
+  ${props =>
     props.section &&
     css`
       padding-top: 14rem;

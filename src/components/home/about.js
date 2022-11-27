@@ -3,7 +3,6 @@ import { Container } from "@styles"
 import styled from "styled-components"
 import { Fade } from "@animations"
 import dots from "@images/dots.svg"
-import { useCurrentWidth } from "@hooks"
 import { ArrowRight } from "../../assets/images/icons"
 
 const list = [
@@ -11,6 +10,8 @@ const list = [
   "GatsbyJS",
   "NextJS",
   "RedwoodJS",
+  "Typescript",
+  "GraphQL",
   "SCSS",
   "PostCSS",
   "Tailwind",
@@ -19,35 +20,47 @@ const list = [
 ]
 
 const About = () => {
-  const width = useCurrentWidth()
-
   return (
-    <Container wrapper section>
-      <Title>The Toolbelt</Title>
+    <Dots>
+      <Container wrapper wrapperSmOnMd section>
+        <Fade>
+          <Title>The Toolbelt</Title>
+        </Fade>
 
-      <Flex>
-        <FlexItem>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis
-            quibusdam mollitia blanditiis vel quasi. Alias maiores voluptatum,
-            ea accusantium similique libero? Vitae recusandae fugiat facilis
-            dolor, cum repellat sed ea.
-          </p>
-        </FlexItem>
-        <FlexItem>
-          <FlexList>
-            <List>
-              {list.map(item => (
-                <ListItem>
-                  <ArrowRight />
-                  {item}
-                </ListItem>
-              ))}
-            </List>
-          </FlexList>
-        </FlexItem>
-      </Flex>
-    </Container>
+        <Flex>
+          <FlexItem>
+            <Fade>
+              <Text>
+                Past. Present. Future. Stack. Honed in on CSS and semantic HTML.
+              </Text>
+              <Text>
+                Moved to React mostly focusing on static sites and blogs for SMB
+                clients.
+              </Text>
+              <Text>Fontend dev RedwoodJS, GraphQL, Tailwind</Text>
+              <Text>
+                When I'm not on the computer, I'm usually playing guitar,
+                reading, or practicing photography.
+              </Text>
+            </Fade>
+          </FlexItem>
+          <FlexItem>
+            <FlexList>
+              <Fade y={10}>
+                <List>
+                  {list.map(item => (
+                    <ListItem>
+                      <ArrowRight />
+                      {item}
+                    </ListItem>
+                  ))}
+                </List>
+              </Fade>
+            </FlexList>
+          </FlexItem>
+        </Flex>
+      </Container>
+    </Dots>
   )
 }
 
@@ -55,10 +68,19 @@ export default About
 
 const Title = styled.h2`
   margin-bottom: 2rem;
+
+  @media screen and (max-width: 61.25em) {
+    font-size: var(--s-10);
+  }
 `
 const Flex = styled.div`
   display: flex;
   gap: 4rem;
+
+  @media screen and (max-width: 61.25em) {
+    flex-direction: column;
+    margin-bottom: var(--s-6);
+  }
 `
 
 const FlexItem = styled.div`
@@ -76,11 +98,32 @@ const List = styled.ul`
   row-gap: 1.2rem;
 `
 
+const Text = styled.p`
+  margin-top: var(--s-4);
+`
+
 const ListItem = styled.li`
   display: flex;
   align-items: center;
   svg {
     color: var(--color-cta);
     margin-right: 0.4rem;
+  }
+`
+
+const Dots = styled.div`
+  position: relative;
+
+  ::before {
+    position: absolute;
+    content: "";
+    display: block;
+    bottom: -28px;
+    left: 2px;
+    height: 105px;
+    width: 210px;
+    background-image: url(${dots});
+    background-size: 70px;
+    opacity: 0.4;
   }
 `
