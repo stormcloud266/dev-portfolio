@@ -11,7 +11,9 @@ const Header = ({ isDark, toggleDark }) => {
   const [isOpen, setIsOpen] = useState(false)
   const width = useCurrentWidth()
 
-  useEffect(() => width > 900 && setIsOpen(false), [width])
+  useEffect(() => {
+    width > 900 && setIsOpen(false)
+  }, [width])
 
   return (
     <SiteHeader>

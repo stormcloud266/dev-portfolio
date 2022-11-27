@@ -8,7 +8,7 @@ import Search from "@global/search"
 const Projects = () => {
   const data = useStaticQuery(graphql`
     query ProjectsProjects {
-      allContentfulCaseStudy(sort: { fields: last_updated, order: DESC }) {
+      allContentfulCaseStudy(sort: { last_updated: DESC }) {
         edges {
           node {
             title
