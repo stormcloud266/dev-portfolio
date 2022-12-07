@@ -1,7 +1,7 @@
 import React from "react"
 import { Container } from "@styles"
 import styled from "styled-components"
-import { Code, Palette } from "@images/icons"
+import { Code, Music, Book } from "@images/icons"
 import { Fade } from "@animations"
 import dots from "@images/dots.svg"
 import { useCurrentWidth } from "@hooks"
@@ -30,20 +30,20 @@ export default Cards
 
 const data = [
   {
-    icon: <Palette />,
-    title: "Web Design",
+    icon: <Code />,
+    title: "Developer",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur,dolorem. Perspiciatis aspernatur sunt impedit aliquid quos fuga error, ullam officia.",
   },
   {
-    icon: <Code />,
-    title: "Web Development",
+    icon: <Music />,
+    title: "Guitar Player",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur,dolorem. Perspiciatis aspernatur sunt impedit aliquid quos fuga error, ullam officia.",
   },
   {
-    icon: <Code />,
-    title: "Hello",
+    icon: <Book />,
+    title: "Book Worm",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur,dolorem. Perspiciatis aspernatur sunt impedit aliquid quos fuga error, ullam officia. lksdj lasdkj ladkj ladkjs sd",
   },

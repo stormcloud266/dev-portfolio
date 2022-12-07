@@ -11,6 +11,10 @@ export const navLinks = [
     href: "/projects",
   },
   {
+    text: "Toolbelt",
+    href: "/#toolbelt",
+  },
+  {
     text: "About",
     href: "/#about",
   },

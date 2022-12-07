@@ -19,10 +19,10 @@ const list = [
   "Framer Motion",
 ]
 
-const About = () => {
+const Toolbelt = () => {
   return (
     <Dots>
-      <Container wrapper wrapperSmOnMd section>
+      <Container wrapper wrapperSmOnMd section id="toolbelt">
         <Fade>
           <Title>The Toolbelt</Title>
         </Fade>
@@ -38,10 +38,6 @@ const About = () => {
                 clients.
               </Text>
               <Text>Fontend dev RedwoodJS, GraphQL, Tailwind</Text>
-              <Text>
-                When I'm not on the computer, I'm usually playing guitar,
-                reading, or practicing photography.
-              </Text>
             </Fade>
           </FlexItem>
           <FlexItem>
@@ -64,7 +60,7 @@ const About = () => {
   )
 }
 
-export default About
+export default Toolbelt
 
 const Title = styled.h2`
   margin-bottom: 2rem;

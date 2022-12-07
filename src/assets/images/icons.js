@@ -209,6 +209,46 @@ export const ArrowCurve = () => (
   </svg>
 )
 
+export const Music = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    className="icon icon-tabler icon-tabler-music"
+    width={56}
+    height={56}
+    viewBox="0 0 24 24"
+    strokeWidth={2}
+    stroke="currentColor"
+    fill="none"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    {...props}
+  >
+    <path d="M0 0h24v24H0z" stroke="none" />
+    <circle cx={6} cy={17} r={3} />
+    <circle cx={16} cy={17} r={3} />
+    <path d="M9 17V4h10v13M9 8h10" />
+  </svg>
+)
+
+export const Book = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    className="icon icon-tabler icon-tabler-book"
+    width={56}
+    height={56}
+    viewBox="0 0 24 24"
+    strokeWidth={2}
+    stroke="currentColor"
+    fill="none"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    {...props}
+  >
+    <path d="M0 0h24v24H0z" stroke="none" />
+    <path d="M3 19a9 9 0 0 1 9 0 9 9 0 0 1 9 0M3 6a9 9 0 0 1 9 0 9 9 0 0 1 9 0M3 6v13M12 6v13M21 6v13" />
+  </svg>
+)
+
 export const Palette = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
