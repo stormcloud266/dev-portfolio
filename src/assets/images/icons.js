@@ -221,7 +221,6 @@ export const Music = () => (
     fill="none"
     strokeLinecap="round"
     strokeLinejoin="round"
-    {...props}
   >
     <path d="M0 0h24v24H0z" stroke="none" />
     <circle cx={6} cy={17} r={3} />
@@ -242,7 +241,6 @@ export const Book = () => (
     fill="none"
     strokeLinecap="round"
     strokeLinejoin="round"
-    {...props}
   >
     <path d="M0 0h24v24H0z" stroke="none" />
     <path d="M3 19a9 9 0 0 1 9 0 9 9 0 0 1 9 0M3 6a9 9 0 0 1 9 0 9 9 0 0 1 9 0M3 6v13M12 6v13M21 6v13" />
