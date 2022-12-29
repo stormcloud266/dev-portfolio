@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 import { Helmet } from "react-helmet"
 import { Link } from "gatsby"
 import styled, { css, keyframes } from "styled-components"
@@ -8,12 +8,12 @@ import { useCurrentWidth } from "@hooks"
 import { navLinks, socialLinks } from "@data"
 
 const Header = ({ isDark, toggleDark }) => {
-  const [isOpen, setIsOpen] = useState(false)
   const width = useCurrentWidth()
+  const [isOpen, setIsOpen] = useState(false)
 
-  useEffect(() => {
-    width > 900 && setIsOpen(false)
-  }, [width])
+  if (width > 900 && isOpen) {
+    setIsOpen(false)
+  }
 
   return (
     <SiteHeader>

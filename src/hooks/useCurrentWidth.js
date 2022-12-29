@@ -1,27 +1,27 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from "react"
+import debounce from "lodash/debounce"
 
 export default function useCurrentWidth() {
-	// save current window width in the state object
-	const [width, setWidth] = useState(0)
+  // save current window width in the state object
+  const [width, setWidth] = useState(
+    typeof window !== undefined ? window.innerWidth : 0
+  )
 
-	// in this case useEffect will execute only once because
-	// it does not have any dependencies.
-	useEffect(() => {
-		setWidth(window.innerWidth)
+  const resizeListener = debounce(() => {
+    setWidth(window.innerWidth)
+    console.log("Resize")
+  }, 200)
 
-		const resizeListener = () => {
-			// change width from the state object
-			setWidth(window.innerWidth)
-		}
-		// set resize listener
-		window.addEventListener('resize', resizeListener)
+  useEffect(() => {
+    // set resize listener
+    window.addEventListener("resize", resizeListener)
 
-		// clean up function
-		return () => {
-			// remove resize listener
-			window.removeEventListener('resize', resizeListener)
-		}
-	}, [])
+    // clean up function
+    return () => {
+      // remove resize listener
+      window.removeEventListener("resize", resizeListener)
+    }
+  }, [resizeListener])
 
-	return width
+  return width
 }
