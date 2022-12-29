@@ -45,7 +45,7 @@ const Toolbelt = () => {
               <Fade y={10}>
                 <List>
                   {list.map(item => (
-                    <ListItem>
+                    <ListItem key={item}>
                       <ArrowRight />
                       {item}
                     </ListItem>

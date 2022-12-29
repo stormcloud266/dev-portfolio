@@ -2,7 +2,6 @@ import React from "react"
 
 export const Hamburger = () => (
   <svg
-    className="prefix__icon prefix__icon-tabler prefix__icon-tabler-menu"
     width={28}
     height={28}
     viewBox="0 0 24 24"
@@ -19,7 +18,6 @@ export const Hamburger = () => (
 
 export const Times = () => (
   <svg
-    className="prefix__icon prefix__icon-tabler prefix__icon-tabler-x"
     width={28}
     height={28}
     viewBox="0 0 24 24"
@@ -36,7 +34,6 @@ export const Times = () => (
 
 export const Sun = () => (
   <svg
-    className="prefix__icon prefix__icon-tabler prefix__icon-tabler-sun"
     width={24}
     height={24}
     viewBox="0 0 24 24"
@@ -54,7 +51,6 @@ export const Sun = () => (
 
 export const Github = () => (
   <svg
-    className="prefix__icon prefix__icon-tabler prefix__icon-tabler-brand-github"
     width={20}
     height={20}
     viewBox="0 0 24 24"
@@ -70,7 +66,6 @@ export const Github = () => (
 )
 export const Twitter = () => (
   <svg
-    className="prefix__icon prefix__icon-tabler prefix__icon-tabler-brand-twitter"
     width={20}
     height={20}
     viewBox="0 0 24 24"
@@ -86,7 +81,6 @@ export const Twitter = () => (
 )
 export const Codepen = () => (
   <svg
-    className="prefix__icon prefix__icon-tabler prefix__icon-tabler-brand-codepen"
     width={20}
     height={20}
     viewBox="0 0 24 24"
@@ -104,7 +98,6 @@ export const Codepen = () => (
 
 export const Mail = () => (
   <svg
-    className="prefix__icon prefix__icon-tabler prefix__icon-tabler-mail"
     width={20}
     height={20}
     viewBox="0 0 24 24"
@@ -121,7 +114,6 @@ export const Mail = () => (
 )
 export const Moon = () => (
   <svg
-    className="prefix__icon prefix__icon-tabler prefix__icon-tabler-moon"
     width={24}
     height={24}
     viewBox="0 0 24 24"
@@ -139,7 +131,6 @@ export const Moon = () => (
 export const LinkIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    className="prefix__icon prefix__icon-tabler prefix__icon-tabler-link"
     width={20}
     height={20}
     viewBox="0 0 24 24"
@@ -158,7 +149,6 @@ export const LinkIcon = () => (
 export const ArrowRight = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    class="icon icon-tabler icon-tabler-chevron-right"
     width="20"
     height="20"
     viewBox="0 0 24 24"
@@ -176,7 +166,6 @@ export const ArrowRight = () => (
 export const CheckCircle = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    className="icon icon-tabler icon-tabler-circle-check"
     width={24}
     height={24}
     viewBox="0 0 24 24"
@@ -194,7 +183,6 @@ export const CheckCircle = () => (
 export const ArrowCurve = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    className="icon icon-tabler icon-tabler-corner-down-right"
     width={24}
     height={24}
     viewBox="0 0 24 24"
@@ -212,7 +200,6 @@ export const ArrowCurve = () => (
 export const Music = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    className="icon icon-tabler icon-tabler-music"
     width={56}
     height={56}
     viewBox="0 0 24 24"
@@ -232,7 +219,6 @@ export const Music = () => (
 export const Book = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    className="icon icon-tabler icon-tabler-book"
     width={56}
     height={56}
     viewBox="0 0 24 24"
@@ -250,7 +236,6 @@ export const Book = () => (
 export const Palette = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    className="prefix__icon prefix__icon-tabler prefix__icon-tabler-palette"
     width={56}
     height={56}
     viewBox="0 0 24 24"
@@ -270,7 +255,6 @@ export const Palette = () => (
 
 export const Code = () => (
   <svg
-    className="prefix__icon prefix__icon-tabler prefix__icon-tabler-code"
     width={60}
     height={60}
     viewBox="0 0 24 24"
@@ -345,7 +329,6 @@ export const Logo = ({ isDark }) => (
 export const CircleX = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    className="prefix__icon prefix__icon-tabler prefix__icon-tabler-circle-x"
     width={24}
     height={24}
     viewBox="0 0 24 24"
