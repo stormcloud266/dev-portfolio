@@ -4,7 +4,7 @@ import debounce from "lodash/debounce"
 export default function useCurrentWidth() {
   // save current window width in the state object
   const [width, setWidth] = useState(
-    typeof window !== undefined ? window.innerWidth : 0
+    typeof window !== "undefined" ? window.innerWidth : 0
   )
 
   const resizeListener = debounce(() => {
