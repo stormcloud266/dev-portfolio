@@ -33,14 +33,12 @@ const Footer = () => (
 
       <TextContainer>
         <Fade>
-          <Title>Ready to work together?</Title>
+          <Title>Let's Connect</Title>
         </Fade>
         <Fade delay={0.3}>
           <Body>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi,
-            totam mollitia? Enim, fuga libero hic iste voluptas molestiae
-            nesciunt a nisi sunt, in magnam? Provident aperiam sit quod hic
-            voluptas esse.
+            Although I'm not currently looking for work, please feel free to
+            reach out and I will try to get back to you as soon as possible.
           </Body>
         </Fade>
       </TextContainer>
@@ -138,4 +136,6 @@ const Title = styled.h2`
     font-size: var(--s-9);
   }
 `
-const Body = styled.p``
+const Body = styled.p`
+  max-width: 56rem;
+`
