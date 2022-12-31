@@ -233,7 +233,7 @@ const NavLinks = styled.ul`
     margin-right: var(--s-8);
   }
   a {
-    color: var(--color-text);
+    color: var(--color-text-primary);
     font-family: var(--font-header);
     font-weight: bold;
     letter-spacing: 1px;

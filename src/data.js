@@ -7,12 +7,12 @@ export const navLinks = [
     href: "/",
   },
   {
-    text: "Projects",
-    href: "/projects",
-  },
-  {
     text: "Toolbelt",
     href: "/#toolbelt",
+  },
+  {
+    text: "Projects",
+    href: "/projects",
   },
   {
     text: "About",
