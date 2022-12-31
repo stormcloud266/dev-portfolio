@@ -38,7 +38,8 @@ const Footer = () => (
         <Fade delay={0.3}>
           <Body>
             Although I'm not currently looking for work, please feel free to
-            reach out and I will try to get back to you as soon as possible.
+            reach out if you have any questions or want to say hi, and I will
+            try to get back to you as soon as possible.
           </Body>
         </Fade>
       </TextContainer>
