@@ -16,14 +16,14 @@ const Hero = () => (
 
         <ButtonContainer>
           <Fade y={20}>
-            <Button primary={1} as={Link} to="/contact">
-              Contact Me
+            <Button primary={1} as={Link} to="/projects">
+              See My Work
             </Button>
           </Fade>
 
           <Fade y={20} delay={0.2}>
-            <Button as={Link} to="/about">
-              See My Work
+            <Button as={Link} to="/#toolbelt">
+              My Tool Belt
             </Button>
           </Fade>
         </ButtonContainer>

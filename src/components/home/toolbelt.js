@@ -27,7 +27,7 @@ const Toolbelt = () => {
     <Dots>
       <Container wrapper wrapperSmOnMd section id="toolbelt">
         <Fade>
-          <Title>The Toolbelt</Title>
+          <Title>My Tool Belt</Title>
         </Fade>
 
         <Flex>

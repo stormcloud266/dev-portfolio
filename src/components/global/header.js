@@ -230,7 +230,7 @@ const NavLinks = styled.ul`
   display: flex;
 
   li {
-    margin-right: var(--s-8);
+    margin-right: var(--s-9);
   }
   a {
     color: var(--color-text-primary);

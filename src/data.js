@@ -7,7 +7,7 @@ export const navLinks = [
     href: "/",
   },
   {
-    text: "Toolbelt",
+    text: "Tool Belt",
     href: "/#toolbelt",
   },
   {
