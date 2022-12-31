@@ -12,7 +12,7 @@ const Hero = () => (
     <Bg />
     <Container wrapper>
       <Text>
-        <BlockTitle wide>Front End Developer specializing in React</BlockTitle>
+        <BlockTitle wide>Crafting Unique Digital Experiences</BlockTitle>
 
         <ButtonContainer>
           <Fade y={20}>

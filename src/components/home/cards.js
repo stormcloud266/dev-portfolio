@@ -1,7 +1,7 @@
 import React from "react"
 import { Container } from "@styles"
 import styled from "styled-components"
-import { Code, Music, Book } from "@images/icons"
+import { Bulb, Music, Book } from "@images/icons"
 import { Fade } from "@animations"
 import dots from "@images/dots.svg"
 import { useCurrentWidth } from "@hooks"
@@ -30,22 +30,22 @@ export default Cards
 
 const data = [
   {
-    icon: <Code />,
-    title: "Developer",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur,dolorem. Perspiciatis aspernatur sunt impedit aliquid quos fuga error, ullam officia.",
-  },
-  {
     icon: <Music />,
     title: "Guitar Player",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur,dolorem. Perspiciatis aspernatur sunt impedit aliquid quos fuga error, ullam officia.",
+      "I've been teaching myself how to play guitar since middle school. As a huge music lover, I enjoy listening to, playing, and creating music.",
   },
   {
     icon: <Book />,
     title: "Book Worm",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur,dolorem. Perspiciatis aspernatur sunt impedit aliquid quos fuga error, ullam officia. lksdj lasdkj ladkj ladkjs sd",
+      "Fiction or non-fiction, physical books or audiobooks, I'll usually have two or three books going at a time.",
+  },
+  {
+    icon: <Bulb />,
+    title: "Learner",
+    description:
+      "From new hobbies to interesting tidbits of info, learning new things has always been engaging to me.",
   },
 ]
 

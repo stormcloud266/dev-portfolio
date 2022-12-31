@@ -37,7 +37,7 @@ const StyledHero = styled.section`
     min-height: 38rem;
   }
   @media screen and (max-width: 36.25em) {
-    min-height: 30rem;
+    min-height: 34rem;
   }
 `
 
