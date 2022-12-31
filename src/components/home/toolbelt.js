@@ -36,13 +36,15 @@ const Toolbelt = () => {
               <Text>
                 I started my journey as a professional front-end developer by
                 doing freelance work for SMB clients. This consisted of
-                designing and building static websites and blogs using GatsbyJS,
-                several headless content management systems, SCSS, and Figma.
+                designing conversion-focused and intuitive UIs, implementing
+                on-page SEO, and developing static websites and blogs powered by
+                headless content management systems.
               </Text>
               <Text>
-                During this time I began dabbling the web3 space doing freelance
-                and contract work using NextJS, React Native, Framer Motion, and
-                the OpenSea API.
+                Later on I began working more in the web3 space as a freelancer
+                and a contractor. Some responsibilities included front-end work
+                on a mobile app, integrating the OpenSea API into NextJS sites,
+                and building landing pages with custom animations.
               </Text>
               <Text>
                 Currently, I work at Infinity Keys building unique digital
